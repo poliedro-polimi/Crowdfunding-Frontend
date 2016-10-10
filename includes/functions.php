@@ -1,4 +1,8 @@
 <?php
+use site\db\DBException;
+use site\Exception;
+use site\PHPErrorException;
+use site\views\Html;
 
 /**
  * Takes out the Byte Order Masks in an UTF8 text. Useful for includes that use UTF8 encoded files because BOMs break HTML validity and doctype
@@ -48,7 +52,7 @@ function error_to_exception_handler($errno, $errstr, $errfile='', $errline='', $
             }
             else {
                 if (defined('DEBUG') and DEBUG) {
-                    echo '<p class="error">' . nl2br(escape($e->renderFullError(), 'html')) . "</p>";
+                    echo '<p class="error">' . nl2br(Html::escape($e->renderFullError())) . "</p>";
                 }
                 else {
                     echo '<p class="error">' . $e->showError() . '</p>';
