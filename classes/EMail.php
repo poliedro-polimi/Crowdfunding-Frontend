@@ -1,6 +1,7 @@
 <?php
 namespace site;
 use site\Exception;
+use site\views\Html;
 
 /**
  * Email Sender, wrapper around PHPMailer
@@ -42,29 +43,29 @@ class Email
 
         try {
             //Invio con SMTP
-            if (getParam('email_smtp_active', 0) == 1) {
+            if (Site::getParam('email_smtp', false)) {
                 $this->mail->IsSMTP();
-                $this->mail->Host = getParam('email_smtp', '');
-                $this->mail->Port = getParam('email_smtp_port', '25');
-                $user = getParam('email_smtp_user', '');
+                $this->mail->Host = Site::getParam('email_smtp_host', '');
+                $this->mail->Port = Site::getParam('email_smtp_port', '25');
+                $user = Site::getParam('email_smtp_user', '');
                 if (!empty($user)) {
                     $this->mail->SMTPAuth = true;
                     $this->mail->Username = $user;
-                    $this->mail->Password = getParam('email_smtp_psw', '');
+                    $this->mail->Password = Site::getParam('email_smtp_psw', '');
                 }
-                if (getParam('email_smtp_secure') == 1) {
+                if (Site::getParam('email_smtp_secure') == 1) {
                     $this->mail->SMTPSecure = "ssl";
                 }
             }
 
             if (empty($from) || empty($from['addr'])) {
-                $this->mail->SetFrom($par_WebmasterEmail, $par_SiteName, true);
+                $this->mail->SetFrom(Site::getParam('email'), Site::getParam('site_name'), true);
             } else {
                 if (!isset($from['name'])) {
                     $from['name'] = '';
                 }
                 $this->mail->SetFrom($from['addr'], $from['name'], true);
-                $this->mail->Sender = $par_WebmasterEmail;
+                $this->mail->Sender = Site::getParam('site_name');
             }
 
             $this->mail->Subject = $subject;
@@ -188,7 +189,7 @@ class Email
         foreach ($tokens as $k => $v) {
             $patterns[] = '/@' . preg_quote($k, '/') . '\b/s';
             if ($escape_html) {
-                $values[] = escape($v, 'html');
+                $values[] = Html::escape($v);
             } else {
                 $values[] = $v;
             }
