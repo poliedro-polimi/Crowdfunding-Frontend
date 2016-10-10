@@ -1,6 +1,9 @@
 <?php
 namespace site;
 
+use site\db\DBException;
+use site\views\Html;
+
 class Exception extends \Exception
 {
     private $internal;
@@ -13,7 +16,7 @@ class Exception extends \Exception
 
     public function showError($return = false)
     {
-        $str = '<div class="error">' . escape($this->getMessage(), 'html') . "</div>";
+        $str = '<div class="error">' . Html::escape($this->getMessage()) . "</div>";
         if (!$return) {
             echo $str;
         } else {
@@ -24,7 +27,7 @@ class Exception extends \Exception
     public function showAndLogError($return = false)
     {
         $this->logError();
-        $str = '<div class="error">' . escape($this->getMessage(), 'html') . "</div>";
+        $str = '<div class="error">' . Html::escape($this->getMessage()) . "</div>";
         if (!$return) {
             echo $str;
         } else {
@@ -69,16 +72,21 @@ class Exception extends \Exception
 
     public function logToWebmasterEmail()
     {
-        $email = $GLOBALS['par_TechnicalEmail'];
+        $email = Site::getParam("technical_email");
         if (empty($email)) {
-            if (!empty($GLOBALS['par_WebmasterEmail'])) {
-                $email = $GLOBALS['par_WebmasterEmail'];
-            } else {
+            $email = Site::getParam("email");
+            if (empty($email)) {
                 $email = 'webmaster';
             }
         }
 
-        @email($email, "BSS: Errore Fatale!", $this->renderEmailText());
+        try {
+            $m = new Email();
+            @$m->addRecipients($email)->send(Site::getParam('site_name') . ': Errore Fatale!', $this->renderEmailText());
+        }
+        catch (Exception $e){
+            //Nothing we are already dealing with an error
+        }
     }
 
     protected function renderEmailText()
@@ -106,11 +114,11 @@ class Exception extends \Exception
      */
     static public function watchdog($msg, $user = "")
     {
-        if (!$user && isset($_SESSION['UID'])) {
+        /*if (!$user && isset($_SESSION['UID'])) {
             $user = getUsername($_SESSION['UID']);
-        }
+        }*/
         try {
-            DB::query("INSERT INTO LogErrori (Nome, Errore, DataEvento, IP) VALUES ('" . escape($user) . "','" . escape($msg) . "',NOW(),'" . escape($_SERVER['REMOTE_ADDR']) . "')");
+            Site::DB()->query("INSERT INTO LogErrori (Nome, Errore, DataEvento, IP) VALUES ('" . Site::DB()->escape($user) . "','" . Site::DB()->escape($msg) . "',NOW(),'" . Site::DB()->escape($_SERVER['REMOTE_ADDR']) . "')");
         } catch (DBException $e) {
             //Se fallisce perfino questo...registriamo l'errore con l'handler di default di PHP
             error_log($msg);
