@@ -15,13 +15,13 @@ class Site{
     static private $params=[];
 
     /**
-     * @var site/theme/ThemeInterface
+     * @var ThemeInterface
      */
     static private $theme;
 
     static function init($data){
         if(empty($data['theme']) or !($data['theme'] instanceof ThemeInterface)){
-            //TODO print fatal error page
+            throw new Exception("Nessun tema configurato per visualizzare il sito", 1, "Non è stato specificato nessun tema o il tema specificato non implementa l'interfaccia ThemeInterface");
         }
         else{
             self::$theme=$data['theme'];
@@ -35,11 +35,11 @@ class Site{
                         self::$DB = $class->newInstance($data['db']);
                     }
                     else{
-                        //TODO print fatal error
+                        throw new Exception("Errore nella configurazione del database", 2, "Il database specificato non estende la classe DB");
                     }
                 }
                 else{
-                    //TODO print fatal error
+                    throw new Exception("Errore nella configurazione del database", 3, "La classe specificata per il database non esiste");
                 }
             }
             else {
@@ -69,6 +69,10 @@ class Site{
             return self::$params[$name];
         }
         return $default;
+    }
+
+    public static function printPage(){
+        echo self::$theme->render();
     }
 
     //TODO Routing?
