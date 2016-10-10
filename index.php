@@ -1,7 +1,4 @@
 <?php
-use site\db\DBException;
-use site\Exception;
-use site\PHPErrorException;
 use site\Psr4AutoloaderClass;
 use site\Site;
 
