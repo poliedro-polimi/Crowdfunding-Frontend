@@ -16,6 +16,6 @@ $autoloader->register();
 
 Site::init(require_once __DIR__.'/includes/settings.php');
 
-//TODO page loading
+Site::getTheme()->append(Site::getRouter()->routeRequest());
 
 Site::printPage();
