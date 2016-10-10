@@ -1,6 +1,7 @@
 <?php
+namespace site\db;
 
-class MySqlDriver implements DbInterface{
+class MySql extends DB {
   private $connection;
   private $transactionTime=false;
 
@@ -22,7 +23,7 @@ class MySqlDriver implements DbInterface{
       $data['socket']=null;
     }
 
-    $this->connection=new mysqli($data['host'],$data['user'],$data['password'],$data['dbname'],$data['port'],$data['socket']);
+    $this->connection=new \mysqli($data['host'],$data['user'],$data['password'],$data['dbname'],$data['port'],$data['socket']);
 
     if($this->connection->connect_error){
       throw new DBException("Errore di connessione al server MySql: ".$this->connection->connect_error, '', $this->connection->connect_errno);
@@ -36,7 +37,7 @@ class MySqlDriver implements DbInterface{
   /**
    * @inheritdoc
    */
-  public function query($sql,$oneshot=false,$mode=RESULT_ASSOC){
+  public function doQuery($sql,$oneshot=false,$mode=DB::RESULT_ASSOC){
     $result=$this->connection->query($sql);
     if(!$result){
       throw new DBException("Query Fallita: ".$this->connection->error,$sql,$this->connection->errno);
@@ -133,83 +134,5 @@ class MySqlDriver implements DbInterface{
 
   public function __destruct(){
     $this->close();
-  }
-}
-
-
-class MySqlResult implements DbResult{
-  private $result;
-
-  public function __construct(mysqli_result $result){
-    if($result instanceof mysqli_result){
-      $this->result=$result;
-    }
-    else{
-      throw new DBException("Invalid result resource type!");
-    }
-  }
-
-  /**
-   * @inheritdoc
-   */
-  public function fetch($mode=RESULT_ASSOC){
-    switch($mode){
-      case RESULT_ARRAY:
-        return $this->result->fetch_row();
-      case RESULT_ASSOC:
-      default:
-        return $this->result->fetch_assoc();
-      case RESULT_OBJECT:
-        return $this->result->fetch_object();
-    }
-  }
-
-  /**
-   * @inheritdoc
-   */
-  public function fetchAll($mode=RESULT_ASSOC){
-    if(!method_exists($this->result, 'fetch_all')){
-      $result=array();
-      while($row=$this->fetch($mode)){
-        $result[]=$row;
-      }
-      return $result;
-    }
-    else{
-      switch($mode){
-        case RESULT_ARRAY:
-          return $this->result->fetch_all(MYSQLI_NUM);
-        case RESULT_ASSOC:
-        default:
-          return $this->result->fetch_all(MYSQLI_ASSOC);
-        case RESULT_OBJECT:
-          throw new DBException("Fetch All with objects is unsupported!");
-      }
-    }
-  }
-
-  /**
-   * @inheritdoc
-   */
-  public function numRows(){
-    return $this->result->num_rows;
-  }
-
-  /**
-   * @inheritdoc
-   */
-  public function free(){
-    $this->result->free();
-  }
-
-  public function __destruct(){
-    $this->free();
-  }
-
-  /**
-   * Resets the internal results pointer, so the next call to fetch() will return the first record in the dataset
-   */
-  public function reset(){
-    $this->result->data_seek(0);
   }
 }
