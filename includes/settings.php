@@ -6,6 +6,7 @@ return [
     'theme' => new Theme(),
     'params' => [
         'email' => '',
-        'site_name' => 'My Site Name'
+        'site_name' => 'My Site Name',
+        'debug' => true
     ]
 ];

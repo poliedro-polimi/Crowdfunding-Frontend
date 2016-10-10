@@ -1,6 +1,8 @@
 <?php
 namespace site\db;
 
+use site\Site;
+
 /**
  * Database Abstraction
  */
@@ -35,7 +37,7 @@ abstract class DB
      * @param int $mode
      */
     public function query($sql,$oneshot=false,$mode=DB::RESULT_ASSOC){
-        if (defined('DEBUG') and DEBUG) {
+        if (Site::getParam('debug')) {
             self::$requestsLog[] = array($sql);
         }
 

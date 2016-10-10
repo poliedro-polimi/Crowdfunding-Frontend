@@ -26,13 +26,13 @@ use site\views\Html;
   echo (($exception!=null and $exception instanceof Exception and $exception->getMessage())?
     Html::escape($exception->getMessage()):'Nessuno'); ?></p>
 <?php
-if(defined('DEBUG') and DEBUG and $exception!=null){
+if(Site::getParam('debug') and $exception!=null){
   if($exception instanceof Exception) {
     echo '<table><tr><th colspan="2">Exception</th></tr>
     <tr><td>Nome</td><td>' . get_class($exception) . '</td></tr>
-    <tr><td>Messaggio</td><td>' . Html::escape($exception->getMessage(), 'html') . '</td></tr>';
+    <tr><td>Messaggio</td><td>' . Html::escape($exception->getMessage()) . '</td></tr>';
     if($exception instanceof Exception) {
-      echo '<tr><td>Messaggio Interno</td><td>' . nl2br(Html::escape($exception->getInternalError(), 'html')) . '</td></tr>';
+      echo '<tr><td>Messaggio Interno</td><td>' . nl2br(Html::escape($exception->getInternalError())) . '</td></tr>';
     }
     if ($exception instanceof PHPErrorException) {
       echo '<tr><td>Contesto</td><td>' . $exception->getContextAsString() . '</td></tr>';
