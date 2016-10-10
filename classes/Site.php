@@ -64,7 +64,7 @@ class Site{
      * @param $name
      * @return mixed|null
      */
-    public function getParam($name){
+    public static function getParam($name){
         if(key_exists($name, self::$params)){
             return self::$params[$name];
         }
