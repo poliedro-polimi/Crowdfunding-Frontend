@@ -14,4 +14,8 @@ $autoloader = new Psr4AutoloaderClass();
 $autoloader->addNamespace('site', __DIR__.'/classes');
 $autoloader->register();
 
-$site = new Site(require_once __DIR__.'/includes/settings.php');
+Site::init(require_once __DIR__.'/includes/settings.php');
+
+//TODO page loading
+
+Site::printPage();
