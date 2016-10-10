@@ -1,0 +1,89 @@
+<?php
+namespace site\views;
+use site\Site;
+
+/**
+ * Utility class that helps generating correct URLs for pages and resources of the site
+ */
+class Url
+{
+
+    /**
+     * Creates a URL to a page of the website.
+     * Takes into account usage of CLEAN_URLS and URL_PREFIX
+     * @param string $l_page : the name of the page
+     * @param string $query : the GET query. Can be a string or an array of key value pairs
+     * @param bool $absolute : generates an absolute URL instead of one relative to the document root
+     * @return string
+     */
+    public static function to($l_page = '', $query = '', $absolute = false)
+    {
+        if (empty($l_page)) {
+            $url = $page;//TODO depends on routing
+        } else {
+            $url = $l_page;
+        }
+
+        if (!Site::getParam('clean_urls')) {
+            $url = 'index.php?page=' . $url;
+        }
+
+        return self::make($url, $query, $absolute);
+    }
+
+    /**
+     * Low level function to make urls of this website
+     * @param string $path : actual path from the index.php page to the resource
+     * @param string $query : the GET query. Can be a string or an array of key value pairs
+     * @param bool $absolute : generates an absolute URL instead of one relative to the document root
+     * @return string the requested URL
+     */
+    private static function make($path, $query = '', $absolute = false)
+    {
+        $url = $path;
+
+        if (!empty($query)) {
+            if (is_array($query)) {
+                $temp = array();
+                foreach ($query as $k => $v) {
+                    $temp[] = $k . '=' . urlencode($v);
+                }
+                $query = implode('&', $temp);
+            }
+
+            if (strpos($url, '?') === false) {
+                $url .= '?' . $query;
+            } else {
+                $url .= '&' . $query;
+            }
+        }
+
+        if ($url[0] == '/') {
+            $url = substr($url, 1);
+        }
+
+        if (Site::getParam('url_prefix') != '') {
+            $url = '/' . Site::getParam('url_prefix') . $url;
+        } else {
+            $url = '/' . $url;
+        }
+
+        if ($absolute) {
+            $url = (empty($_SERVER["REQUEST_SCHEME"]) ? 'http' : $_SERVER["REQUEST_SCHEME"]) . '://' . $_SERVER["HTTP_HOST"] . $url;
+        }
+
+        return $url;
+    }
+
+    /**
+     * Function to make urls of resources in the website (e.g. images, css, js)
+     * @param string $path
+     * @param bool $absolute
+     * @param string $query
+     * @return string the URL to the resource
+     */
+    public static function resource($path, $absolute = false, $query = '')
+    {
+        return self::make($path, $query, $absolute);
+    }
+}
