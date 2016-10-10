@@ -52,7 +52,7 @@ abstract class DB
      * containing the first row of the result set in the format specified by $mode
      * @throws DBException if the query doesn't execute correctly
      */
-    abstract public function doQuery($sql,$oneshot=false,$mode=DB::RESULT_ASSOC);
+    abstract protected function doQuery($sql,$oneshot=false,$mode=DB::RESULT_ASSOC);
 
     /**
      * Starts a transaction if the DBMS supports it
