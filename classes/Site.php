@@ -19,6 +19,11 @@ class Site{
      */
     static private $theme;
 
+    /**
+     * @var Router
+     */
+    static private $router;
+
     static function init($data){
         if(empty($data['theme']) or !($data['theme'] instanceof ThemeInterface)){
             throw new Exception("Nessun tema configurato per visualizzare il sito", 1, "Non è stato specificato nessun tema o il tema specificato non implementa l'interfaccia ThemeInterface");
@@ -50,13 +55,32 @@ class Site{
         if(!empty($data['params'])){
             self::$params=$data['params'];
         }
+
+        self::$router = new Router();
     }
 
     /**
      * @return DB
      */
-    static function DB(){
+    public static function DB(){
         return self::$DB;
+    }
+
+    public static function getRouter(){
+        return self::$router;
+    }
+
+    public static function getTheme(){
+        return self::$theme;
+    }
+
+    /**
+     * Switches the current theme with another one.
+     * WARNING: strings already passed to the theme with append() will be lost!
+     * @param ThemeInterface $t
+     */
+    public static function switchTheme(ThemeInterface $t){
+        self::$theme = $t;
     }
 
     /**
@@ -74,8 +98,4 @@ class Site{
     public static function printPage(){
         echo self::$theme->render();
     }
-
-    //TODO Routing?
-
-    //TODO Url generation?
 }
