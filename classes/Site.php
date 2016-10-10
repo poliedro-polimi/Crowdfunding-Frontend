@@ -64,11 +64,11 @@ class Site{
      * @param $name
      * @return mixed|null
      */
-    public static function getParam($name){
+    public static function getParam($name, $default=null){
         if(key_exists($name, self::$params)){
             return self::$params[$name];
         }
-        return null;
+        return $default;
     }
 
     //TODO Routing?
