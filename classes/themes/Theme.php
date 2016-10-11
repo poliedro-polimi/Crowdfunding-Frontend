@@ -21,7 +21,7 @@ class Theme implements ThemeInterface {
 
     public function render()
     {
-        $this->title .= ' - '.Site::getParam('site_name');
+        $this->title .= (empty($this->title)?'':' - ').Site::getParam('site_name');
 
         $ready = '';
         if(!empty($this->script_on_ready)){
