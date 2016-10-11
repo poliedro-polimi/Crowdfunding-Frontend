@@ -16,7 +16,7 @@ register_shutdown_function('fatal_error_handler');
 $autoloader = new Psr4AutoloaderClass();
 $autoloader->register();
 $autoloader->addNamespace('nigiri', __DIR__.'/classes');
-$autoloader->addNamespace('site\\controllers', __DIR__.'/controllers');
+$autoloader->addNamespace('site', __DIR__);
 
 Site::init(require_once __DIR__.'/includes/settings.php');
 
