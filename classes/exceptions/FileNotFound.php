@@ -15,5 +15,7 @@ class FileNotFound extends Exception {
         }
 
         parent::__construct($str, 404, $detail);
+
+        header('HTTP/1.0 404 Not Found', true, 404);
     }
 }
