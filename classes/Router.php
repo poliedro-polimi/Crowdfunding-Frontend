@@ -17,7 +17,7 @@ class Router{
 
         $boom = explode('/', $this->page);
         if(count($boom)==2){
-            $this->controller = $this->underscoreToCamelCase($boom[0]);
+            $this->controller = $this->underscoreToCamelCase($boom[0]).'Controller';
             $this->method = $this->underscoreToCamelCase($boom[1], false);
         }
     }
