@@ -7,7 +7,6 @@ use nigiri\Site;
  */
 class Url
 {
-
     /**
      * Creates a URL to a page of the website.
      * Takes into account usage of CLEAN_URLS and URL_PREFIX
@@ -19,7 +18,7 @@ class Url
     public static function to($l_page = '', $query = '', $absolute = false)
     {
         if (empty($l_page)) {
-            $url = $page;//TODO depends on routing
+            $url = Site::getRouter()->getPage();
         } else {
             $url = $l_page;
         }
