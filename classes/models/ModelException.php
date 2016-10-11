@@ -1,7 +1,7 @@
 <?php
 namespace nigiri\models;
 
-use nigiri\Exception;
+use nigiri\exceptions\Exception;
 
 /**
  * Eccezione per i modelli

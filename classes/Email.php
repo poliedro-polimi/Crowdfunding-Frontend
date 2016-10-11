@@ -1,6 +1,6 @@
 <?php
 namespace nigiri;
-use nigiri\Exception;
+use nigiri\exceptions\Exception;
 use nigiri\views\Html;
 
 /**

@@ -1,5 +1,5 @@
 <?php
-namespace nigiri;
+namespace nigiri\exceptions;
 
 /**
  * Handles a

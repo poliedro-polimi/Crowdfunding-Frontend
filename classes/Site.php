@@ -2,6 +2,7 @@
 namespace nigiri;
 
 use nigiri\db\DB;
+use nigiri\exceptions\Exception;
 use nigiri\theme\ThemeInterface;
 
 /**

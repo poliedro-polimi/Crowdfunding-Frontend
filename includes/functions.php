@@ -1,7 +1,7 @@
 <?php
 use nigiri\db\DBException;
-use nigiri\Exception;
-use nigiri\PHPErrorException;
+use nigiri\exceptions\Exception;
+use nigiri\exceptions\PHPErrorException;
 use nigiri\views\Html;
 
 /**

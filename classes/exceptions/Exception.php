@@ -1,7 +1,9 @@
 <?php
-namespace nigiri;
+namespace nigiri\exceptions;
 
 use nigiri\db\DBException;
+use nigiri\Email;
+use nigiri\Site;
 use nigiri\views\Html;
 
 class Exception extends \Exception

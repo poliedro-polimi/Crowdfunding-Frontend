@@ -1,7 +1,7 @@
 <?php
 namespace nigiri\db;
 
-use nigiri\Exception;
+use nigiri\exceptions\Exception;
 
 /**
  * Exception class for all db operations

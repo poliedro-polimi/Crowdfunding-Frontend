@@ -1,8 +1,6 @@
 <?php
 namespace nigiri\exceptions;
 
-use nigiri\Exception;
-
 /**
  * Represents an HTTP 404 error
  * @package site\exceptions
