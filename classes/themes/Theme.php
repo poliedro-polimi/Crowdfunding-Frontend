@@ -6,15 +6,15 @@ use nigiri\views\Html;
 use nigiri\views\Url;
 
 class Theme implements ThemeInterface {
-    private $title;
-    private $head;
-    private $script;
-    private $script_on_ready;
-    private $body;
+    private $title = '';
+    private $head = '';
+    private $script = '';
+    private $script_on_ready = '';
+    private $body = '';
 
     public function append($str, $part = 'body')
     {
-        if(isset($this->$part)){
+        if(property_exists($this,$part)){
             $this->$part .= $str;
         }
     }
