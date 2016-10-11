@@ -1,6 +1,6 @@
 <?php
 
-use nigiri\theme\Theme;
+use nigiri\themes\Theme;
 
 return [
     'theme' => new Theme(),

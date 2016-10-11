@@ -1,5 +1,5 @@
 <?php
-namespace nigiri\theme;
+namespace nigiri\themes;
 
 interface ThemeInterface{
     public function append($str, $part='body');

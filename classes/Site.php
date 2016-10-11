@@ -3,7 +3,7 @@ namespace nigiri;
 
 use nigiri\db\DB;
 use nigiri\exceptions\Exception;
-use nigiri\theme\ThemeInterface;
+use nigiri\themes\ThemeInterface;
 
 /**
  * The main class of the framework. Represents the website and its resources and data

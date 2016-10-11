@@ -1,5 +1,5 @@
 <?php
-namespace nigiri\theme;
+namespace nigiri\themes;
 
 use nigiri\Site;
 use nigiri\views\Html;
