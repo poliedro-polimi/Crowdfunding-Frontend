@@ -42,6 +42,10 @@ class Site{
         }
 
         self::$router = new Router();
+
+        if(self::getParam('debug')){
+            ini_set('display_errors', true);
+        }
     }
 
     /**
