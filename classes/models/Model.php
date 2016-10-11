@@ -90,6 +90,21 @@ abstract class Model{
       }
       foreach($assoc_data as $assoc_name=>$data){
         $model=$associations[$assoc_name]['model'];
+
+          //If Left or Right Join the associated record may not exist and be all NULL
+          if(($associations[$assoc_name]['type']=='LEFT' || $associations[$assoc_name]['type']=='RIGHT')){
+              $null = true;
+              foreach($data as $k=>$v){
+                  if($v!==null){
+                      $null = false;
+                      break;
+                  }
+              }
+              if($null){
+                  continue;
+              }
+          }
+
         if(class_exists($model)){
           $this->loaded_associations[$assoc_name]=$model::buildFromArray($data,$apply_callback);
         }
