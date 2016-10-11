@@ -118,6 +118,6 @@ function render_fatal_error($exception=null) {
         ob_end_clean();
     }
 
-    echo page_include(__DIR__.'includes/full_error.php', array('exception' => $exception));
+    echo page_include(__DIR__.'/full_error.php', array('exception' => $exception));
     exit();
 }
