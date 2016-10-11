@@ -33,24 +33,8 @@ class Site{
             self::$theme=$data['theme'];
         }
 
-        if(!empty($data['db']) and (($data['db'] instanceof DB) || is_array($data['db']))){
-            if(is_array($data['db'])){
-                if(class_exists($data['db']['class'])) {
-                    $class = new \ReflectionClass($data['db']['class']);
-                    if ($class->isSubclassOf('site\db\DB')){
-                        self::$DB = $class->newInstance($data['db']);
-                    }
-                    else{
-                        throw new Exception("Errore nella configurazione del database", 2, "Il database specificato non estende la classe DB");
-                    }
-                }
-                else{
-                    throw new Exception("Errore nella configurazione del database", 3, "La classe specificata per il database non esiste");
-                }
-            }
-            else {
-                self::$DB = $data['db'];
-            }
+        if(!empty($data['db'])){
+            self::initDB($data['db']);
         }
 
         if(!empty($data['params'])){
@@ -98,5 +82,27 @@ class Site{
 
     public static function printPage(){
         echo self::$theme->render();
+    }
+
+    private static function initDB($db){
+        if(!empty($db) and (($db instanceof DB) || is_array($db))){
+            if(is_array($db)){
+                if(class_exists($db['class'])) {
+                    $class = new \ReflectionClass($db['class']);
+                    if ($class->isSubclassOf('site\db\DB')){
+                        self::$DB = $class->newInstance($db);
+                    }
+                    else{
+                        throw new Exception("Errore nella configurazione del database", 2, "Il database specificato non estende la classe DB");
+                    }
+                }
+                else{
+                    throw new Exception("Errore nella configurazione del database", 3, "La classe specificata per il database non esiste");
+                }
+            }
+            else {
+                self::$DB = $db;
+            }
+        }
     }
 }
