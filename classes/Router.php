@@ -28,7 +28,7 @@ class Router{
      * @throws FileNotFound
      */
     public function routeRequest(){
-        if(class_exists($this->controller)){//TODO Hard code controllers namespace?
+        if(class_exists('site\\controllers\\'.$this->controller)){
             $class = new \ReflectionClass($this->controller);
             if($class->isSubclassOf('site\Controller')) {
                 if ($class->hasMethod($this->method)) {
