@@ -40,14 +40,12 @@ class Router{
         if(class_exists('site\\controllers\\'.$this->controller)){
             $class = new \ReflectionClass('site\\controllers\\'.$this->controller);
             if($class->isSubclassOf('nigiri\Controller')) {
+                /** @var Controller $instance */
+                $instance = $class->newInstance();
                 if ($class->hasMethod($this->method)) {
-                    $instance = $class->newInstance();
-                    $meth = $this->method;
-                    return $instance->$meth();
+                    return $instance->executeAction($this->method);
                 } elseif ($class->hasMethod('action' . ucfirst($this->method))) {
-                    $instance = $class->newInstance();
-                    $meth = 'action'.ucfirst($this->method);
-                    return $instance->$meth();
+                    return $instance->executeAction('action'.ucfirst($this->method));
                 }
             }
         }
