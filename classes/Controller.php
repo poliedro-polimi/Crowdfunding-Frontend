@@ -18,7 +18,7 @@ abstract class Controller{
      * @return string the generated HTML code
      * @throws FileNotFound
      */
-    protected function renderView($path, $args){
+    protected function renderView($path, $args= []){
         $p = dirname(__DIR__).'/views/'.$path.'.php';
         if(file_exists($p)){
             return page_include($p, $args);
