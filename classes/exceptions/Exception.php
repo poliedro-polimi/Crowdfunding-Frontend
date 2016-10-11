@@ -119,10 +119,15 @@ class Exception extends \Exception
         /*if (!$user && isset($_SESSION['UID'])) {
             $user = getUsername($_SESSION['UID']);
         }*/
-        try {
-            Site::DB()->query("INSERT INTO LogErrori (Nome, Errore, DataEvento, IP) VALUES ('" . Site::DB()->escape($user) . "','" . Site::DB()->escape($msg) . "',NOW(),'" . Site::DB()->escape($_SERVER['REMOTE_ADDR']) . "')");
-        } catch (DBException $e) {
-            //Se fallisce perfino questo...registriamo l'errore con l'handler di default di PHP
+        if(Site::DB()!==null) {
+            try {
+                Site::DB()->query("INSERT INTO LogErrori (Nome, Errore, DataEvento, IP) VALUES ('" . Site::DB()->escape($user) . "','" . Site::DB()->escape($msg) . "',NOW(),'" . Site::DB()->escape($_SERVER['REMOTE_ADDR']) . "')");
+            } catch (DBException $e) {
+                //Se fallisce perfino questo...registriamo l'errore con l'handler di default di PHP
+                error_log($msg);
+            }
+        }
+        else{//No DB enabled
             error_log($msg);
         }
     }
