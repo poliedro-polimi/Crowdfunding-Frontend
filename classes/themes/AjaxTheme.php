@@ -12,15 +12,12 @@ class AjaxTheme implements ThemeInterface {
 
     public function append($str, $part = 'body')
     {
-        return;
-    }
-
-    public function jsonOutput($data){
-        $this->json = $data;
+        $this->json = json_encode($str);
     }
 
     public function render()
     {
+        header('Content-Type: application/json; charset=utf-8');
         echo json_encode($this->json);
     }
 }
