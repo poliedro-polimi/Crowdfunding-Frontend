@@ -2,6 +2,7 @@
 namespace nigiri;
 
 use nigiri\exceptions\FileNotFound;
+use nigiri\exceptions\InternalServerError;
 
 /**
  * Finds the pages to execute given the current url
@@ -13,12 +14,20 @@ class Router{
 
     public function __construct()
     {
-        $this->page = $_GET['show_page'];
+        if(!empty($_GET['show_page'])) {
+            $this->page = $_GET['show_page'];
+        }
+        else{
+            $this->page = Site::getParam('default_page');
+        }
 
         $boom = explode('/', $this->page);
         if(count($boom)==2){
             $this->controller = $this->underscoreToCamelCase($boom[0]).'Controller';
             $this->method = $this->underscoreToCamelCase($boom[1], false);
+        }
+        else{
+            throw new InternalServerError("Nessuna home page è stata definita");
         }
     }
 
