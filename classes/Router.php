@@ -38,8 +38,8 @@ class Router{
      */
     public function routeRequest(){
         if(class_exists('site\\controllers\\'.$this->controller)){
-            $class = new \ReflectionClass($this->controller);
-            if($class->isSubclassOf('site\Controller')) {
+            $class = new \ReflectionClass('site\\controllers\\'.$this->controller);
+            if($class->isSubclassOf('nigiri\Controller')) {
                 if ($class->hasMethod($this->method)) {
                     $instance = $class->newInstance();
                     $meth = $this->method;
