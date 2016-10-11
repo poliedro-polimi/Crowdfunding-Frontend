@@ -1,6 +1,6 @@
 <?php
-namespace site\views;
-use site\Site;
+namespace nigiri\views;
+use nigiri\Site;
 
 /**
  * Utility class that helps generating correct URLs for pages and resources of the site

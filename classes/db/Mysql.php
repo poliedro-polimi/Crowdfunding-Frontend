@@ -1,5 +1,5 @@
 <?php
-namespace site\db;
+namespace nigiri\db;
 
 class MySql extends DB {
   private $connection;

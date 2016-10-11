@@ -1,5 +1,5 @@
 <?php
-/* @var $exception Exception */
+/* @var $exception \nigiri\Exception */
 
 use site\db\DBException;
 use site\Exception;

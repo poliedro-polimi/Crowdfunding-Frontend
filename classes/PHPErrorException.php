@@ -1,5 +1,5 @@
 <?php
-namespace site;
+namespace nigiri;
 
 /**
  * Handles a

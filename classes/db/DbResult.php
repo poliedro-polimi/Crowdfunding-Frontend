@@ -1,5 +1,5 @@
 <?php
-namespace site\db;
+namespace nigiri\db;
 /**
  * The interface for all the results returned by the DB layer
  */

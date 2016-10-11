@@ -1,7 +1,7 @@
 <?php
-namespace site;
+namespace nigiri;
 
-use site\exceptions\FileNotFound;
+use nigiri\exceptions\FileNotFound;
 
 /**
  * Interface for all the controllers of the site

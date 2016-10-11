@@ -1,7 +1,7 @@
 <?php
-namespace site\exceptions;
+namespace nigiri\exceptions;
 
-use site\Exception;
+use nigiri\Exception;
 
 /**
  * Represents an HTTP 403 error

@@ -1,5 +1,5 @@
 <?php
-namespace site\db;
+namespace nigiri\db;
 
 class MySqlResult implements DbResult{
     private $result;

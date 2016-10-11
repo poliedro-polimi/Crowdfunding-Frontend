@@ -1,8 +1,8 @@
 <?php
-use site\db\DBException;
-use site\Exception;
-use site\PHPErrorException;
-use site\views\Html;
+use nigiri\db\DBException;
+use nigiri\Exception;
+use nigiri\PHPErrorException;
+use nigiri\views\Html;
 
 /**
  * Takes out the Byte Order Masks in an UTF8 text. Useful for includes that use UTF8 encoded files because BOMs break HTML validity and doctype

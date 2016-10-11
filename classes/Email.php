@@ -1,7 +1,7 @@
 <?php
-namespace site;
-use site\Exception;
-use site\views\Html;
+namespace nigiri;
+use nigiri\Exception;
+use nigiri\views\Html;
 
 /**
  * Email Sender, wrapper around PHPMailer

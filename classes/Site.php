@@ -1,8 +1,8 @@
 <?php
-namespace site;
+namespace nigiri;
 
-use site\db\DB;
-use site\theme\ThemeInterface;
+use nigiri\db\DB;
+use nigiri\theme\ThemeInterface;
 
 /**
  * The main class of the framework. Represents the website and its resources and data

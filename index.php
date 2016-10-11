@@ -1,6 +1,6 @@
 <?php
-use site\Psr4AutoloaderClass;
-use site\Site;
+use nigiri\Psr4AutoloaderClass;
+use nigiri\Site;
 
 require_once __DIR__.'/classes/class_loader.php';
 require_once __DIR__.'/includes/functions.php';

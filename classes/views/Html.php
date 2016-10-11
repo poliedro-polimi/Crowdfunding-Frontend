@@ -1,5 +1,5 @@
 <?php
-namespace site\views;
+namespace nigiri\views;
 
 /**
  * Provides some utilities to print html code

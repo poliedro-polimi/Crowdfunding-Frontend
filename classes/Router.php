@@ -1,7 +1,7 @@
 <?php
-namespace site;
+namespace nigiri;
 
-use site\exceptions\FileNotFound;
+use nigiri\exceptions\FileNotFound;
 
 /**
  * Finds the pages to execute given the current url

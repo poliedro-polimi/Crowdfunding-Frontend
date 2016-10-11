@@ -1,5 +1,5 @@
 <?php
-namespace site;
+namespace nigiri;
 
 /**
  * An example of a general-purpose implementation that includes the optional

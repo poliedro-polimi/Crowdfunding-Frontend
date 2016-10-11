@@ -1,7 +1,7 @@
 <?php
-namespace site\db;
+namespace nigiri\db;
 
-use site\Site;
+use nigiri\Site;
 
 /**
  * Database Abstraction

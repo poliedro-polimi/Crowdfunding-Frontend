@@ -1,4 +1,7 @@
 <?php
+namespace nigiri\models;
+use nigiri\db\DbResult;
+
 /**
  * Classe di appoggio usata per rappresentare oggetti di modelli inesistenti ma di cui esistono tabelle nel DB
  * Oggetti di questa classe sono in modalità sola-lettura. Non è quindi possibile scrivere sul DB

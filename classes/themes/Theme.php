@@ -1,9 +1,9 @@
 <?php
-namespace site\theme;
+namespace nigiri\theme;
 
-use site\Site;
-use site\views\Html;
-use site\views\Url;
+use nigiri\Site;
+use nigiri\views\Html;
+use nigiri\views\Url;
 
 class Theme implements ThemeInterface {
     private $title;

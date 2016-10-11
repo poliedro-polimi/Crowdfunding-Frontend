@@ -1,8 +1,8 @@
 <?php
-namespace site;
+namespace nigiri;
 
-use site\db\DBException;
-use site\views\Html;
+use nigiri\db\DBException;
+use nigiri\views\Html;
 
 class Exception extends \Exception
 {

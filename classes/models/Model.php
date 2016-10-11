@@ -1,7 +1,7 @@
 <?php
-namespace site\models;
+namespace nigiri\models;
 
-use site\Exception;
+use nigiri\Exception;
 
 /**
  * Classe generica che implementa alcuni meccanismi di base utili
@@ -1231,11 +1231,4 @@ abstract class Model{
   public static function attributeSerialWrite($field,$value){
     return "'".DB::escape(serialize($value))."'";
   }
-}
-
-/**
- * Eccezione per i modelli
- */
-class ModelException extends Exception {
-
 }
