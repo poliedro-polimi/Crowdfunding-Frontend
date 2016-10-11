@@ -7,7 +7,9 @@ use nigiri\exceptions\FileNotFound;
  * Interface for all the controllers of the site
  */
 abstract class Controller{
-    abstract public function __construct();
+    public function __construct(){
+
+    }
 
     /**
      * Renders a View file
