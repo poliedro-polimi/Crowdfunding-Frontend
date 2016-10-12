@@ -1,0 +1,109 @@
+<?php
+use nigiri\db\DBException;
+use nigiri\exceptions\Exception;
+use nigiri\exceptions\InternalServerError;
+use nigiri\models\Permission;
+use nigiri\models\Role;
+use nigiri\Site;
+
+/**
+ * The Authorization/Authentication Component
+ * It implements a RBAC Authorization structure
+ */
+class Auth{
+    /**
+     * Assigns a Permission to a Role
+     * @param string $p the permission to assign
+     * @param string $r the role name
+     * @throws DBException
+     */
+    public function assignPerm($p,$r){
+        new Permission($p);//Check if permission exists. If it doesn't exception is thrown
+        try {
+            Site::DB()->query("INSERT INTO roles_permissions (role, permission) VALUE ('".
+                Site::DB()->escape($r)."', '".Site::DB()->escape($p)."')");
+        }
+        catch(DBException $e){
+            if($e->getCode()!=1062){//Ignore Duplicate entries errors
+                throw $e;
+            }
+        }
+    }
+
+    /**
+     * Deletes the assignment of a permission to a role
+     * @param $p
+     * @param $r
+     */
+    public function deletePerm($p, $r){
+        Site::DB()->query("DELETE FROM roles_permissions WHERE role='".
+            Site::DB()->escape($r)."' AND permission='".Site::DB()->escape($p)."'");
+    }
+
+    public function getRole($r){
+        return Role::findOne(['name' => $r]);
+    }
+
+    public function addRole($r, $display=''){
+        Site::DB()->query("INSERT INTO role (`name`, display) VALUE ('".
+            Site::DB()->escape($r)."', '".Site::DB()->escape($display)."')");
+    }
+
+    public function deleteRole($r){
+        try {
+            Site::DB()->startTransaction();
+            Site::DB()->query("DELETE FROM roles_permissions WHERE role='".
+                Site::DB()->escape($r)."'");
+            Site::DB()->query("DELETE FROM role WHERE `name`='".
+                Site::DB()->escape($r)."'");
+            Site::DB()->commitTransaction();
+        }
+        catch (DBException $e){
+            Site::DB()->rollbackTransaction();
+            $e->logError("Cancellazione ruolo");
+            throw new InternalServerError("Si è verificato un errore nella cancellazione del ruolo");
+        }
+    }
+
+    public function roleCan($r, $perm){
+        if(!is_array($r)){
+            $r = [$r];
+        }
+
+        foreach($r as $k=>$v){
+            if(is_string($v)) {
+                $r[$k] = "'" . Site::DB()->escape($v) . "'";
+            }
+            elseif($v instanceof Role){
+                $r[$k] = "'" . Site::DB()->escape($v->getName()) . "'";
+            }
+            else{
+                unset($r[$k]);
+            }
+        }
+
+        $q = "SELECT COUNT(*) AS N FROM roles_permissions WHERE role IN (".implode(', ', $r).") AND permission='".
+            Site::DB()->escape($perm)."'";
+
+        $res = Site::DB()->query($q, true);
+        return $res['N'] > 0;
+    }
+
+    /**
+     * Checks if a user has a specific permission
+     * @param $uid
+     * @param $perm
+     */
+    public function userCan($uid, $perm){
+        $roles = $this->getUserRoles($uid);
+        return $this->roleCan($roles, $perm);
+    }
+    
+    public function getUserRoles($uid){
+        return Role::find([
+            'search_joins' => 'users',
+            'search_literal' => 1,
+            "users.uid = '".Site::DB()->escape($uid)."'"
+        ]);
+    }
+}
