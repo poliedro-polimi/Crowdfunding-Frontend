@@ -65,6 +65,12 @@ class Auth{
         }
     }
 
+    /**
+     * Checks if a role or a group of roles have a specific permission
+     * @param Role[]|string[]|string|Role $r
+     * @param string $perm
+     * @return bool
+     */
     public function roleCan($r, $perm){
         if(!is_array($r)){
             $r = [$r];
@@ -93,12 +99,18 @@ class Auth{
      * Checks if a user has a specific permission
      * @param $uid
      * @param $perm
+     * @return bool
      */
     public function userCan($uid, $perm){
         $roles = $this->getUserRoles($uid);
         return $this->roleCan($roles, $perm);
     }
-    
+
+    /**
+     * Finds the roles a user is assigned to
+     * @param string $uid
+     * @return Role[]
+     */
     public function getUserRoles($uid){
         return Role::find([
             'search_joins' => 'users',
