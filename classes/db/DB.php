@@ -35,13 +35,14 @@ abstract class DB
      * @param $sql
      * @param bool $oneshot
      * @param int $mode
+     * @return DbResult|array
      */
     public function query($sql,$oneshot=false,$mode=DB::RESULT_ASSOC){
         if (Site::getParam('debug')) {
             self::$requestsLog[] = array($sql);
         }
 
-        self::doQuery($sql, $oneshot, $mode);
+        return self::doQuery($sql, $oneshot, $mode);
     }
 
     /**

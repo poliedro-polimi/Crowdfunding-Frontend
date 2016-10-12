@@ -1,7 +1,10 @@
 <?php
 namespace nigiri\models;
 
-use nigiri\Exception;
+use nigiri\db\DB;
+use nigiri\db\DBException;
+use nigiri\db\DbResult;
+use nigiri\Site;
 
 /**
  * Classe generica che implementa alcuni meccanismi di base utili
@@ -102,7 +105,7 @@ abstract class Model
                 if (class_exists($model)) {
                     $this->loaded_associations[$assoc_name] = $model::buildFromArray($data, $apply_callback);
                 } else {
-                    $this->loaded_associations[$assoc_name] = new \GenericModel($model, $data);
+                    $this->loaded_associations[$assoc_name] = new GenericModel($model, $data);
                 }
             }
         }
@@ -282,7 +285,7 @@ abstract class Model
                             $out = call_user_func($a_value['write'], $a_value['name'], $value);
                         } else {
                             //Nothing...use normal value
-                            $out = "'" . DB::escape($value) . "'";
+                            $out = "'" . Site::DB()->escape($value) . "'";
                         }
 
                         return array($a_value['name'], $out);
@@ -317,7 +320,7 @@ abstract class Model
                         if ($value === null) {
                             return array('`' . $a_value . '`', 'NULL');
                         } else {
-                            return array('`' . $a_value . '`', "'" . DB::escape($value) . "'");
+                            return array('`' . $a_value . '`', "'" . Site::DB()->escape($value) . "'");
                         }
                     case 'after_read':
                         return $value;
@@ -444,7 +447,7 @@ abstract class Model
             if (class_exists($model)) {
                 $this->loaded_associations[$ass] = $model::buildFromArray($data, true);
             } else {
-                $this->loaded_associations[$ass] = new \GenericModel($model, $data);
+                $this->loaded_associations[$ass] = new GenericModel($model, $data);
             }
         }
 
@@ -499,7 +502,7 @@ abstract class Model
             ));
         } else {
             $output['model'] = 'GenericModel';
-            \GenericModel::setNextTableType($j['model']);
+            GenericModel::setNextTableType($j['model']);
             $output['table'] = $j['model'];
             $output['select'] = '`' . $output['name'] . '`.*';
         }
@@ -560,7 +563,7 @@ abstract class Model
     {
         $columns = array();
         try {
-            $cols = DB::query("SHOW COLUMNS IN `" . escape($table, 'db') . "`");
+            $cols = Site::DB()->query("SHOW COLUMNS IN `" . Site::DB()->escape($table) . "`");
             while ($col = $cols->fetch()) {
                 if ($col['Key'] == 'PRI') {
                     $columns['primary'] = $col['Field'];
@@ -596,8 +599,8 @@ abstract class Model
                 $primary = self::normalizeAttribute(static::getIdName(), 'write',
                   $this->loaded_attributes[$primary_field]);
                 if (is_string($field)) {
-                    $q = DB::query("SELECT " . $field . " FROM " . static::getTableName() . " WHERE " . $primary[0] . "=" . $primary[1],
-                      true, RESULT_ARRAY);
+                    $q = Site::DB()->query("SELECT " . $field . " FROM " . static::getTableName() . " WHERE " . $primary[0] . "=" . $primary[1],
+                      true, DB::RESULT_ARRAY);
                     if (!empty($q)) {
                         return $q[0];
                     } else {
@@ -605,7 +608,7 @@ abstract class Model
                     }
                 } elseif (is_array($field)) {
                     $joins = $this->loadAnalyzeJoins($field);
-                    $q = DB::query("SELECT " . implode(', ',
+                    $q = Site::DB()->query("SELECT " . implode(', ',
                         $field) . " FROM " . static::getTableName() . " AS THIS " . implode(' ',
                         $joins) . " WHERE THIS." . $primary[0] . "=" . $primary[1], true);
                     if (!empty($q)) {
@@ -712,7 +715,7 @@ abstract class Model
     public static function exists($id)
     {
         $key = self::normalizeAttribute(static::getIdName(), 'write', $id);
-        $q = DB::query("SELECT COUNT(*) AS N FROM " . static::getTableName() . " WHERE " . $key[0] . '=' . $key[1],
+        $q = Site::DB()->query("SELECT COUNT(*) AS N FROM " . static::getTableName() . " WHERE " . $key[0] . '=' . $key[1],
           true);
 
         return $q['N'] > 0;
@@ -850,7 +853,7 @@ abstract class Model
         $where = self::queryParseConditions($search);
         $query = "SELECT " . $select_what . " FROM " . static::getTableName() . ' AS THIS ' . $joins . (!empty($where) ? " WHERE "
             . $where : '') . $order_by . $limit;
-        $obj = DB::query($query);
+        $obj = Site::DB()->query($query);
 
         return static::buildMany($obj);
     }
@@ -961,7 +964,7 @@ abstract class Model
 
     public static function attributeSerialWrite($field, $value)
     {
-        return "'" . DB::escape(serialize($value)) . "'";
+        return "'" . Site::DB()->escape(serialize($value)) . "'";
     }
 
     //Associations Utilities
@@ -1035,7 +1038,7 @@ abstract class Model
                             }
 
                             $method = 'get' . $assoc['attr'];
-                            if (($data instanceof Model or $data instanceof \GenericModel) and $data->hasAttribute($assoc['attr'])) {
+                            if (($data instanceof Model or $data instanceof GenericModel) and $data->hasAttribute($assoc['attr'])) {
                                 return $data->$method();
                             }
 
@@ -1108,7 +1111,7 @@ abstract class Model
                     $my_id = static::getIdName();
 
                     $where = self::normalizeAttribute($my_id, 'write', $this->getAttribute($my_id));
-                    $q = DB::query("SELECT " . $join_table['select'] . " FROM " . $this->getTableName() . " AS THIS "
+                    $q = Site::DB()->query("SELECT " . $join_table['select'] . " FROM " . $this->getTableName() . " AS THIS "
                       . self::buildJoinClause($orig_name) . " WHERE THIS." . $where[0] . "=" . $where[1] .
                       (empty($j['condition']) ? ' AND ' . $orig_name . '.`' . $j['its_field'] . '` IS NOT NULL' : '') .
                       (!empty($join_table['orderby']) ? ' ORDER BY ' . $join_table['orderby'] : ''));
@@ -1196,8 +1199,8 @@ abstract class Model
                         $set_field = self::normalizeAttribute($name, 'write', $value);
                         $primary = self::normalizeAttribute(static::getIdName(), 'write',
                           $this->loaded_attributes[$primary_field]);
-                        $q = DB::query("UPDATE " . static::getTableName() . " SET " . $set_field[0] . "=" . $set_field[1] . " WHERE " . $primary[0] . "=" . $primary[1]);
-                        if (DB::getLastAffectedRows() > 0) {
+                        $q = Site::DB()->query("UPDATE " . static::getTableName() . " SET " . $set_field[0] . "=" . $set_field[1] . " WHERE " . $primary[0] . "=" . $primary[1]);
+                        if (Site::DB()->getLastAffectedRows() > 0) {
                             $this->loaded_attributes[$field] = $ini_val;
                         }
 
@@ -1244,7 +1247,7 @@ abstract class Model
         }
         try {
             $primary = self::normalizeAttribute(static::getIdName(), 'write', $this->loaded_attributes[$primary_field]);
-            DB::query("UPDATE " . static::getTableName() . " SET " . implode(', ',
+            Site::DB()->query("UPDATE " . static::getTableName() . " SET " . implode(', ',
                 $fields) . " WHERE " . $primary[0] . "=" . $primary[1]);
 
             return true;
