@@ -124,6 +124,17 @@ class Auth{
         ]);
     }
 
+    public function userHasRole($uid, $r){
+        if($r instanceof Role){
+            $r = $r->getName();
+        }
+
+        $result = Site::DB()->query("SELECT COUNT(*) AS N FROM users_roles WHERE `user`='".Site::DB()->escape($uid).
+          "' AND role='".Site::DB()->escape($r)."'", true);
+
+        return $result['N']>0;
+    }
+
     /**
      * @param string $uid
      * @param Role|string $r
