@@ -3,6 +3,7 @@ namespace nigiri;
 
 use nigiri\db\DB;
 use nigiri\exceptions\Exception;
+use nigiri\rbac\Auth;
 use nigiri\themes\ThemeInterface;
 
 /**
@@ -25,6 +26,11 @@ class Site{
      */
     static private $router;
 
+    /**
+     * @var Auth
+     */
+    static private $auth;
+
     static function init($data){
         if(empty($data['theme']) or !($data['theme'] instanceof ThemeInterface)){
             throw new Exception("Nessun tema configurato per visualizzare il sito", 1, "Non è stato specificato nessun tema o il tema specificato non implementa l'interfaccia ThemeInterface");
@@ -42,6 +48,7 @@ class Site{
         }
 
         self::$router = new Router();
+        self::$auth = new Auth();
 
         if(self::getParam('debug')){
             ini_set('display_errors', true);
@@ -61,6 +68,10 @@ class Site{
 
     public static function getTheme(){
         return self::$theme;
+    }
+
+    public static function getAuth(){
+        return self::$auth;
     }
 
     /**
