@@ -13,7 +13,7 @@ use nigiri\Site;
  */
 class Auth{
 
-    /** @var mixed the currently logged in user */
+    /** @var AuthUserInterface the currently logged in user */
     private $user = null;
 
     /**
@@ -73,7 +73,7 @@ class Auth{
     /**
      * Checks if a role or a group of roles have a specific permission
      * @param Role[]|string[]|string|Role $r
-     * @param string $perm
+     * @param string|Permission $perm
      * @return bool
      */
     public function roleCan($r, $perm){
@@ -93,6 +93,10 @@ class Auth{
             }
         }
 
+        if($perm instanceof Permission){
+            $perm = $perm->getName();
+        }
+
         $q = "SELECT COUNT(*) AS N FROM roles_permissions WHERE role IN (".implode(', ', $r).") AND permission='".
             Site::DB()->escape($perm)."'";
 
@@ -102,8 +106,8 @@ class Auth{
 
     /**
      * Checks if a user has a specific permission
-     * @param $uid
-     * @param $perm
+     * @param string $uid
+     * @param string|Permission $perm
      * @return bool
      */
     public function userCan($uid, $perm){
@@ -124,6 +128,11 @@ class Auth{
         ]);
     }
 
+    /**
+     * @param string $uid
+     * @param string|Role $r
+     * @return bool
+     */
     public function userHasRole($uid, $r){
         if($r instanceof Role){
             $r = $r->getName();
@@ -169,6 +178,9 @@ class Auth{
             Site::DB()->escape($uid)."' AND role='".Site::DB()->escape($r)."'");
     }
 
+    /**
+     * @param AuthUserInterface $user
+     */
     public function login($user){
         $this->user=$user;
         //TODO setcookie?
@@ -181,5 +193,12 @@ class Auth{
 
     public function isLoggedIn(){
         return $this->user!==null;
+    }
+
+    /**
+     * @return AuthUserInterface
+     */
+    public function getLoggedInUser(){
+        return $this->user;
     }
 }
