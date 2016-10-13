@@ -1,6 +1,7 @@
 <?php
+namespace nigiri\rbac;
+
 use nigiri\db\DBException;
-use nigiri\exceptions\Exception;
 use nigiri\exceptions\InternalServerError;
 use nigiri\models\Permission;
 use nigiri\models\Role;
@@ -117,5 +118,39 @@ class Auth{
             'search_literal' => 1,
             "users.uid = '".Site::DB()->escape($uid)."'"
         ]);
+    }
+
+    /**
+     * @param string $uid
+     * @param Role|string $r
+     * @throws DBException
+     */
+    public function addUserRole($uid, $r){
+        if($r instanceof Role){
+            $r = $r->getName();
+        }
+
+        try {
+            Site::DB()->query("INSERT INTO users_roles (`user`, role) VALUES ('" . Site::DB()->escape($uid) .
+                "','" . Site::DB()->escape($r) . "')");
+        }
+        catch(DBException $e){
+            if($e->getCode()!=1062){//Ignore Duplicate entries errors
+                throw $e;
+            }
+        }
+    }
+
+    /**
+     * @param Role|string $uid
+     * @param $r
+     */
+    public function deleteUserRole($uid, $r){
+        if($r instanceof Role){
+            $r = $r->getName();
+        }
+
+        Site::DB()->query("DELETE FROM users_roles WHERE `user`='".
+            Site::DB()->escape($uid)."' AND role='".Site::DB()->escape($r)."'");
     }
 }
