@@ -12,6 +12,10 @@ use nigiri\Site;
  * It implements a RBAC Authorization structure
  */
 class Auth{
+
+    /** @var mixed the currently logged in user */
+    private $user = null;
+
     /**
      * Assigns a Permission to a Role
      * @param string $p the permission to assign
@@ -152,5 +156,19 @@ class Auth{
 
         Site::DB()->query("DELETE FROM users_roles WHERE `user`='".
             Site::DB()->escape($uid)."' AND role='".Site::DB()->escape($r)."'");
+    }
+
+    public function login($user){
+        $this->user=$user;
+        //TODO setcookie?
+    }
+
+    public function logout(){
+        $this->user = null;
+        //TODO setcookie?
+    }
+
+    public function isLoggedIn(){
+        return $this->user!==null;
     }
 }
