@@ -5,15 +5,14 @@ namespace nigiri\exceptions;
  * Represents an HTTP 404 error
  * @package site\exceptions
  */
-class FileNotFound extends Exception {
+class FileNotFound extends HttpException {
     public function __construct($str="", $detail="")
     {
         if(empty($str)){
             $str = 'La pagina richiesta non esiste';
         }
+        $this->httpString = 'Not Found';
 
         parent::__construct($str, 404, $detail);
-
-        header('HTTP/1.0 404 Not Found', true, 404);
     }
 }
