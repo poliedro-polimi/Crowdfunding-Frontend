@@ -39,19 +39,17 @@ class Exception extends \Exception
 
     public function logError($additional = '', $save_trace = false)
     {
-        if (!empty($this->internal)) {
-            $trace = '';
-            if ($save_trace) {
-                $trace = "\n Call Stack:\n";
-                ob_start();
-                $t = $this->getTrace();
-                var_dump($t);
-                $trace .= ob_get_contents();
-                ob_end_clean();
-            }
-
-            $this->watchdog($additional . ' - ' . $this->renderFullError() . $trace);
+        $trace = '';
+        if ($save_trace) {
+            $trace = "\n Call Stack:\n";
+            ob_start();
+            $t = $this->getTrace();
+            var_dump($t);
+            $trace .= ob_get_contents();
+            ob_end_clean();
         }
+
+        $this->watchdog($additional . ' - ' . $this->renderFullError() . $trace);
     }
 
     public function renderFullError()
