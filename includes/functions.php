@@ -2,6 +2,8 @@
 use nigiri\db\DBException;
 use nigiri\exceptions\Exception;
 use nigiri\exceptions\PHPErrorException;
+use nigiri\Site;
+use nigiri\themes\FatalErrorTheme;
 use nigiri\views\Html;
 
 /**
@@ -118,6 +120,8 @@ function render_fatal_error($exception=null) {
         ob_end_clean();
     }
 
-    echo page_include(__DIR__.'/full_error.php', array('exception' => $exception));
+    Site::switchTheme(new FatalErrorTheme());
+    Site::getTheme()->append($exception, 'exception');
+    Site::printPage();
     exit();
 }
