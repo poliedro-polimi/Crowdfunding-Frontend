@@ -2,22 +2,22 @@
 namespace nigiri\themes;
 
 /**
- * Implements rendering of data only in JSON format. Useful for Ajax Backends
- * It is intended to be used with an explicit call to Site::switchTheme() in the controller that implements the ajax backend
+ * Implements an empty theme with only the body output provided by the controller. Very useful for Ajax requests.
+ * It is intended to be used with an explicit call to Site::switchTheme() in the controller that implements the ajax backend.
+ * Specific output format can be implemented with a controller plugin like nigiri\plugin\JsonPlugin
  *
  * @package nigiri\themes
  */
 class AjaxTheme implements ThemeInterface {
-    private $json=null;
+    private $body=null;
 
     public function append($str, $part = 'body')
     {
-        $this->json = json_encode($str);
+        $this->body = $str;
     }
 
     public function render()
     {
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($this->json);
+        echo $this->body;
     }
 }
