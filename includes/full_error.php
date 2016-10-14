@@ -1,11 +1,11 @@
 <?php
-/* @var $exception \nigiri\Exception */
+/* @var $exception \nigiri\exceptions\Exception */
 
-use site\db\DBException;
-use site\Exception;
-use site\PHPErrorException;
-use site\Site;
-use site\views\Html;
+use nigiri\db\DBException;
+use nigiri\exceptions\Exception;
+use nigiri\exceptions\PHPErrorException;
+use nigiri\Site;
+use nigiri\views\Html;
 
 ?>
 <!doctype html>
@@ -17,7 +17,7 @@ use site\views\Html;
 <title>Errore Fatale</title>
 </head>
 <body>
-<h1>Errore Fatale</h1>
+<h1>Errore</h1>
 <h2>Si &egrave; verificato un errore grave che impedisce la corretta esecuzione del Sito Web.</h2>
 <h3>Ci scusiamo per il disagio, il nostro staff &egrave; stato notificato e il problema sar&agrave; presto risolto.</h3>
 <p>Se avete necessit&agrave; di contattare lo staff potete farlo inviando un email a: <a
