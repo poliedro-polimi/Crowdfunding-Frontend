@@ -120,7 +120,21 @@ function render_fatal_error($exception=null) {
         ob_end_clean();
     }
 
-    Site::switchTheme(new FatalErrorTheme());
+    $th = $exception->getThemeClass();
+    if(!empty($th)){
+        $class = new ReflectionClass($th);
+        if($class->implementsInterface('nigiri\\themes\\ThemeInterface')){
+            $theme = $class->newInstance();
+        }
+        else{
+            $theme = new FatalErrorTheme();
+        }
+    }
+    else{
+        $theme = new FatalErrorTheme();
+    }
+
+    Site::switchTheme($theme);
     Site::getTheme()->append($exception, 'exception');
     Site::printPage();
     exit();

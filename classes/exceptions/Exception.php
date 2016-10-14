@@ -8,6 +8,12 @@ use nigiri\views\Html;
 
 class Exception extends \Exception
 {
+    /**
+     * @var string the name of the class to use to render the error when it reaches the uncaught exception heandler
+     * It must implement \nigiri\themes\ThemeInterface
+     */
+    private $theme = '';
+
     private $internal;
 
     public function __construct($str = null, $no = null, $detail = null)
@@ -128,5 +134,9 @@ class Exception extends \Exception
         else{//No DB enabled
             error_log($msg);
         }
+    }
+
+    public function getThemeClass(){
+        return $this->theme;
     }
 }
