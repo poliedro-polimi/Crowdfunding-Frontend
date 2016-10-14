@@ -9,10 +9,11 @@ use nigiri\views\Html;
 class Exception extends \Exception
 {
     /**
-     * @var string the name of the class to use to render the error when it reaches the uncaught exception heandler
+     * @var string the name of the class to use to render the error when it reaches the uncaught exception handler
+     * You can also specify a View by appending its path after a colon (:)
      * It must implement \nigiri\themes\ThemeInterface
      */
-    private $theme = '';
+    private $theme = 'nigiri\\themes\\FatalErrorTheme';
 
     private $internal;
 
