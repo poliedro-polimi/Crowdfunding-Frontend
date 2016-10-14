@@ -75,7 +75,7 @@ class AuthPlugin implements PluginInterface{
         }
         elseif(is_array($p)){
             $match = false;
-            foreach($p as $temp){$output .= '_'.strtolower($action[$i]);
+            foreach($p as $temp){
                 if(is_int($temp) && $temp == self::AUTHENTICATED_USER){
                     if(Site::getAuth()->isLoggedIn()){
                         $match = true;
