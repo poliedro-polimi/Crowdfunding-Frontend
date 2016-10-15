@@ -135,6 +135,12 @@ class Exception extends \Exception
     }
 
     public function getThemeClass(){
+        $className = get_called_class();
+        $overrides = Site::getParam('exceptions_views', []);
+
+        if(array_key_exists($className, $overrides)){
+            return $overrides[$className];
+        }
         return $this->theme;
     }
 }
