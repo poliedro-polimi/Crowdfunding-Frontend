@@ -131,6 +131,7 @@ function render_fatal_error($exception=null) {
         }
     }
 
+    $content = '';
     if(!empty($boom[1])){
         try {
             $content = Controller::renderView($boom[1], ['exception' => $exception]);
