@@ -129,6 +129,12 @@ function render_fatal_error($exception=null) {
         if($class->implementsInterface('nigiri\\themes\\ThemeInterface')){
             Site::switchTheme($class->newInstance());
         }
+        else{
+            Site::getTheme()->resetPart('body');
+        }
+    }
+    else{
+        Site::getTheme()->resetPart('body');
     }
 
     $content = '';

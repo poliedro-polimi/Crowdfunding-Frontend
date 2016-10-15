@@ -20,4 +20,14 @@ class AjaxTheme implements ThemeInterface {
     {
         echo $this->body;
     }
+
+    /**
+     * Empties a par of the final page to render
+     * @param $name
+     * @return mixed
+     */
+    public function resetPart($name)
+    {
+        $this->body = '';
+    }
 }

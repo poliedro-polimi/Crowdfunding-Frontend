@@ -19,6 +19,13 @@ class Theme implements ThemeInterface {
         }
     }
 
+    public function resetPart($name)
+    {
+        if(property_exists($this,$name)){
+            $this->$name = '';
+        }
+    }
+
     public function render()
     {
         $this->title .= (empty($this->title)?'':' - ').Site::getParam('site_name');
