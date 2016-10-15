@@ -117,13 +117,10 @@ class Exception extends \Exception
     /**
      * Aggiunge una linea nel log degli errori
      * @param $msg : il messaggio da inserire
-     * @oaram $user: opzionale, l'utente che ha eseguito l'azione che ha scatenato l'errore
+     * @param $user: opzionale, l'utente che ha eseguito l'azione che ha scatenato l'errore
      */
     static public function watchdog($msg, $user = "")
     {
-        /*if (!$user && isset($_SESSION['UID'])) {
-            $user = getUsername($_SESSION['UID']);
-        }*/
         if(Site::DB()!==null) {
             try {
                 Site::DB()->query("INSERT INTO LogErrori (Nome, Errore, DataEvento, IP) VALUES ('" . Site::DB()->escape($user) . "','" . Site::DB()->escape($msg) . "',NOW(),'" . Site::DB()->escape($_SERVER['REMOTE_ADDR']) . "')");
