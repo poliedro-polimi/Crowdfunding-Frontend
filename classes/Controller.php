@@ -55,6 +55,7 @@ abstract class Controller{
             if(!empty($plugin['class']) and class_exists($plugin['class'])){
                 $refl = new \ReflectionClass($plugin['class']);
                 if($refl->implementsInterface('nigiri\\plugins\\PluginInterface')) {
+                    unset($plugin['class']);
                     /** @var PluginInterface $p */
                     $p = $refl->newInstance($plugin);
                     $plugins[] = $p;
