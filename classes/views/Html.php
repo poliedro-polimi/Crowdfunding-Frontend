@@ -40,7 +40,7 @@ class Html{
      * @param array $attributes additional attributes to set in the tag
      * @return string the HTML code of the link
      */
-    public static function a($to, $text, $attributes){
+    public static function a($to, $text, $attributes = []){
         return self::tag('a', $text, array_merge($attributes, ['href' => $to]));
     }
 }
