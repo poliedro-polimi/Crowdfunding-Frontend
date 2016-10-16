@@ -23,8 +23,8 @@ class Router{
 
         $boom = explode('/', $this->page);
         if(count($boom)==2){
-            $this->controller = $this->underscoreToCamelCase($boom[0]).'Controller';
-            $this->method = $this->underscoreToCamelCase($boom[1], false);
+            $this->controller = Controller::underscoreToCamelCase($boom[0]).'Controller';
+            $this->method = Controller::underscoreToCamelCase($boom[1], false);
         }
         else{
             throw new InternalServerError("Nessuna home page è stata definita");
@@ -62,21 +62,5 @@ class Router{
 
     public function getMethod(){
         return $this->method;
-    }
-
-    /**
-     * Converts a name from underscore_form to CamelCase
-     * @param string $str
-     * @param bool $first_upper tells whether the first letter should be capitalized or not. Default true
-     * @return string
-     */
-    private function underscoreToCamelCase($str, $first_upper = true){
-        $out = str_replace(' ', '', ucwords(str_replace('_', ' ', $str)));
-
-        if(!$first_upper){
-            $out[0] = strtolower($out[0]);
-        }
-
-        return $out;
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace nigiri\rbac;
 
+use nigiri\Controller;
 use nigiri\exceptions\Exception;
 use nigiri\exceptions\Forbidden;
 use nigiri\models\Permission;
@@ -40,7 +41,7 @@ class AuthPlugin implements PluginInterface{
         if(!empty($this->config['rules'])){
             $raw_p = null;
             foreach($this->config['rules'] as $rule){
-                if(in_array($this->actionCamelToUnderscore($actionName), $rule['actions'])){
+                if(in_array(Controller::camelCaseToUnderscore($actionName), $rule['actions'])){
                     $raw_p = $rule;
                     break;
                 }
@@ -143,24 +144,5 @@ class AuthPlugin implements PluginInterface{
         else{
             return self::DENY;
         }
-    }
-
-    private function actionCamelToUnderscore($action){
-        if(strpos($action, 'action')===0){
-            $action = substr($action, 6);
-            $action[0] = strtolower($action[0]);
-        }
-
-        $output = '';
-        for($i=0; $i<strlen($action); $i++){
-            $ord = ord($action[$i]);
-            if($ord >= 65 && $ord <= 90){
-                $output .= '_'.strtolower($action[$i]);
-            }
-            else{
-                $output .= $action[$i];
-            }
-        }
-        return $output;
     }
 }

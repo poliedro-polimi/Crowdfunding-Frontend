@@ -75,4 +75,39 @@ abstract class Controller{
 
         return $output;
     }
+
+    static public function camelCaseToUnderscore($action){
+        if(strpos($action, 'action')===0){
+            $action = substr($action, 6);
+            $action[0] = strtolower($action[0]);
+        }
+
+        $output = '';
+        for($i=0; $i<strlen($action); $i++){
+            $ord = ord($action[$i]);
+            if($ord >= 65 && $ord <= 90){
+                $output .= '_'.strtolower($action[$i]);
+            }
+            else{
+                $output .= $action[$i];
+            }
+        }
+        return $output;
+    }
+
+    /**
+     * Converts a name from underscore_form to CamelCase
+     * @param string $str
+     * @param bool $first_upper tells whether the first letter should be capitalized or not. Default true
+     * @return string
+     */
+    static public function underscoreToCamelCase($str, $first_upper = true){
+        $out = str_replace(' ', '', ucwords(str_replace('_', ' ', $str)));
+
+        if(!$first_upper){
+            $out[0] = strtolower($out[0]);
+        }
+
+        return $out;
+    }
 }
