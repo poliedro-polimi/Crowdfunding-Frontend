@@ -1,6 +1,7 @@
 <?php
 namespace nigiri\plugins;
 
+use nigiri\Controller;
 use nigiri\exceptions\BadRequest;
 
 class MethodPlugin implements PluginInterface{
@@ -14,8 +15,14 @@ class MethodPlugin implements PluginInterface{
 
     public function beforeAction($actionName)
     {
-        if(array_key_exists($actionName, $this->config)){
-            $methods = $this->config[$actionName];
+        $action = $actionName;
+        if(strpos($actionName, 'action')===0){
+            $action = substr($actionName, 6);
+        }
+        $action = Controller::camelCaseToUnderscore($action);
+
+        if(array_key_exists($action, $this->config)){
+            $methods = $this->config[$action];
             if(!is_array($methods)){
                 $methods = [$methods];
             }
