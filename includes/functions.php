@@ -1,7 +1,11 @@
 <?php
+use nigiri\Controller;
 use nigiri\db\DBException;
 use nigiri\exceptions\Exception;
+use nigiri\exceptions\FileNotFound;
 use nigiri\exceptions\PHPErrorException;
+use nigiri\Site;
+use nigiri\themes\FatalErrorTheme;
 use nigiri\views\Html;
 
 /**
@@ -118,6 +122,35 @@ function render_fatal_error($exception=null) {
         ob_end_clean();
     }
 
-    echo page_include(__DIR__.'/full_error.php', array('exception' => $exception));
+    $th = $exception->getThemeClass();
+    $boom = explode(':', $th);
+    if(!empty($boom[0])){
+        $class = new ReflectionClass($boom[0]);
+        if($class->implementsInterface('nigiri\\themes\\ThemeInterface')){
+            Site::switchTheme($class->newInstance());
+        }
+        else{
+            Site::getTheme()->resetPart('body');
+        }
+    }
+    else{
+        Site::getTheme()->resetPart('body');
+    }
+
+    $content = '';
+    if(!empty($boom[1])){
+        try {
+            $content = Controller::renderView($boom[1], ['exception' => $exception]);
+        }
+        catch(FileNotFound $e){//Don't throw another uncaught exception
+            $boom[1] = '';
+        }
+    }
+    if(empty($boom[1])){
+        $content = Controller::renderView(dirname(__DIR__).'/classes/views/fatal_error', ['exception' => $exception]);
+    }
+
+    Site::getTheme()->append($content, 'body');
+    Site::printPage();
     exit();
 }

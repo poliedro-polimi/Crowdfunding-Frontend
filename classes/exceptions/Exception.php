@@ -8,6 +8,13 @@ use nigiri\views\Html;
 
 class Exception extends \Exception
 {
+    /**
+     * @var string the name of the class to use to render the error when it reaches the uncaught exception handler
+     * You can also specify a View by appending its path after a colon (:)
+     * It must implement \nigiri\themes\ThemeInterface
+     */
+    private $theme = 'nigiri\\themes\\FatalErrorTheme';
+
     private $internal;
 
     public function __construct($str = null, $no = null, $detail = null)
@@ -39,19 +46,17 @@ class Exception extends \Exception
 
     public function logError($additional = '', $save_trace = false)
     {
-        if (!empty($this->internal)) {
-            $trace = '';
-            if ($save_trace) {
-                $trace = "\n Call Stack:\n";
-                ob_start();
-                $t = $this->getTrace();
-                var_dump($t);
-                $trace .= ob_get_contents();
-                ob_end_clean();
-            }
-
-            $this->watchdog($additional . ' - ' . $this->renderFullError() . $trace);
+        $trace = '';
+        if ($save_trace) {
+            $trace = "\n Call Stack:\n";
+            ob_start();
+            $t = $this->getTrace();
+            var_dump($t);
+            $trace .= ob_get_contents();
+            ob_end_clean();
         }
+
+        $this->watchdog($additional . ' - ' . $this->renderFullError() . $trace);
     }
 
     public function renderFullError()
@@ -112,13 +117,10 @@ class Exception extends \Exception
     /**
      * Aggiunge una linea nel log degli errori
      * @param $msg : il messaggio da inserire
-     * @oaram $user: opzionale, l'utente che ha eseguito l'azione che ha scatenato l'errore
+     * @param $user: opzionale, l'utente che ha eseguito l'azione che ha scatenato l'errore
      */
     static public function watchdog($msg, $user = "")
     {
-        /*if (!$user && isset($_SESSION['UID'])) {
-            $user = getUsername($_SESSION['UID']);
-        }*/
         if(Site::DB()!==null) {
             try {
                 Site::DB()->query("INSERT INTO LogErrori (Nome, Errore, DataEvento, IP) VALUES ('" . Site::DB()->escape($user) . "','" . Site::DB()->escape($msg) . "',NOW(),'" . Site::DB()->escape($_SERVER['REMOTE_ADDR']) . "')");
@@ -130,5 +132,15 @@ class Exception extends \Exception
         else{//No DB enabled
             error_log($msg);
         }
+    }
+
+    public function getThemeClass(){
+        $className = get_called_class();
+        $overrides = Site::getParam('exceptions_views', []);
+
+        if(array_key_exists($className, $overrides)){
+            return $overrides[$className];
+        }
+        return $this->theme;
     }
 }
