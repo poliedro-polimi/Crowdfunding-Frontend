@@ -50,6 +50,8 @@ class Site{
             self::$params=$data['params'];
         }
 
+        self::$autoloader = $data['autoloader'];
+
         self::$router = new Router();
         self::$auth = new Auth();
 
