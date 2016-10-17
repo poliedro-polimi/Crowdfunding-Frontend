@@ -8,6 +8,8 @@ namespace nigiri\exceptions;
 class FileNotFound extends HttpException {
     public function __construct($str="", $detail="")
     {
+        $this->theme = ':'.dirname(__DIR__).'/views/http404.php';
+
         if(empty($str)){
             $str = 'La pagina richiesta non esiste';
         }

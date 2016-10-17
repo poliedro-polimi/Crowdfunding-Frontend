@@ -13,7 +13,7 @@ class Exception extends \Exception
      * You can also specify a View by appending its path after a colon (:)
      * It must implement \nigiri\themes\ThemeInterface
      */
-    private $theme = 'nigiri\\themes\\FatalErrorTheme';
+    protected $theme = 'nigiri\\themes\\FatalErrorTheme';
 
     private $internal;
 
