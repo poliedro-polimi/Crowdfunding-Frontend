@@ -3,7 +3,7 @@ use nigiri\Psr4AutoloaderClass;
 use nigiri\Site;
 
 ini_set('display_errors', false);
-ini_set('log_errors', false);
+ini_set('log_errors', true);
 ini_set('error_log', __DIR__.'/nigiri_error.log');
 
 require_once __DIR__.'/classes/class_loader.php';
