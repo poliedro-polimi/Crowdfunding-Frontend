@@ -18,7 +18,11 @@ $autoloader->register();
 $autoloader->addNamespace('nigiri', __DIR__.'/classes');
 $autoloader->addNamespace('site', __DIR__);
 
-Site::init(require_once __DIR__.'/includes/settings.php');
+$config = require_once __DIR__.'/includes/settings.php';
+
+$config['autoloader'] = $autoloader;
+
+Site::init($config);
 
 Site::getTheme()->append(Site::getRouter()->routeRequest());
 

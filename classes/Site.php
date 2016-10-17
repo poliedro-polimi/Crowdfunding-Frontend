@@ -31,6 +31,9 @@ class Site{
      */
     static private $auth;
 
+    /** @var Psr4AutoloaderClass */
+    static private $autoloader;
+
     static function init($data){
         if(empty($data['theme']) or !($data['theme'] instanceof ThemeInterface)){
             throw new Exception("Nessun tema configurato per visualizzare il sito", 1, "Non è stato specificato nessun tema o il tema specificato non implementa l'interfaccia ThemeInterface");
@@ -93,6 +96,10 @@ class Site{
             return self::$params[$name];
         }
         return $default;
+    }
+
+    public static function getAutoloader(){
+        return self::$autoloader;
     }
 
     public static function printPage(){
