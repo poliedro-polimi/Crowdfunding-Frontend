@@ -37,6 +37,7 @@ class Router{
      * @throws FileNotFound
      */
     public function routeRequest(){
+        ob_start();//Just a security measure to ensure accidental echos in the controllers don't break the theme output
         if(class_exists('site\\controllers\\'.$this->controller)){
             $class = new \ReflectionClass('site\\controllers\\'.$this->controller);
             if($class->isSubclassOf('nigiri\Controller')) {
@@ -49,6 +50,7 @@ class Router{
                 }
             }
         }
+        ob_end_clean();
         throw new FileNotFound();
     }
 
