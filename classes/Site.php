@@ -50,7 +50,7 @@ class Site{
             self::$params=$data['params'];
         }
 
-        self::$autoloader = $data['autoloader'];
+        self::autoloadSetup($data['autoloader'], empty($data['autoload_paths'])?[]:$data['autoload_paths']);
 
         self::$router = new Router();
         self::$auth = new Auth();
@@ -127,6 +127,14 @@ class Site{
             else {
                 self::$DB = $db;
             }
+        }
+    }
+
+    private static function autoloadSetup($autoloader, $data){
+        self::$autoloader=$autoloader;
+
+        foreach($data as $prefix => $path){
+            self::$autoloader->addNamespace($prefix, $path);
         }
     }
 }
