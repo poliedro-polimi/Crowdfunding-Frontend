@@ -26,6 +26,10 @@ class Router{
             $this->controller = Controller::underscoreToCamelCase($boom[0]).'Controller';
             $this->method = Controller::underscoreToCamelCase($boom[1], false);
         }
+        elseif(count($boom)==1){
+            $this->controller = Controller::underscoreToCamelCase($boom[0]).'Controller';
+            $this->method = 'actionIndex';
+        }
         else{
             throw new InternalServerError("Nessuna home page è stata definita");
         }
