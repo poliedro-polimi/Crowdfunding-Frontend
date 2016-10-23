@@ -58,6 +58,11 @@ class Site{
         if(self::getParam('debug')){
             ini_set('display_errors', true);
         }
+
+        //TODO generalize localization?
+        setlocale(LC_TIME, 'ita', 'it_IT');
+        setlocale(LC_CTYPE, 'it_IT.utf-8','ita.utf-8','it_IT','ita');
+        date_default_timezone_set("Europe/Rome");
     }
 
     /**
