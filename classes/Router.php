@@ -10,7 +10,7 @@ use nigiri\exceptions\InternalServerError;
 class Router{
     private $page;
     private $controller;
-    private $method;
+    private $action;
 
     public function __construct()
     {
@@ -24,11 +24,11 @@ class Router{
         $boom = explode('/', $this->page);
         if(count($boom)==2){
             $this->controller = Controller::underscoreToCamelCase($boom[0]).'Controller';
-            $this->method = Controller::underscoreToCamelCase($boom[1], false);
+            $this->action = Controller::underscoreToCamelCase($boom[1], false);
         }
         elseif(count($boom)==1){
             $this->controller = Controller::underscoreToCamelCase($boom[0]).'Controller';
-            $this->method = 'actionIndex';
+            $this->action = 'index';
         }
         else{
             throw new InternalServerError("Nessuna home page è stata definita");
@@ -47,10 +47,10 @@ class Router{
             if($class->isSubclassOf('nigiri\Controller')) {
                 /** @var Controller $instance */
                 $instance = $class->newInstance();
-                if ($class->hasMethod($this->method)) {
-                    return $instance->executeAction($this->method);
-                } elseif ($class->hasMethod('action' . ucfirst($this->method))) {
-                    return $instance->executeAction('action'.ucfirst($this->method));
+                if ($class->hasMethod($this->action)) {
+                    return $instance->executeAction($this->action);
+                } elseif ($class->hasMethod('action' . ucfirst($this->action))) {
+                    return $instance->executeAction('action'.ucfirst($this->action));
                 }
             }
         }
@@ -62,11 +62,11 @@ class Router{
         return $this->page;
     }
 
-    public function getController(){
+    public function getControllerName(){
         return $this->controller;
     }
 
-    public function getMethod(){
-        return $this->method;
+    public function getActionName(){
+        return $this->action;
     }
 }
