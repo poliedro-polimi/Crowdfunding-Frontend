@@ -118,7 +118,7 @@ class Site{
             if(is_array($db)){
                 if(class_exists($db['class'])) {
                     $class = new \ReflectionClass($db['class']);
-                    if ($class->isSubclassOf('site\db\DB')){
+                    if ($class->isSubclassOf('nigiri\db\DB')){
                         self::$DB = $class->newInstance($db);
                     }
                     else{
