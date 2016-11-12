@@ -122,8 +122,14 @@ function render_fatal_error($exception=null) {
         ob_end_clean();
     }
 
-    $th = $exception->getThemeClass();
-    $boom = explode(':', $th);
+    if($exception!=null and $exception instanceof Exception) {
+        $th = $exception->getThemeClass();
+        $boom = explode(':', $th);
+    }
+    else{
+        $boom = ['',''];
+    }
+
     if(!empty($boom[0])){
         $class = new ReflectionClass($boom[0]);
         if($class->implementsInterface('nigiri\\themes\\ThemeInterface')){

@@ -39,6 +39,15 @@ if(Site::getParam('debug') and $exception!=null){
         echo '</table>';
     }
     else{
-        var_dump($exception);
+        echo '<table><tr><th colspan="2">Exception</th></tr>
+<tr><td>Nome</td><td>'.get_class($exception).'</td></tr>
+<tr><td>Messaggio</td><td>'.Html::escape($exception->getMessage()).'</td></tr>
+<tr><td>File</td><td>' . Html::escape($exception->getFile()) . '</td></tr>
+<tr><td>Line</td><td>' . Html::escape($exception->getLine()) . '</td></tr>
+<tr><td>Call Trace</td><td><pre>';
+        $t = $exception->getTrace();
+        var_dump($t);
+        echo '</pre></td></tr>';
+        echo '</table>';
     }
 }
