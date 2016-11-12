@@ -42,7 +42,7 @@ abstract class DB
             self::$requestsLog[] = array($sql);
         }
 
-        return self::doQuery($sql, $oneshot, $mode);
+        return static::doQuery($sql, $oneshot, $mode);
     }
 
     /**
