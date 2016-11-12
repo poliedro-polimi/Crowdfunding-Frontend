@@ -31,7 +31,7 @@ class Router{
             $this->action = 'index';
         }
         else{
-            if($this->page) {
+            if(empty($this->page)) {
                 throw new InternalServerError("Nessuna home page è stata definita");
             }
             else{
