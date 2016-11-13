@@ -114,6 +114,10 @@ class Exception extends \Exception
     Call Stack:" . $stack;
     }
 
+    public function unCaughtEffect(){
+        header('HTTP/1.0 500 Internal Server Error', true, 500);
+    }
+
     /**
      * Aggiunge una linea nel log degli errori
      * @param $msg : il messaggio da inserire

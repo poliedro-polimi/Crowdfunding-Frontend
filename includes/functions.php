@@ -106,6 +106,9 @@ function uncaught_exception_handler($e){
         catch(DBException $ex) {//if db is unavailable, log to email
             $e->logToWebmasterEmail();
         }
+
+        $e->unCaughtEffect();
+
         render_fatal_error($e);
     }
     else{
