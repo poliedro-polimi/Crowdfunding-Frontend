@@ -24,6 +24,12 @@ $config['autoloader'] = $autoloader;
 
 Site::init($config);
 
-Site::getTheme()->append(Site::getRouter()->routeRequest());
+/**
+ * This needs to be a statement on its own. If you call it inside theme->append(), any theme change happening inside the
+ * controller's action won't make any real effect
+ */
+$output = Site::getRouter()->routeRequest();
+
+Site::getTheme()->append($output);
 
 Site::printPage();
