@@ -897,6 +897,10 @@ abstract class Model
                         }
                     }
 
+                    if($operatore=='=' && $value===null){
+                        $operatore='IS NULL';
+                    }
+
                     if (is_array($value)) {
                         switch ($operatore) {
                             /**
