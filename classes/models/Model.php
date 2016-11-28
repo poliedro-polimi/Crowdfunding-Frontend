@@ -899,6 +899,7 @@ abstract class Model
 
                     if($operatore=='=' && $value===null){
                         $operatore='IS NULL';
+                        $value=[];
                     }
 
                     if (is_array($value)) {
