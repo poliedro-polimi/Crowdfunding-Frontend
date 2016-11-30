@@ -18,11 +18,7 @@ class JsonPlugin implements PluginInterface{
 
     public function afterAction($actionName, $actionOutput)
     {
-        $action = $actionName;
-        if(strpos($actionName, 'action')===0){
-            $action = substr($actionName, 6);
-        }
-        $action = Controller::camelCaseToUnderscore($action);
+        $action = Controller::camelCaseToUnderscore($actionName);
 
         if(in_array($action, $this->config) or in_array('*',$this->config)){
             header('Content-Type: application/json; charset=utf-8');
