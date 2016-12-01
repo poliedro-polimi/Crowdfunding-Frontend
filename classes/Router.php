@@ -74,4 +74,23 @@ class Router{
     public function getActionName(){
         return $this->action;
     }
+
+    /**
+     * Checks if a url points to the current page, given routing rules
+     * @param string $page
+     * @return bool
+     */
+    public function isCurrentPage($page){
+        if($page==$this->page){
+            return true;
+        }
+
+        $boom = explode('/', $page);
+        if(count($boom)==2){
+            return $boom[0]==Controller::camelCaseToUnderscore(substr($this->controller, 0, 10)) && $boom[1]==Controller::camelCaseToUnderscore($this->action);
+        }
+        elseif(count($boom)==1){
+            return $boom[0]==Controller::camelCaseToUnderscore(substr($this->controller, 0, 10)) && Controller::camelCaseToUnderscore($this->action)=='index';
+        }
+    }
 }
