@@ -24,7 +24,7 @@ class Html{
      * @return string the HTML code of the tag
      */
     public static function tag($name, $content='', $attributes=[]){
-        $out = '<'.$name;
+        $out = '<'.$name.' ';
         $attr = [];
         foreach($attributes as $k=>$v){
             $attr[] = $k.'="'.str_replace('"', '\\"', $v).'"';
