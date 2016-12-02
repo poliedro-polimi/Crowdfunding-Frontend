@@ -60,8 +60,7 @@ class Site{
         }
 
         //TODO generalize localization?
-        setlocale(LC_TIME, 'ita', 'it_IT');
-        setlocale(LC_CTYPE, 'it_IT.utf8','ita.utf8', 'it_IT.utf-8','ita.utf-8','it_IT','ita');
+        setlocale(LC_ALL, 'it_IT.utf8','ita.utf8', 'it_IT.utf-8','ita.utf-8','it_IT','ita');
         date_default_timezone_set("Europe/Rome");
     }
 
