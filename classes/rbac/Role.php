@@ -1,9 +1,11 @@
 <?php
-namespace nigiri\models;
+namespace nigiri\rbac;
 
 use nigiri\db\DbResult;
+use nigiri\models\Model;
+use nigiri\models\ModelException;
 
-class Role extends Model{
+class Role extends Model {
 
     /**
      * @return array Un array di attributi. key/values mappano i nomi degli attributi con i campi del Database

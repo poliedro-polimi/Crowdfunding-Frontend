@@ -1,5 +1,5 @@
 <?php
-namespace nigiri\models;
+namespace nigiri\rbac;
 use nigiri\exceptions\Exception;
 
 /**

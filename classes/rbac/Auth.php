@@ -3,8 +3,6 @@ namespace nigiri\rbac;
 
 use nigiri\db\DBException;
 use nigiri\exceptions\InternalServerError;
-use nigiri\models\Permission;
-use nigiri\models\Role;
 use nigiri\Site;
 
 /**
