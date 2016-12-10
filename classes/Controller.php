@@ -85,8 +85,13 @@ abstract class Controller{
         $output = '';
         for($i=0; $i<strlen($action); $i++){
             $ord = ord($action[$i]);
-            if($ord >= 65 && $ord <= 90 && $i!=0){
-                $output .= '_'.strtolower($action[$i]);
+            if($ord >= 65 && $ord <= 90){
+                if($i==0){
+                    $output .= strtolower($action[$i]);
+                }
+                else {
+                    $output .= '_' . strtolower($action[$i]);
+                }
             }
             else{
                 $output .= $action[$i];
