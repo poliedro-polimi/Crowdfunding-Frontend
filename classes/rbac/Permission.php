@@ -18,7 +18,7 @@ class Permission{
 
     public function __construct($name)
     {
-        if(array_key_exists($name, self::$permissions)){
+        if(array_key_exists($name, self::getPermissions())){
             $this->p = $name;
         }
         else{
@@ -31,18 +31,27 @@ class Permission{
     }
 
     public function getDescription(){
-        return self::$permissions[$this->p];
+        $p = self::getPermissions();
+        return $p[$this->p];
     }
 
     /**
-     * Adds a permission to the list of permissions available in the system
+     * Adds a permission to the list of permissions available in the system, temporarily
      * NOTE: if you provide a permission name that is already in use, the existing permission will
      * be overwritten
      * @param string $name
      * @param string $description
      */
     static public function addPermission($name, $description){
-        self::$permissions[$name] = $description;
+        $p = self::getPermissions();
+        $p[$name] = $description;
+    }
+
+    static public function getPermissions(){
+        if(empty(self::$permissions)){
+            self::loadFile(self::$permissions, dirname(dirname(__DIR__)).'/includes/permissions.php');
+        }
+        return self::$permissions;
     }
 
     /**
@@ -50,6 +59,15 @@ class Permission{
      * @return array
      */
     static public function getIndex(){
+        if(empty(self::$permissions_index)){
+            self::loadFile(self::$permissions_index, dirname(dirname(__DIR__)).'/includes/permissions_index.php');
+        }
         return self::$permissions_index;
+    }
+
+    static private function loadFile(&$var, $file){
+        if(file_exists($file)){
+            $var = require $file;
+        }
     }
 }
