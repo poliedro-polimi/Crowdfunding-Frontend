@@ -53,7 +53,7 @@ class Site{
         self::autoloadSetup($data['autoloader'], empty($data['autoload_paths'])?[]:$data['autoload_paths']);
 
         self::$router = new Router();
-        self::$auth = new Auth();
+        self::$auth = new Auth(empty($data['authUserClass'])?'':$data['authUserClass']);
 
         if(self::getParam('debug')){
             ini_set('display_errors', true);

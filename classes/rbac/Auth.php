@@ -2,6 +2,7 @@
 namespace nigiri\rbac;
 
 use nigiri\db\DBException;
+use nigiri\exceptions\Exception;
 use nigiri\exceptions\InternalServerError;
 use nigiri\Site;
 
@@ -13,6 +14,21 @@ class Auth{
 
     /** @var AuthUserInterface the currently logged in user */
     private $user = null;
+    private $userClass = null;
+
+    public function __construct($userClass){
+        try {
+            $c = new \ReflectionClass($userClass);
+            if ($c->implementsInterface('nigiri\\rbac\\AuthUserInterface')) {
+                $this->userClass = $c;
+            } else {
+                throw new InternalServerError("Configurazione errata", "La classe utente specificata per l'autorizzazione non è valida");
+            }
+        }
+        catch (\ReflectionException $e){
+            throw new InternalServerError("Configurazione errata", "La classe utente specificata per l'autorizzazione non esiste");
+        }
+    }
 
     /**
      * Assigns a Permission to a Role
@@ -181,22 +197,29 @@ class Auth{
      */
     public function login($user){
         $this->user=$user;
-        //TODO setcookie?
+        $_SESSION['uid'] = $user->getId();
     }
 
     public function logout(){
         $this->user = null;
-        //TODO setcookie?
+        unset($_SESSION['uid']);
     }
 
     public function isLoggedIn(){
+        if($this->user===null){
+            $this->getLoggedInUser();
+        }
+
         return $this->user!==null;
     }
 
     /**
-     * @return AuthUserInterface
+     * @return AuthUserInterface|null
      */
     public function getLoggedInUser(){
+        if($this->user===null){
+            $this->user = $this->userClass->getMethod('getLoggedInUser')->invoke(null);
+        }
         return $this->user;
     }
 }

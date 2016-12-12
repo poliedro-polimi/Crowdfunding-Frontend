@@ -6,4 +6,6 @@ namespace nigiri\rbac;
  */
 interface AuthUserInterface{
     public function getId();
+
+    public static function getLoggedInUser();
 }
