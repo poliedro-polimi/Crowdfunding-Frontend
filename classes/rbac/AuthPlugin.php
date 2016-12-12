@@ -38,15 +38,16 @@ class AuthPlugin implements PluginInterface{
         $allow = true;
         if(!empty($this->config['rules'])){
             $raw_p = null;
+            $under = Controller::camelCaseToUnderscore($actionName);
             foreach($this->config['rules'] as $rule){
-                if(in_array(Controller::camelCaseToUnderscore($actionName), $rule['actions'])){
+                if(in_array($under, $rule['actions'])){
                     $raw_p = $rule;
                     break;
                 }
             }
 
             if(!empty($raw_p)) {
-                $allow = empty($raw_p['allow']) ? true : $raw_p['allow'];
+                $allow = array_key_exists('allow', $raw_p) ? (boolean)$raw_p['allow'] : true;
                 $policy = $this->policyEvaluation($raw_p['policy']);
             }
         }
@@ -105,7 +106,7 @@ class AuthPlugin implements PluginInterface{
 
     private function policyEvaluation($p){
         if(!empty($p)){
-            if($p == self::ALLOW || $p == self::DENY){
+            if($p === self::ALLOW || $p === self::DENY){
                 return $p;
             }
             else{
