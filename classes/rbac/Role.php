@@ -7,6 +7,9 @@ use nigiri\models\ModelException;
 
 class Role extends Model {
 
+    const AUTHENTICATED_USER = '-1';
+    const ANONYMOUS_USER = '-2';
+
     /**
      * @return array Un array di attributi. key/values mappano i nomi degli attributi con i campi del Database
      *         In caso che sia necessario trattare il campo in modi particolari lato SQL è possibile sostituire il valore
@@ -145,5 +148,17 @@ class Role extends Model {
             return new Role(false, $data, $apply_callback);
         }
         throw new ModelException("ID ruolo mancante nei dati!");
+    }
+
+    public static function getAuthenticatedUserRole(){
+        $r = new Role(false, ['name' => self::AUTHENTICATED_USER, 'display' => 'Utente Autenticato']);
+        $r->setNoSave(true);
+        return $r;
+    }
+
+    public static function getAnonymousUserRole(){
+        $r = new Role(false, ['name' => self::ANONYMOUS_USER, 'display' => 'Utente Non Autenticato']);
+        $r->setNoSave(true);
+        return $r;
     }
 }

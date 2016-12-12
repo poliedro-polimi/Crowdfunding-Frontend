@@ -32,12 +32,17 @@ class Auth{
 
     /**
      * Assigns a Permission to a Role
-     * @param string $p the permission to assign
-     * @param string $r the role name
+     * @param string|Permission $p the permission to assign
+     * @param string|Role $r the role name
      * @throws DBException
      */
     public function assignPerm($p,$r){
-        new Permission($p);//Check if permission exists. If it doesn't exception is thrown
+        if(!($p instanceof Permission)) {
+            new Permission($p);//Check if permission exists. If it doesn't exception is thrown
+        }
+        if($r instanceof Role){
+           $r = $r->getName();
+        }
         try {
             Site::DB()->query("INSERT INTO roles_permissions (role, permission) VALUE ('".
                 Site::DB()->escape($r)."', '".Site::DB()->escape($p)."')");
@@ -51,10 +56,17 @@ class Auth{
 
     /**
      * Deletes the assignment of a permission to a role
-     * @param $p
-     * @param $r
+     * @param string|Permission $p
+     * @param string|Role $r
      */
     public function deletePerm($p, $r){
+        if($r instanceof Role){
+            $r = $r->getName();
+        }
+        if($p instanceof Permission){
+            $p = $p->getName();
+        }
+
         Site::DB()->query("DELETE FROM roles_permissions WHERE role='".
             Site::DB()->escape($r)."' AND permission='".Site::DB()->escape($p)."'");
     }
@@ -68,13 +80,24 @@ class Auth{
             Site::DB()->escape($r)."', '".Site::DB()->escape($display)."')");
     }
 
+    /**
+     * @param string|Role $r
+     * @throws InternalServerError
+     */
     public function deleteRole($r){
+        if($r instanceof Role){
+            $r = $r->getName();
+        }
+
         try {
             Site::DB()->startTransaction();
             Site::DB()->query("DELETE FROM roles_permissions WHERE role='".
                 Site::DB()->escape($r)."'");
             Site::DB()->query("DELETE FROM role WHERE `name`='".
                 Site::DB()->escape($r)."'");
+            Site::DB()->query("DELETE FROM users_roles WHERE role='".
+                Site::DB()->escape($r)."'");
+
             Site::DB()->commitTransaction();
         }
         catch (DBException $e){
@@ -135,11 +158,11 @@ class Auth{
      * @return Role[]
      */
     public function getUserRoles($uid){
-        return Role::find([
+        return array_merge(Role::find([
             'search_joins' => 'users',
             'search_literal' => 1,
             "users.uid = '".Site::DB()->escape($uid)."'"
-        ]);
+        ]), $this->isLoggedIn()?[Role::getAuthenticatedUserRole()]:[Role::getAnonymousUserRole()]);
     }
 
     /**
@@ -150,6 +173,13 @@ class Auth{
     public function userHasRole($uid, $r){
         if($r instanceof Role){
             $r = $r->getName();
+        }
+
+        if($r==Role::AUTHENTICATED_USER && $this->isLoggedIn()){
+            return true;
+        }
+        elseif($r==Role::ANONYMOUS_USER && !$this->isLoggedIn()){
+            return true;
         }
 
         $result = Site::DB()->query("SELECT COUNT(*) AS N FROM users_roles WHERE `user`='".Site::DB()->escape($uid).

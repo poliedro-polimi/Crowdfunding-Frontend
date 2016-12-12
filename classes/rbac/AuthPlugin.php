@@ -11,7 +11,6 @@ class AuthPlugin implements PluginInterface{
 
     const DENY = -1;
     const ALLOW = 1;
-    const AUTHENTICATED_USER = 2;
 
     private $config;
 
@@ -76,7 +75,7 @@ class AuthPlugin implements PluginInterface{
         elseif(is_array($p)){
             $match = false;
             foreach($p as $temp){
-                if(is_int($temp) && $temp == self::AUTHENTICATED_USER){
+                if(is_int($temp) && $temp == Role::AUTHENTICATED_USER){
                     if(Site::getAuth()->isLoggedIn()){
                         $match = true;
                         break;
@@ -127,8 +126,8 @@ class AuthPlugin implements PluginInterface{
                             }
                         }
                     }
-                    elseif(is_int($temp) && $p == self::AUTHENTICATED_USER){
-                        $out[] = self::AUTHENTICATED_USER;
+                    elseif(is_int($temp) && $p == Role::AUTHENTICATED_USER){
+                        $out[] = Role::AUTHENTICATED_USER;
                     }
                 }
 
