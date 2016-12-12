@@ -4,8 +4,6 @@ namespace nigiri\rbac;
 use nigiri\Controller;
 use nigiri\exceptions\Exception;
 use nigiri\exceptions\Forbidden;
-use nigiri\models\Permission;
-use nigiri\models\Role;
 use nigiri\plugins\PluginInterface;
 use nigiri\Site;
 
