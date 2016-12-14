@@ -174,7 +174,7 @@ class Auth{
         return array_merge(Role::find([
             'search_joins' => 'users',
             'search_literal' => 1,
-            "users.uid = '".Site::DB()->escape($uid)."'"
+            "users.user = '".Site::DB()->escape($uid)."'"
         ]), $this->isLoggedIn()?[Role::getAuthenticatedUserRole()]:[Role::getAnonymousUserRole()]);
     }
 
