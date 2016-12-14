@@ -35,6 +35,10 @@ class Site{
     static private $autoloader;
 
     static function init($data){
+        if(empty($data['disableSession'])){
+            session_start();
+        }
+
         if(empty($data['theme']) or !($data['theme'] instanceof ThemeInterface)){
             throw new Exception("Nessun tema configurato per visualizzare il sito", 1, "Non è stato specificato nessun tema o il tema specificato non implementa l'interfaccia ThemeInterface");
         }
@@ -53,7 +57,10 @@ class Site{
         self::autoloadSetup($data['autoloader'], empty($data['autoload_paths'])?[]:$data['autoload_paths']);
 
         self::$router = new Router();
-        self::$auth = new Auth(empty($data['authUserClass'])?'':$data['authUserClass']);
+
+        if(!empty($data['enableAuth'])) {
+            self::$auth = new Auth(empty($data['authUserClass']) ? '' : $data['authUserClass']);
+        }
 
         if(self::getParam('debug')){
             ini_set('display_errors', true);
