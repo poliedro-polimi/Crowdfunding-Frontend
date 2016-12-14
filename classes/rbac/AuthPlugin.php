@@ -82,13 +82,13 @@ class AuthPlugin implements PluginInterface{
                     }
                 }
                 elseif($temp instanceof Permission){
-                    if(Site::getAuth()->userCan(Site::getAuth()->getLoggedInUser()->getId(), $p)){
+                    if(Site::getAuth()->iCan($p)){
                         $match = true;
                         break;
                     }
                 }
                 elseif($temp instanceof Role){
-                    if(Site::getAuth()->userHasRole(Site::getAuth()->getLoggedInUser()->getId(), $p)){
+                    if(Site::getAuth()->userHasRole(Site::getAuth()->getLoggedInUser(), $p)){
                         $match = true;
                         break;
                     }

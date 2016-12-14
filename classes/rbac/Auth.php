@@ -143,7 +143,7 @@ class Auth{
 
     /**
      * Checks if a user has a specific permission
-     * @param string $uid
+     * @param string|AuthUserInterface $uid
      * @param string|Permission $perm
      * @return bool
      */
@@ -153,11 +153,24 @@ class Auth{
     }
 
     /**
+     * Checks if the current user has a specific permission, it works even with permissions of anonymous users
+     * @param string|Permission $perm
+     * @return bool
+     */
+    public function iCan($perm){
+        return $this->userCan($this->getLoggedInUser(), $perm);
+    }
+
+    /**
      * Finds the roles a user is assigned to
-     * @param string $uid
+     * @param string|AuthUserInterface $uid
      * @return Role[]
      */
     public function getUserRoles($uid){
+        if(is_object($uid) && $uid instanceof AuthUserInterface){
+            $uid = $uid->getId();
+        }
+
         return array_merge(Role::find([
             'search_joins' => 'users',
             'search_literal' => 1,
@@ -166,13 +179,17 @@ class Auth{
     }
 
     /**
-     * @param string $uid
+     * @param string|AuthUserInterface $uid
      * @param string|Role $r
      * @return bool
      */
     public function userHasRole($uid, $r){
         if($r instanceof Role){
             $r = $r->getName();
+        }
+
+        if(is_object($uid) && $uid instanceof AuthUserInterface){
+            $uid = $uid->getId();
         }
 
         if($r==Role::AUTHENTICATED_USER && $this->isLoggedIn()){
@@ -189,13 +206,17 @@ class Auth{
     }
 
     /**
-     * @param string $uid
+     * @param string|AuthUserInterface $uid
      * @param Role|string $r
      * @throws DBException
      */
     public function addUserRole($uid, $r){
         if($r instanceof Role){
             $r = $r->getName();
+        }
+
+        if(is_object($uid) && $uid instanceof AuthUserInterface){
+            $uid = $uid->getId();
         }
 
         try {
@@ -210,12 +231,16 @@ class Auth{
     }
 
     /**
-     * @param Role|string $uid
-     * @param $r
+     * @param string|AuthUserInterface $uid
+     * @param Role $r
      */
     public function deleteUserRole($uid, $r){
         if($r instanceof Role){
             $r = $r->getName();
+        }
+
+        if(is_object($uid) && $uid instanceof AuthUserInterface){
+            $uid = $uid->getId();
         }
 
         Site::DB()->query("DELETE FROM users_roles WHERE `user`='".
