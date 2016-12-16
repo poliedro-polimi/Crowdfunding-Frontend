@@ -180,29 +180,58 @@ class Auth{
 
     /**
      * @param string|AuthUserInterface $uid
-     * @param string|Role $r
+     * @param string|Role|Role[] $r
+     * @param bool $any in the case that $r is an array, tells if it should return true if ANY role matches or if ALL need to match
      * @return bool
      */
-    public function userHasRole($uid, $r){
-        if($r instanceof Role){
-            $r = $r->getName();
+    public function userHasRole($uid, $r, $any = true){
+        if(!is_array($r)){
+            $r = [$r];
         }
-
         if(is_object($uid) && $uid instanceof AuthUserInterface){
             $uid = $uid->getId();
         }
 
-        if($r==Role::AUTHENTICATED_USER && $this->isLoggedIn()){
-            return true;
-        }
-        elseif($r==Role::ANONYMOUS_USER && !$this->isLoggedIn()){
-            return true;
+        foreach ($r as $value) {
+            if ($value instanceof Role) {
+                $value = $value->getName();
+            }
+            if ($value == Role::AUTHENTICATED_USER && $this->isLoggedIn()) {
+                if($any) {
+                    return true;
+                }
+                else{
+                    continue;
+                }
+            } elseif ($r == Role::ANONYMOUS_USER && !$this->isLoggedIn()) {
+                if($any){
+                    return true;
+                }
+                else{
+                    continue;
+                }
+            }
+
+            $result = Site::DB()->query("SELECT COUNT(*) AS N FROM users_roles WHERE `user`='" . Site::DB()->escape($uid) .
+              "' AND role='" . Site::DB()->escape($r) . "'", true);
+
+            if($result['N']>0) {
+                if ($any){
+                    return true;
+                }
+                else{
+                    continue;
+                }
+            }
+            else {//If I get here, ALL checks were false
+                if(!$any) {
+                    return false;//As soon as I get a false I return with the ALL strategy
+                }
+            }
         }
 
-        $result = Site::DB()->query("SELECT COUNT(*) AS N FROM users_roles WHERE `user`='".Site::DB()->escape($uid).
-          "' AND role='".Site::DB()->escape($r)."'", true);
-
-        return $result['N']>0;
+        //If we get here it means we didn't find any true in ANY strategy, or we didn't find any false in ALL strategy
+        return $any?false:true;
     }
 
     /**
