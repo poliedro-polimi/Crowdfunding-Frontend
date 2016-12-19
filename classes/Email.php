@@ -68,6 +68,10 @@ class Email
                 $this->mail->Sender = Site::getParam('site_name');
             }
 
+            if($html){
+                $this->mail->IsHTML();
+            }
+
             $this->mail->Subject = $subject;
 
             if (file_exists(dirname(__DIR__) . '/email/' . $message)) {
