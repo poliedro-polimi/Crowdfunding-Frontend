@@ -22,20 +22,20 @@ class Router{
         }
 
         $boom = explode('/', $this->page);
+        if(count($boom)==1){
+            $boom[1] = 'index';
+        }
+
         if(count($boom)==2){
             $this->controller = Controller::underscoreToCamelCase($boom[0]).'Controller';
             $this->action = Controller::underscoreToCamelCase($boom[1], false);
-        }
-        elseif(count($boom)==1){
-            $this->controller = Controller::underscoreToCamelCase($boom[0]).'Controller';
-            $this->action = 'index';
         }
         else{
             if(empty($this->page)) {
                 throw new InternalServerError("Nessuna home page è stata definita");
             }
             else{
-                new FileNotFound();
+                new FileNotFound("", 'Impossibile trovare '.$this->page);
             }
         }
     }
