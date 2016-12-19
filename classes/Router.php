@@ -28,7 +28,7 @@ class Router{
 
         if(count($boom)==2){
             $this->controller = Controller::underscoreToCamelCase($boom[0]).'Controller';
-            $this->action = Controller::underscoreToCamelCase($boom[1], false);
+            $this->action = Controller::underscoreToCamelCase(empty($boom[1])?'index':$boom[1], false);
         }
         else{
             if(empty($this->page)) {
