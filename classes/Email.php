@@ -2,6 +2,7 @@
 namespace nigiri;
 use nigiri\exceptions\Exception;
 use nigiri\views\Html;
+use nigiri\views\Url;
 
 /**
  * Email Sender, wrapper around PHPMailer
@@ -65,7 +66,7 @@ class Email
                     $from['name'] = '';
                 }
                 $this->mail->SetFrom($from['addr'], $from['name'], true);
-                $this->mail->Sender = Site::getParam('site_name');
+                $this->mail->Sender = Site::getParam('email');
             }
 
             if($html){
@@ -186,8 +187,8 @@ class Email
           '/@year\b/s'
         ];
         $values = [
-          $GLOBALS['par_SiteName'],
-          $GLOBALS['par_SiteURL'],
+          Site::getParam('site_name'),
+          Url::to('/', [], true),
           date('Y')
         ];
         foreach ($tokens as $k => $v) {
