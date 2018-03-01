@@ -138,6 +138,10 @@ class Exception extends \Exception
         }
     }
 
+    /**
+     * Gets the Theme class configured to handle the screen rendering of this Exception
+     * @return string
+     */
     public function getThemeClass(){
         $className = get_called_class();
         $overrides = Site::getParam('exceptions_views', []);

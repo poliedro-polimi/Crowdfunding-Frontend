@@ -11,6 +11,9 @@ return [
         'url_prefix' => '',//A prefix for the URL. Useful if the site is in a subdirectory
         'default_page' => 'site/home',//the home page, the one to show if there is no page requested
         'debug' => true,
-        'exceptions_views' => []//Can be an array of "ThemeClass:ViewFile" for each exception class (MUST be specified with the full namespace)
+
+        /** Defines views to be used to render each type of Exception.
+         * Keys of the array must be Exception names (with full namespace) values must be in the format "ThemeClass:ViewFileName */
+        'exceptions_views' => []
     ]
 ];
