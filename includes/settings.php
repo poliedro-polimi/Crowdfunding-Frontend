@@ -1,14 +1,12 @@
 <?php
 
-use nigiri\themes\Theme;
-
 return [
-    'theme' => new Theme(),
+    'theme' => new \site\theme\CrowdfundingTheme(),
     'params' => [
         /** Website's Email address, used as sender of the emails and webmaster's contact */
-        'email' => '',
+        'email' => 'info@poliedro-polimi.it',
 
-        'site_name' => 'My Site Name',
+        'site_name' => 'PoliMi Pride Crowdfunding',
 
         /** Set to true if URL Rewriting is active */
         'clean_urls' => true,
@@ -20,7 +18,7 @@ return [
         'default_page' => 'site/home',
 
         /** An array of enabled languages in the website */
-        'languages' => ['it'],
+        'languages' => ['it', 'en'],
 
         /** The default language to be used if none is specified */
         'default_language' => 'it',
