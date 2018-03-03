@@ -6,11 +6,11 @@ use nigiri\views\Html;
 use nigiri\views\Url;
 
 class Theme implements ThemeInterface {
-    private $title = '';
-    private $head = '';
-    private $script = '';
-    private $script_on_ready = '';
-    private $body = '';
+    protected $title = '';
+    protected $head = '';
+    protected $script = '';
+    protected $script_on_ready = '';
+    protected $body = '';
 
     public function append($str, $part = 'body')
     {
