@@ -15,12 +15,38 @@ class Url
      * @param bool $absolute : generates an absolute URL instead of one relative to the document root
      * @return string
      */
-    public static function to($l_page = '', $query = '', $absolute = false)
+    public static function to($l_page = '', $query = '', $absolute = false, $language = '')
     {
+        /*if(empty($language)){
+            $language = Site::getRouter()->getRequestedLanguage();
+        }*/
+
         if (empty($l_page)) {
             $url = Site::getRouter()->getPage();
+
+            if(!empty($language)) {
+                $boom = explode('/', $url);
+                $lang = Site::getParam("languages", []);
+                if (in_array($boom[0], $lang)) {
+                    array_shift($boom);
+                    $url = $language.'/'.implode('/', $boom);
+                }
+            }
         } else {
             $url = $l_page;
+
+            $boom = explode('/', $url);
+            $lang = Site::getParam("languages", []);
+            if (in_array($boom[0], $lang)) {
+                if(!empty($language)){
+                    array_shift($boom);
+                    $url = $language.'/'.implode('/', $boom);
+                }
+            }
+            else{
+                $language = empty($language)?Site::getRouter()->getRequestedLanguage():$language;
+                $url = $language.'/'.implode('/', $boom);
+            }
         }
 
         if (!Site::getParam('clean_urls')) {
