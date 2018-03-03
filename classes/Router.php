@@ -11,6 +11,7 @@ class Router{
     private $page;
     private $controller;
     private $action;
+    private $language;
 
     public function __construct()
     {
@@ -22,6 +23,15 @@ class Router{
         }
 
         $boom = explode('/', $this->page);
+
+        $lang = Site::getParam("languages", []);
+        if(in_array($boom[0], $lang)){
+            $this->language = array_shift($boom);
+        }
+        else{
+            $this->language = Site::getParam('default_language');
+        }
+
         if(count($boom)==1){
             $boom[1] = 'index';
         }
@@ -45,7 +55,8 @@ class Router{
      * @return string the HTML code to include in the output body
      * @throws FileNotFound
      */
-    public function routeRequest(){
+    public function routeRequest()
+    {
         ob_start();//Just a security measure to ensure accidental echos in the controllers don't break the theme output
         if(class_exists('site\\controllers\\'.$this->controller)){
             $class = new \ReflectionClass('site\\controllers\\'.$this->controller);
@@ -63,16 +74,24 @@ class Router{
         throw new FileNotFound();
     }
 
-    public function getPage(){
+    public function getPage()
+    {
         return $this->page;
     }
 
-    public function getControllerName(){
+    public function getControllerName()
+    {
         return $this->controller;
     }
 
-    public function getActionName(){
+    public function getActionName()
+    {
         return $this->action;
+    }
+
+    public function getRequestedLanguage()
+    {
+        return $this->language;
     }
 
     /**
@@ -80,12 +99,18 @@ class Router{
      * @param string $page
      * @return bool
      */
-    public function isCurrentPage($page){
+    public function isCurrentPage($page)
+    {
         if($page==$this->page){
             return true;
         }
 
         $boom = explode('/', $page);
+        $lang = Site::getParam("languages", []);
+        if(in_array($boom[0], $lang)){
+            array_shift($boom);
+        }
+
         if(count($boom)==2){
             return $boom[0]==Controller::camelCaseToUnderscore(substr($this->controller, 0, -10)) && $boom[1]==Controller::camelCaseToUnderscore($this->action);
         }

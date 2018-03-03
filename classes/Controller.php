@@ -29,16 +29,27 @@ abstract class Controller{
      * @throws FileNotFound
      */
     static public function renderView($path, $args= []){
-        $p = dirname(__DIR__).'/views/'.$path.'.php';
-        if(file_exists($p)){
-            return page_include($p, $args);
+        $def_lan = Site::getParam('default_language');
+        $current_lan = Site::getRouter()->getRequestedLanguage();
+
+        $try = [
+            //View in a folder for the current language
+            dirname(__DIR__).'/views/'.$current_lan.'/'.$path.'.php',
+            //View in a folder for the default language
+            dirname(__DIR__).'/views/'.$def_lan.'/'.$path.'.php',
+            //View in a folder with no language
+            dirname(__DIR__).'/views/'.$path.'.php',
+            //Exact location of the view is specified in $path
+            $path.'.php'
+        ];
+
+        foreach($try as $t){
+            if(file_exists($t)){
+                return page_include($t, $args);
+            }
         }
-        elseif(file_exists($path.'.php')){
-            return page_include($path.'.php', $args);
-        }
-        else{
-            throw new FileNotFound();
-        }
+
+        throw new FileNotFound();
     }
 
     /**

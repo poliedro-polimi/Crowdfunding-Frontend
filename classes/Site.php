@@ -66,9 +66,13 @@ class Site{
             ini_set('display_errors', true);
         }
 
-        //TODO generalize localization?
-        setlocale(LC_ALL, 'it_IT.utf8','ita.utf8', 'it_IT.utf-8','ita.utf-8','it_IT','ita');
-        date_default_timezone_set("Europe/Rome");
+        //TODO how to determine language since now? Is Router already configured?
+        $locale = self::getParam('locales', []);
+        if(array_key_exists(self::getRouter()->getRequestedLanguage(), $locale)) {
+            call_user_func_array('setlocale', array_merge([LC_ALL], $locale[self::getRouter()->getRequestedLanguage()]));
+        }
+
+        date_default_timezone_set(self::getParam('timezone', ''));
     }
 
     /**
