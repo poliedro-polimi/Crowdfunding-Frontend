@@ -17,10 +17,6 @@ class Url
      */
     public static function to($l_page = '', $query = '', $absolute = false, $language = '')
     {
-        /*if(empty($language)){
-            $language = Site::getRouter()->getRequestedLanguage();
-        }*/
-
         if (empty($l_page)) {
             $url = Site::getRouter()->getPage();
 
