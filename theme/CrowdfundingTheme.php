@@ -2,6 +2,7 @@
 
 namespace site\theme;
 
+use nigiri\Controller;
 use nigiri\Site;
 use nigiri\themes\Theme;
 use nigiri\views\Html;
@@ -42,7 +43,8 @@ READY;
 
 '.$this->head.'
 </head>
-<body>
+<body class="'.Controller::camelCaseToUnderscore(Site::getRouter()->getControllerName()).' '
+          .Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()).'_action">
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
 <div class="container">
 
@@ -85,7 +87,6 @@ READY;
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="'.Url::resource('/assets/js/navbar.js').'"></script>
-<script src="'.Url::resource('/assets/js/index.js').'"></script>
 
 '.$this->script.'
 

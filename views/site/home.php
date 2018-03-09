@@ -1,3 +1,10 @@
+<?php
+
+use nigiri\Site;
+use nigiri\views\Url;
+
+Site::getTheme()->append('<script src="' . Url::resource('/assets/js/index.js') . '"></script>', 'script');
+?>
 <section class="jumbotron" id="header">
     <div class="outer-center">
         <div class="inner-center">
@@ -42,6 +49,9 @@
                 Spillette + Maglietta +
                 Sacca
             </div>
+        </div>
+        <div class="row">
+            <a href="<?= Url::to('donation') ?>">Ottieni i Gadget PoliMi Pride</a>
         </div>
     </div>
 </section>
