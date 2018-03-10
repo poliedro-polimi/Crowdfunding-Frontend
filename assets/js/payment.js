@@ -10,7 +10,7 @@ paypal.Button.render({
   },
   payment: function(data, actions){
     return $.ajax({
-      url: BACKEND_URL+'/create?validate_only=1',
+      url: BACKEND_URL+'/create',
       method: 'post',
       crossDomain: true,
       contentType: 'application/json; charset=UTF-8',
@@ -41,7 +41,7 @@ paypal.Button.render({
   },
   onAuthorize: function(data, actions){
     return $.ajax({
-      url: BACKEND_URL+'/execute?validate-only=1',
+      url: BACKEND_URL+'/execute',
       method: 'post',
       crossDomain: true,
       contentType: 'application/json; charset=UTF-8',
