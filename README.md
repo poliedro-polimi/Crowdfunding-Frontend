@@ -6,7 +6,7 @@
 Basato su [Nigiri](https://github.com/ste-camp/nigiri).
 
 
-Il front-end comunica con il [back-end](/poliedro-polimi/Crowdfunding-Backend) per consentire di effettuare donazioni e di prenotare i gadget in modo sicuro.
+Il front-end comunica con il [back-end](https://github.com/poliedro-polimi/Crowdfunding-Backend) per consentire di effettuare donazioni e di prenotare i gadget in modo sicuro.
 
 
 È scritto in PHP, verrà hostato sul servizio di web hosting già utilizzato da PoliEdro ([donate.poliedro-polimi.it](https://donate.poliedro-polimi.it)).
