@@ -1,6 +1,6 @@
 # Front-end per il sito di crowdfunding di PoliEdro 
 
-![Language](https://img.shields.io/badge/language-php-8080c0.svg) ![Python versions](https://img.shields.io/badge/php-%3E%3D%205.4-8080c0.svg) [![license](https://img.shields.io/github/license/poliedro-polimi/Crowdfunding-Frontend.svg)](https://github.com/poliedro-polimi/Crowdfunding-Frontend/blob/master/LICENSE) [![Author Gayness](https://img.shields.io/badge/author%20gayness-100%25-ff69b4.svg)](https://github.com/ste-camp) 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7ef2bfc188e24c2d99d734b754e238e9)](https://www.codacy.com/app/Depau/Crowdfunding-Frontend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=poliedro-polimi/Crowdfunding-Frontend&amp;utm_campaign=Badge_Grade) ![Language](https://img.shields.io/badge/language-php-8080c0.svg) ![Python versions](https://img.shields.io/badge/php-%3E%3D%205.4-8080c0.svg) [![license](https://img.shields.io/github/license/poliedro-polimi/Crowdfunding-Frontend.svg)](https://github.com/poliedro-polimi/Crowdfunding-Frontend/blob/master/LICENSE) [![Author Gayness](https://img.shields.io/badge/author%20gayness-100%25-ff69b4.svg)](https://github.com/ste-camp) 
 
 
 Basato su [Nigiri](https://github.com/ste-camp/nigiri).
