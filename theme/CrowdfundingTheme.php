@@ -39,48 +39,33 @@ READY;
 <link rel="stylesheet" href="https://poliedro-polimi.it/wp-content/themes/passivello/inc/css/passivello.css" crossorigin="anonymous">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" href="'.Url::resource('/assets/css/style.css').'">
-<link rel="stylesheet" href="'.Url::resource('/assets/css/index.css').'">
 
 '.$this->head.'
 </head>
 <body class="'.Controller::camelCaseToUnderscore(Site::getRouter()->getControllerName()).' '
           .Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()).'_action">
-<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-<div class="container">
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
 
-<div class="navbar-header page-scroll">
-<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-<span class="sr-only">Commuta navigazione</span> Menu <i class="fa fa-bars"></i>
-</button>
-<a class="navbar-brand page-scroll" href="https://poliedro-polimi.it">
-'.page_include(dirname(__DIR__).'/assets/imgs/poliedro.svg').'
-</a>
-<div class="navbar-lang">
-<p>'.Html::a(Url::to('', '', false, 'it'),'IT').'
-</p>
-<p>
-'.Html::a(Url::to('', '', false, 'en'),'EN').'
-</p>
-</div>
-</div>
-
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<ul class="nav navbar-nav navbar-right">
-<li class="hidden">
-<a href="#page-top"></a>
-</li>
-<li>
-<a class="page-scroll" href="https://polimipride.it" id="">PoliMi Pride <i class="fa fa-external-link"></i></a>
-</li>
-<li>
-<a class="page-scroll" href="https://poliedro-polimi.it" id="">PoliEdro Home <i class="fa fa-external-link"></i></a>
-</li>
-</ul>
-</div>
-
-</div>
-
-</nav>
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Commuta navigazione</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="https://poliedro-polimi.it">'.page_include(dirname(__DIR__).'/assets/imgs/poliedro.svg').'</a>
+                <div class="navbar-lang">
+                    <p>'.Html::a(Url::to('', '', false, 'it'),'IT').'</p>
+                    <p>'.Html::a(Url::to('', '', false, 'en'),'EN').'</p>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden"><a href="#page-top"></a></li>
+                    <li><a class="page-scroll" href="https://polimipride.it" id="">PoliMi Pride <i class="fa fa-external-link"></i></a></li>
+                    <li><a class="page-scroll" href="https://poliedro-polimi.it" id="">PoliEdro Home <i class="fa fa-external-link"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 '.$this->body.'
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

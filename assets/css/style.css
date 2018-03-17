@@ -84,3 +84,73 @@ nav#mainNav.navbar-custom.menu-open .navbar-toggle {
     transform: translateY(-50%);
     margin: auto;
 }
+
+/** Home Style */
+body.site-controller section#header {
+    height: 100vmin;
+    padding-top: 74px;
+    background-color: #ff0a5c;
+    color: white;
+}
+
+body.site-controller section#header .outer-center {
+    height: 100vmin;
+}
+
+@media screen and (min-width: 768px) {
+    body.site-controller section#header {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
+
+body.site-controller section#header .section-title,
+body.site-controller section#header .section-content {
+    text-align: center;
+}
+
+body.site-controller section#header .section-content {
+    padding-top: 20px;
+}
+
+body.site-controller .section-title {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body.site-controller .section-content {
+    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@keyframes up-down {
+    from {
+        bottom: 5px;
+    }
+    to {
+        bottom: 20px;
+    }
+}
+
+body.site-controller section#header .up-down-arrow {
+    /*font-size: 30px;*/
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 5px;
+    animation-name: up-down;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@media screen and (max-width: 768px) {
+
+    @keyframes up-down {
+        from {
+            bottom: 0px;
+        }
+        to {
+            bottom: 15px;
+        }
+    }
+}
