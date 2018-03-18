@@ -60,18 +60,28 @@ READY;
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden"><a href="#page-top"></a></li>
-                    <li><a class="page-scroll" href="https://polimipride.it" id="">PoliMi Pride <i class="fa fa-external-link"></i></a></li>
-                    <li><a class="page-scroll" href="https://poliedro-polimi.it" id="">PoliEdro Home <i class="fa fa-external-link"></i></a></li>
+                    <li><a class="page-scroll" href="https://poliedro-polimi.it" id="">Chi Siamo <i class="fa fa-external-link"></i></a></li>
+                    <li><a class="page-scroll" href="https://poliedro-polimi.it" id="">PoliMi Pride <i class="fa fa-external-link"></i></a></li>
+                    <li><a class="page-scroll" href="'.Url::to('/').'" id="">PoliMi Pride</a></li>
+                    <li><a class="page-scroll" href="https://poliedro-polimi.it#contatti" id="">Contatti <i class="fa fa-external-link"></i></a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    
+    <section class="jumbotron" id="header">
+        <div class="container">
+            <h1 class="section-title"><span id="countdown"><span class="days">00</span>d&nbsp;&nbsp;<span 
+            class="hours">00</span>h&nbsp;&nbsp;<span class="minutes">00</span>m&nbsp;&nbsp;<span class="seconds">00</span>s</span></h1>
+            <h2 class="section-content">al PoliMi Pride</h2>
+        </div>
+    </section>
 '.$this->body.'
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="'.Url::resource('/assets/js/navbar.js').'"></script>
+<script src="'.Url::resource('/assets/js/site.js').'"></script>
 
 '.$this->script.'
 

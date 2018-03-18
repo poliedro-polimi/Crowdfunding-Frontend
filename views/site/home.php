@@ -1,58 +1,14 @@
 <?php
-
-use nigiri\Site;
 use nigiri\views\Url;
-
-Site::getTheme()->append('<script src="' . Url::resource('/assets/js/index.js') . '"></script>', 'script');
 ?>
-<section class="jumbotron" id="header">
-    <div class="outer-center">
-        <div class="inner-center">
-            <div class="container">
-                <h1 class="section-title">Supporta PoliEdro</h1>
-                <p class="section-content">
-                    Scopri come supportare le nostre iniziative, compreso PoliMi Pride, e ottenere i nostri gadget!
-                </p>
-            </div>
-        </div>
-        <div class="up-down-arrow">
-            <h2><i class="fa fa-chevron-down"></i></h2>
-        </div>
-    </div>
-</section>
-<section class="first-after-header" id="why">
+<section id="how_to_help">
     <div class="container">
-        <h1 class="section-title">How are donations used?</h1>
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <h2>PoliMi Pride</h2>
-            </div>
-            <div class="col-sm-8 col-xs-12">
-                Bla bla blaaaaaaa
-            </div>
-        </div>
+        <h1 class="section-title">Come puoi aiutarci?<br />-</h1>
+        <div class="section-content">Quest&#039;anno l&#039;organizzazione dell&#039;evento, prevede la consegna
+            di alcuni gadget targati &quot;Polimi Pride&quot; in seguito alla donazione di un contributo minimo
+            volontario.</div>
     </div>
 </section>
-<section id="donate">
-    <div class="container">
-        <h1 class="section-title">Decide how much to donate</h1>
-        <h3 class="section-subtitle">Depending on the amount you can request your PoliMi Pride gadgets!</h3>
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                Spillette
-            </div>
-            <div class="col-sm-4 col-xs-12">
-                Spillette +
-                Maglietta
-            </div>
-            <div class="col-sm-4 col-xs-12">
-                Spillette + Maglietta +
-                Sacca
-            </div>
-        </div>
-        <div class="row">
-            <a href="<?= Url::to('donation') ?>">Ottieni i Gadget PoliMi Pride</a>
-        </div>
-    </div>
+<section id="">
+
 </section>
-<section style="height: 3000px"></section>
