@@ -108,11 +108,45 @@ body.site_controller section#how_to_help{
 }
 
 body.site_controller section#how_to_help .section-title{
-    font-size: 30px;
+    font-size: 32px;
 }
 body.site_controller section#how_to_help .section-content{
     color: #B0B0B0;
-    font-size: 1.3em;
+    font-size: 1.5em;
     width: 50%;
     margin: auto;
+}
+
+body.site_controller section#sequence{
+    margin: 100px 0;
+    padding: 30px;
+    height: 30vmin;
+    text-align: center;
+    background-color: #CCCCCC;
+}
+body.site_controller section#sequence div, body.site_controller section#sequence div svg{
+    height: 100%;
+}
+body.site_controller section#sequence div.arrow svg{
+    position: absolute;
+    height: 25%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+body.site_controller section#sequence div#siteurl{
+    position: absolute;
+    height: 32px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px #000000;
 }

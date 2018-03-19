@@ -9,6 +9,12 @@ use nigiri\views\Url;
             volontario.</div>
     </div>
 </section>
-<section id="">
-
+<section id="sequence">
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-2"><div id="siteurl">www.polimipride.it</div></div>
+        <div class="col-xs-1 arrow"><?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/freccia.svg') ?></div>
+        <div class="col-xs-2"><?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/donate_in.svg') ?></div>
+        <div class="col-xs-1 arrow"><?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/freccia.svg') ?></div>
+        <div class="col-xs-2"><?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/donate_out.svg') ?></div>
+    </div>
 </section>
