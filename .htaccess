@@ -1,5 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  
+  RewriteCond %{HTTPS} off
+  RewriteRule ^/?(.*)$ https://%{SERVER_NAME}/$1 [R,QSA,L]
+
+  
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)$ /index.php?show_page=$1 [L,QSA]
