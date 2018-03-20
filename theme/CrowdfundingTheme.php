@@ -44,7 +44,7 @@ READY;
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://poliedro-polimi.it/wp-content/themes/passivello/inc/css/passivello.css" crossorigin="anonymous">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 <link rel="stylesheet" href="'.Url::resource('/assets/css/style.css').'">
 
 '.$this->head.'
@@ -93,10 +93,13 @@ READY;
             </div>
             <div class="col-xs-4 col-xs-offset-2" id="initiative-sign">
                 <h2>PoliEdro x <strong>PoliMi</strong> Pride</h2>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id libero pretium, accumsan justo sit amet, euismod quam. Nullam et malesuada sem. Etiam vel urna ut diam pretium pulvinar ut et nibh. Ut diam ligula, sodales at mauris at, auctor feugiat lacus.</div>
-                <div id="contacts"></div>
+                <div>PoliEdro dal 2012 vuole essere un punto di riferimento per tutti gli studenti del Politecnico di Milano, in particolar modo per gli studenti LGBTI+ (Lesbiche, Gay, Bisex, Trans, ...). Organizziamo eventi di carattere culturale (cineforum, conferenze), oltre ad eventi ricreativi, come divertenti serate tra amici nei locali di Milano. Dal 2017 organizza PoliMi Pride per portare il volto del Politecnico al Milano Pride.</div>
+                <div id="contacts"><a href="https://www.facebook.com/poliedro.polimi" class="extern"><i 
+                class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/poliedro.polimi" class="extern"><i 
+                class="fab fa-instagram"></i></a><a href="https://t.me/PoliEdro" class="extern"><i class="fab fa-telegram-plane"></i></a></div>
             </div>
         </div>
+        <div id="legal"><a href="'.Url::to('site/legal').'">Condizioni di Utilizzo e Privacy Policy</a></div>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

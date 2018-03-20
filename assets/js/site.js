@@ -1,20 +1,18 @@
 var countDownGoal = new Date('2018-06-30 15:00:00');
 
 $(function () {
-
     $(document).on('click', 'a.extern', function(ev){
         ev.preventDefault();
         window.open($(this).attr('href'));
     });
 
-    $(window).scroll(navBarState);
+    $(window).on('scroll load', navBarState);
 
-    togglebtn.click(function () {
+    $("button.navbar-toggle").click(function () {
         setTimeout(function () {
             var navbar = $("nav#mainNav");
-            var togglebtn = $("button.navbar-toggle");
 
-            if (!togglebtn.hasClass("collapsed")) {
+            if (!$(this).hasClass("collapsed")) {
                 navbar.addClass("menu-open");
                 if (!navbar.hasClass("affix"))
                     navbar.addClass("affix");
@@ -23,7 +21,6 @@ $(function () {
             }
         }, 100);
     });
-    navBarState();
 
     //CountDown Code
     updateCountDown();
