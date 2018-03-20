@@ -3,6 +3,7 @@
 namespace site\theme;
 
 use nigiri\Controller;
+use nigiri\exceptions\FileNotFound;
 use nigiri\Site;
 use nigiri\themes\Theme;
 use nigiri\views\Html;
@@ -13,6 +14,12 @@ class CrowdfundingTheme extends Theme {
     public function render()
     {
         $this->title .= (empty($this->title)?'':' - ').Site::getParam('site_name');
+        try {
+            $social = Controller::renderView('social-feed');
+        }
+        catch (FileNotFound $e){
+            $social = '';
+        }
 
         $ready = '';
         if(!empty($this->script_on_ready)){
@@ -77,7 +84,21 @@ READY;
         </div>
     </section>
 '.$this->body.'
-
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-xs-offset-1" id="social-feed">
+                <h3>#polimipride</h3>
+                '.$social.'
+            </div>
+            <div class="col-xs-4 col-xs-offset-2" id="initiative-sign">
+                <h2>PoliEdro x <strong>PoliMi</strong> Pride</h2>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id libero pretium, accumsan justo sit amet, euismod quam. Nullam et malesuada sem. Etiam vel urna ut diam pretium pulvinar ut et nibh. Ut diam ligula, sodales at mauris at, auctor feugiat lacus.</div>
+                <div id="contacts"></div>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
