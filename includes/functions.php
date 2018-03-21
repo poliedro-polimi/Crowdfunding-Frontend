@@ -163,3 +163,21 @@ function render_fatal_error($exception=null) {
     Site::printPage();
     exit();
 }
+
+/**
+ * Localization function, its basically a shortcut for sprintf(gettext())
+ * @param string $str the actual string to translate, with substritution markers as in printf()
+ * @param mixed ... as many other values needed to substitute values into the translated string
+ * @return string
+ */
+function l(){
+    $argc = func_num_args();
+    $argv = func_get_args();
+    if($argc>0){
+        $argv[0] = _($argv[0]);
+        if($argc > 1) {
+            $argv[0] = call_user_func_array('sprintf', $argv);
+        }
+        return $argv[0];
+    }
+}
