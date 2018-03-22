@@ -56,7 +56,7 @@ READY;
 
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Commuta navigazione</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">'.l('Commuta navigazione').'</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="https://poliedro-polimi.it">'.page_include(dirname(__DIR__).'/assets/imgs/poliedro.svg').'</a>
                 <div class="navbar-lang">
@@ -67,10 +67,10 @@ READY;
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden"><a href="#page-top"></a></li>
-                    <li><a class="page-scroll" href="https://poliedro-polimi.it" id="">Chi Siamo <i class="fa fa-external-link"></i></a></li>
-                    <li><a class="page-scroll" href="https://poliedro-polimi.it" id="">PoliMi Pride <i class="fa fa-external-link"></i></a></li>
-                    <li><a class="page-scroll" href="'.Url::to('/').'" id="">PoliMi Pride</a></li>
-                    <li><a class="page-scroll" href="https://poliedro-polimi.it#contatti" id="">Contatti <i class="fa fa-external-link"></i></a></li>
+                    <li><a class="extern" href="https://poliedro-polimi.it" id="">'.l('Chi Siamo').' <i class="fa fa-external-link"></i></a></li>
+                    <li><a class="extern" href="https://poliedro-polimi.it" id="">PoliMi Pride <i class="fa fa-external-link"></i></a></li>
+                    <li><a href="'.Url::to('/').'" id="">'.l('Dona').'</a></li>
+                    <li><a href="https://poliedro-polimi.it#contatti" id="" class="extern">'.l('Contatti').' <i class="fa fa-external-link"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -80,7 +80,7 @@ READY;
         <div class="container">
             <h1 class="section-title"><span id="countdown"><span class="days">00</span>d&nbsp;&nbsp;<span 
             class="hours">00</span>h&nbsp;&nbsp;<span class="minutes">00</span>m&nbsp;&nbsp;<span class="seconds">00</span>s</span></h1>
-            <h2 class="section-content">al PoliMi Pride</h2>
+            <h2 class="section-content">'.l('al PoliMi Pride').'</h2>
         </div>
     </section>
 '.$this->body.'
@@ -93,7 +93,7 @@ READY;
             </div>
             <div class="col-xs-4 col-xs-offset-2" id="initiative-sign">
                 <h2>PoliEdro x <strong>PoliMi</strong> Pride</h2>
-                <div>PoliEdro dal 2012 vuole essere un punto di riferimento per tutti gli studenti del Politecnico di Milano, in particolar modo per gli studenti LGBTI+ (Lesbiche, Gay, Bisex, Trans, ...). Organizziamo eventi di carattere culturale (cineforum, conferenze), oltre ad eventi ricreativi, come divertenti serate tra amici nei locali di Milano. Dal 2017 organizza PoliMi Pride per portare il volto del Politecnico al Milano Pride.</div>
+                <div>'.l('PoliEdro dal 2012 vuole essere un punto di riferimento per tutti gli studenti del Politecnico di Milano, in particolar modo per gli studenti LGBTI+ (Lesbiche, Gay, Bisex, Trans, ...). Organizziamo eventi di carattere culturale (cineforum, conferenze), oltre ad eventi ricreativi, come divertenti serate tra amici nei locali di Milano. Dal 2017 organizza PoliMi Pride per portare il volto del Politecnico al Milano Pride.').'</div>
                 <div id="contacts"><a href="https://www.facebook.com/poliedro.polimi" class="extern"><i 
                 class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/poliedro.polimi" class="extern"><i 
                 class="fab fa-instagram"></i></a><a href="https://t.me/PoliEdro" class="extern"><i class="fab fa-telegram-plane"></i></a></div>
