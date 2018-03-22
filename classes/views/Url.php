@@ -23,8 +23,11 @@ class Url
             if(!empty($language)) {
                 $boom = explode('/', $url);
                 $lang = Site::getParam("languages", []);
-                if (in_array($boom[0], $lang)) {
+                if (in_array($boom[0], $lang)) {//If the first argument is a language code
                     array_shift($boom);
+                    $url = $language.'/'.implode('/', $boom);
+                }
+                else{
                     $url = $language.'/'.implode('/', $boom);
                 }
             }
