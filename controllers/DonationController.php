@@ -13,6 +13,7 @@ use nigiri\Controller;
 class DonationController extends Controller
 {
     public function actionIndex(){
-        return self::renderView("donation/index");
+        $amount = empty($_GET['amount'])?0:(int)$_GET['amount'];
+        return self::renderView("donation/index", ['amount' => $amount]);
     }
 }

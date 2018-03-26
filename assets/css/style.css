@@ -244,3 +244,33 @@ body.site_controller #donate a{
     background-color: #E54060;
     color: #FFFFFF;
 }
+
+body.donation_controller.index_action #donation_amount{
+    margin: 50px auto;
+}
+body.donation_controller.index_action #donation_slider .ui-slider-handle{
+    border-radius: 10px;
+    width: 1.5em;
+    height: 1.5em;
+    top: -.4em;
+    margin-left: -.7em;
+    outline: none;
+}
+body.donation_controller.index_action #donation_slider #handle-label {
+    position: absolute;
+    top: 1.95em;
+    background-color: #EEEEEE;
+    width: 26px;
+    line-height: 25px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #000000;
+}
+body.donation_controller.index_action #donation_slider #handle-label-arrow{
+    position: absolute;
+    top: 1.28em;
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 10px solid #EEEEEE;
+}

@@ -29,7 +29,7 @@ use nigiri\views\Html;
                     <div class="contribution-label"><?= l('Contributo Minimo Volontario') ?>:</div>
                     <div class="reward-amount">2&euro;</div>
                 </div>
-                <a href="<?= Url::to('donation/') ?>"><?= l('Ricevi') ?></a>
+                <a href="<?= Url::to('donation', ['amount'=>2]) ?>"><?= l('Ricevi') ?></a>
             </div>
             <div class="reward-description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id libero pretium, accumsan justo sit amet, euismod quam. Nullam et malesuada sem. Etiam vel urna ut diam pretium pulvinar ut et nibh. Ut diam ligula, sodales at mauris at, auctor feugiat lacus.
@@ -42,7 +42,7 @@ use nigiri\views\Html;
                     <div class="contribution-label"><?= l('Contributo Minimo Volontario') ?>:</div>
                     <div class="reward-amount">5&euro;</div>
                 </div>
-                <a href="<?= Url::to('donation/') ?>"><?= l('Ricevi') ?></a>
+                <a href="<?= Url::to('donation', ['amount'=>5]) ?>"><?= l('Ricevi') ?></a>
             </div>
             <div class="reward-description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id libero pretium, accumsan justo sit amet, euismod quam. Nullam et malesuada sem. Etiam vel urna ut diam pretium pulvinar ut et nibh. Ut diam ligula, sodales at mauris at, auctor feugiat lacus.
@@ -55,7 +55,7 @@ use nigiri\views\Html;
                     <div class="contribution-label"><?= l('Contributo Minimo Volontario') ?>:</div>
                     <div class="reward-amount">10&euro;</div>
                 </div>
-                <a href="<?= Url::to('donation/') ?>"><?= l('Ricevi') ?></a>
+                <a href="<?= Url::to('donation', ['amount' => 10]) ?>"><?= l('Ricevi') ?></a>
             </div>
             <div class="reward-description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id libero pretium, accumsan justo sit amet, euismod quam. Nullam et malesuada sem. Etiam vel urna ut diam pretium pulvinar ut et nibh. Ut diam ligula, sodales at mauris at, auctor feugiat lacus.
