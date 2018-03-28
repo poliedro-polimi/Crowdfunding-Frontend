@@ -329,8 +329,8 @@ body.donation_controller.index_action #donation_data .form-inline .form-group:fi
 body.donation_controller.index_action #donation_data .form-inline .form-group:last-child{
     margin-right: 0;
 }
-body.donation_controller.index_action #donation_data .form-inline label,
-body.donation_controller.index_action #donation_data .form-inline input:not([type=radio]):not([type=checkbox]):not(fieldset *){
+body.donation_controller.index_action #general_data .form-inline label,
+body.donation_controller.index_action #general_data .form-inline input:not([type=radio]):not([type=checkbox]){
     display: block;
     width: 350px;
 }
@@ -352,11 +352,19 @@ body.donation_controller.index_action #donation_data .form-inline .form-group.qt
     width: 50px;
 }
 
-body.donation_controller.index_action #donation_data #additional_data,
+body.donation_controller.index_action #donation_data #tshirt_data,
 body.donation_controller.index_action #donation_data #location_data{
     display: none;
 }
-
-body.donation_controller.index_action #donation_data .tshirt-chooser img{
+body.donation_controller.index_action #tshirt_data .tshirt_chooser{
+    text-align: left;
+    border: 1px solid #EEEEEE;
+    border-radius: 3px;
+    margin: 0 10px 10px 0;
+}
+body.donation_controller.index_action #tshirt_data .tshirt_chooser img{
     width: 150px;
+}
+body.donation_controller.index_action #donation_data #pay-button{
+    text-align: center;
 }
