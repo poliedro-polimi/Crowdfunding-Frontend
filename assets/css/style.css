@@ -250,6 +250,7 @@ body.donation_controller.index_action #donation_amount{
 }
 body.donation_controller.index_action #donation_slider .ui-slider-handle{
     border-radius: 10px;
+    border: 1px solid #000000;
     width: 1.5em;
     height: 1.5em;
     top: -.4em;
@@ -258,7 +259,8 @@ body.donation_controller.index_action #donation_slider .ui-slider-handle{
 }
 body.donation_controller.index_action #donation_slider #handle-label {
     position: absolute;
-    top: 1.95em;
+    top: 2.2em;
+    margin-left: -.2em;
     background-color: #EEEEEE;
     width: 26px;
     line-height: 25px;
@@ -267,10 +269,94 @@ body.donation_controller.index_action #donation_slider #handle-label {
 }
 body.donation_controller.index_action #donation_slider #handle-label-arrow{
     position: absolute;
-    top: 1.28em;
+    top: -.65em;
     width: 0;
     height: 0;
     border-left: 13px solid transparent;
     border-right: 13px solid transparent;
     border-bottom: 10px solid #EEEEEE;
+}
+body.donation_controller.index_action #donation_objectives{
+    position: relative;
+    height: 170px;
+}
+body.donation_controller.index_action .donation_objective{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    transform: translate(-50%, 0);
+}
+body.donation_controller.index_action .donation_objective .objective_arrow{
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 12px solid #EEEEEE;
+}
+body.donation_controller.index_action .donation_objective#obj1{
+    left: 13.3%;
+}
+body.donation_controller.index_action .donation_objective#obj2{
+    left: 33.3%;
+}
+body.donation_controller.index_action .donation_objective#obj3{
+    left: 66.6%;
+}
+body.donation_controller.index_action #donation_data{
+    box-shadow: 1px 1px 3px #000000;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 120px auto 80px auto;
+}
+body.donation_controller.index_action #donation_data input,
+body.donation_controller.index_action #donation_data select{
+    background-color: #F2F2F2;
+}
+body.donation_controller.index_action #donation_data .form-inline .form-group{
+    margin: 0 20px 10px 20px;
+}
+body.donation_controller.index_action #donation_data .form-inline .form-group:first-child{
+    margin-left: 0;
+}
+body.donation_controller.index_action #donation_data .form-inline .form-group:last-child{
+    margin-right: 0;
+}
+body.donation_controller.index_action #donation_data .form-inline label,
+body.donation_controller.index_action #donation_data .form-inline input:not([type=radio]):not([type=checkbox]):not(fieldset *){
+    display: block;
+    width: 350px;
+}
+body.donation_controller.index_action #donation_data .form-inline input#email,
+body.donation_controller.index_action #donation_data .form-inline input#email2{
+    width: 430px;
+}
+body.donation_controller.index_action #donation_data input#tel{
+    width: 300px;
+}
+body.donation_controller.index_action #donation_data input#amount{
+    width: 75px;
+}
+body.donation_controller.index_action #donation_data .form-inline .qty{
+    vertical-align: unset;/* Don't know why but this is needed to actually align in the middle */
+}
+body.donation_controller.index_action #donation_data .form-inline .form-group.qty input{
+    display: inherit;
+    width: 50px;
+}
+
+body.donation_controller.index_action #donation_data #additional_data,
+body.donation_controller.index_action #donation_data #location_data{
+    display: none;
+}
+
+body.donation_controller.index_action #donation_data .tshirt-chooser img{
+    width: 150px;
 }
