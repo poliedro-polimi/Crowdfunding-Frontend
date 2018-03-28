@@ -69,8 +69,8 @@ READY;
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden"><a href="#page-top"></a></li>
                     <li><a class="extern" href="https://poliedro-polimi.it" id="">'.l('Chi Siamo').' <i class="fa fa-external-link"></i></a></li>
-                    <li><a class="extern" href="https://poliedro-polimi.it" id="">PoliMi Pride <i class="fa fa-external-link"></i></a></li>
-                    <li><a href="'.Url::to('/').'" id="">'.l('Dona').'</a></li>
+                    <li><a class="extern" href="https://polimipride.it" id="">PoliMi Pride <i class="fa fa-external-link"></i></a></li>
+                    <li><a href="'.Url::to('donation').'" id="">'.l('Dona').'</a></li>
                     <li><a href="https://poliedro-polimi.it#contatti" id="" class="extern">'.l('Contatti').' <i class="fa fa-external-link"></i></a></li>
                 </ul>
             </div>
