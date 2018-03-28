@@ -22,7 +22,7 @@ class Router{
             $this->page = Site::getParam('default_page');
         }
 
-        $boom = explode('/', $this->page);
+        $boom = array_filter(explode('/', $this->page));
 
         $lang = Site::getParam("languages", []);
         if(in_array($boom[0], $lang)){
