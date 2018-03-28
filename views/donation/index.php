@@ -13,7 +13,7 @@ define('REWARD_THRESHOLD2', 5);
 define('REWARD_THRESHOLD3', 10);
 ?>
 <div class="container">
-<h1>Donazione</h1>
+<h1><?= Html::escape(l('Donazioni')); ?></h1>
 
 <section id="donation_amount">
     <div id="donation_objectives">
@@ -34,32 +34,32 @@ define('REWARD_THRESHOLD3', 10);
     <div id="general_data">
         <div class="form-inline">
             <div class="form-group">
-                <label for="nome"><?= l('Nome'); ?>:</label>
+                <label for="nome" class="control-label"><?= l('Nome'); ?>:</label>
                 <input type="text" name="nome" id="nome" class="form-control" />
             </div>
             <div class="form-group">
-                <label for="cognome"><?= l('Cognome'); ?>:</label>
+                <label for="cognome" class="control-label"><?= l('Cognome'); ?>:</label>
                 <input type="text" name="cognome" id="cognome" class="form-control" />
             </div>
         </div>
         <div class="form-inline">
             <div class="form-group">
-                <label for="email"><?= l('Email'); ?>:</label>
+                <label for="email" class="control-label"><?= l('Email'); ?>:</label>
                 <input type="email" name="email" id="email" class="form-control" />
             </div>
             <div class="form-group">
-                <label for="email2"><?= l('Conferma Email'); ?>:</label>
+                <label for="email2" class="control-label"><?= l('Conferma Email'); ?>:</label>
                 <input type="email" name="email2" id="email2" class="form-control" />
             </div>
         </div>
         <div class="form-group">
-            <label for="tel"><?= l('Numero di Telefono') ?>:</label>
+            <label for="tel" class="control-label"><?= l('Numero di Telefono') ?>:</label>
             <input type="tel" name="tel" id="tel" class="form-control">
             <div class="help-block"><?= Html::escape(l('Sarà utilizzato solo in caso di emergenza o se non riuscissimo a contattarti in nessun altro modo')) ?></div>
         </div>
         <div class="form-inline">
             <div class="form-group">
-                <label for="amount"><?= l('Ammontare della Donazione'); ?>:</label>
+                <label for="amount" class="control-label"><?= l('Ammontare della Donazione'); ?>:</label>
                 <div class="input-group">
                     <input type="number" name="amount" id="amount" class="form-control" value="<?= $amount ?>" />
                     <div class="input-group-addon">&euro;</div>
@@ -69,21 +69,22 @@ define('REWARD_THRESHOLD3', 10);
     </div>
     <fieldset>
         <legend><?= l('Ricompensa') ?></legend>
-        <p>Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti pacchetti di gadget:</p>
+        <p><?= Html::escape(l('Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti pacchetti
+         di gadget')); ?>:</p>
         <div class="radio">
             <label>
                 <input type="radio" name="chosenReward" id="reward0" value="0" checked="checked" />
-                Non desidero alcuna ricompensa
+                <?= Html::escape(l('Non desidero alcuna ricompensa')); ?>
             </label>
         </div>
         <div class="form-inline">
             <label class="radio-inline">
                 <input type="radio" name="chosenReward" id="reward1" value="1" disabled="disabled"
                        data-threshold="<?= REWARD_THRESHOLD1 ?>" />
-                Adesivi e Spilla PoliMi Pride (donazione minima <?= REWARD_THRESHOLD1 ?>&euro;)
+                <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)', REWARD_THRESHOLD1)); ?>
             </label>
             <div class="form-group qty">
-                <label class="sr-only" for="qty1">Quantità</label>
+                <label class="sr-only" for="qty1"><?= Html::escape(l('Quantità')); ?></label>
                 <div class="input-group">
                     <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
                     <input type="number" name="qty1" id="qty1" class="form-control" value="0" />
@@ -94,10 +95,11 @@ define('REWARD_THRESHOLD3', 10);
             <label class="radio-inline">
                 <input type="radio" name="chosenReward" id="reward2" value="2" disabled="disabled"
                        data-threshold="<?= REWARD_THRESHOLD2 ?>" />
-                Adesivi, Spilla e Shopper PoliMi Pride (donazione minima <?= REWARD_THRESHOLD2 ?>&euro;)
+                <?= Html::escape(l('Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)',
+                REWARD_THRESHOLD2)); ?>
             </label>
             <div class="form-group qty">
-                <label class="sr-only" for="qty2">Quantità</label>
+                <label class="sr-only" for="qty2"><?= Html::escape(l('Quantità')); ?></label>
                 <div class="input-group">
                     <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
                     <input type="number" name="qty2" id="qty2" class="form-control" value="0" />
@@ -107,11 +109,10 @@ define('REWARD_THRESHOLD3', 10);
         <div class="form-inline">
             <label class="radio-inline">
                 <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled" data-threshold="<?= REWARD_THRESHOLD3 ?>" />
-                Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima <?=
-                REWARD_THRESHOLD3 ?>&euro;)
+                <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima %s€)', REWARD_THRESHOLD3)); ?>
             </label>
             <div class="form-group qty">
-                <label class="sr-only" for="qty3">Quantità</label>
+                <label class="sr-only" for="qty3"><?= Html::escape(l('Quantità')); ?></label>
                 <div class="input-group">
                     <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
                     <input type="number" name="qty3" id="qty3" class="form-control" value="0" />
@@ -119,22 +120,23 @@ define('REWARD_THRESHOLD3', 10);
             </div>
         </div>
         <fieldset id="tshirt_data">
-            <legend>Scegli la tua T-Shirt</legend>
+            <legend><?= Html::escape(l('Scegli la tua T-Shirt')); ?></legend>
             <div class="tshirt_chooser col-xs-3">
                 <div class="radio">
                     <label>
                         <input type="radio" name="shirt-type" value="t-shirt" />
-                        T-shirt classica<br /><img src="https://ae01.alicdn.com/kf/HTB1FnwySFXXXXa0XVXXq6xXFXXXo/Men-s-Leisure-Rainbow-Sheep-Of-The-Family-LGBT-T-shirt-White-Short-Sleeve-Custom-T.jpg_640x640.jpg" />
+                        <?= Html::escape(l('T-shirt classica')); ?><br /><img src="https://ae01.alicdn
+                        .com/kf/HTB1FnwySFXXXXa0XVXXq6xXFXXXo/Men-s-Leisure-Rainbow-Sheep-Of-The-Family-LGBT-T-shirt-White-Short-Sleeve-Custom-T.jpg_640x640.jpg" />
                     </label>
                 </div>
                 <div class="radio">
                     <label>
                         <input type="radio" name="shirt-type" value="tank-top" />
-                        Canotta<br /><img src="https://www.pianetaoutlet.it/59072-large_default/adidas-trefoil-tank-canotta-uomo-nera.jpg" />
+                        <?= Html::escape(l('Canotta')); ?><br /><img src="https://www.pianetaoutlet.it/59072-large_default/adidas-trefoil-tank-canotta-uomo-nera.jpg" />
                     </label>
                 </div>
                 <div class="form-group">
-                    <label for="shirt-size">Scegli la taglia:</label>
+                    <label for="shirt-size"><?= Html::escape(l('Scegli la taglia')); ?>:</label>
                     <select class="form-control" name="shirt-size" id="shirt-size">
                         <option value="XS">XS</option>
                         <option value="S">S</option>
@@ -147,14 +149,12 @@ define('REWARD_THRESHOLD3', 10);
             </div>
         </fieldset>
         <fieldset id="location_data">
-            <legend>Indica dove preferisci ritirare le tue ricompense</legend>
-            <p>Per ragioni organizzative non possiamo spedire gli oggetti a un tuo domicilio, li
+            <legend><?= Html::escape(l('Indica dove preferisci ritirare le tue ricompense')); ?></legend>
+            <p><?= Html::escape(l('Per ragioni organizzative non possiamo spedire gli oggetti a un tuo domicilio, li
                 consegneremo invece personalmente presso i nostri stand nelle sedi del Politecnico organizzati
-                durante il mese di Giugno</p>
+                durante il mese di Giugno')); ?></p>
             <div class="radio">
-                <label>
-                    <input type="radio" name="location" value="leonardo" />Leonardo
-                </label>
+                <label><input type="radio" name="location" value="leonardo" />Leonardo</label>
             </div>
             <div class="radio">
                 <label><input type="radio" name="location" value="bovisa" />Bovisa</label>
@@ -162,113 +162,23 @@ define('REWARD_THRESHOLD3', 10);
         </fieldset>
     </fieldset>
     <div class="form-group">
-        <label for="notes">Note Addizionali</label>
+        <label for="notes"><?= Html::escape(l('Note Addizionali')) ?></label>
         <textarea class="form-control" rows="3" id="notes"></textarea>
     </div>
     <div id="pay-button"></div>
 </section>
 </div>
-
-<?php
-Site::getTheme()->append('
-
-$("#donation_slider").slider({
-    min: 0,
-    max: 15,
-    value: '.$amount.',
-    slide: function(ev, ui){
-        amountChange(ui.value);
+<script type="application/javascript">
+    //Variables to be referenced in payment.js
+    var initialAmount = <?= $amount ?>;
+    var payPalLocale = <?php
+    switch(Site::getRouter()->getRequestedLanguage()){
+        case 'it':
+            echo json_encode('it_IT');
+            break;
+        case 'en':
+            echo json_encode('en_GB');
+            break;
     }
-});
-
-$("#amount").change(function(){
-    amountChange($(this).val());
-});
-
-amountChange('.$amount.');
-
-$("input[name=chosenReward]").change(function(){
-    if($("#reward3").prop("checked")){
-        $("#tshirt_data").show().find("input select").prop("disabled", false);
-    }
-    else{
-        $("#tshirt_data").hide().find("input select").prop("disabled", true);        
-    }
-    
-    if(!$("#reward0").prop("checked")) {
-        $("#location_data").show().find("input select").prop("disabled", false);
-    }
-    else{
-        $("#location_data").hide().find("input select").prop("disabled", true);
-    }
-    
-    $(".qty input").val(0);
-    
-    var $t = $(this);
-    var $qty = $t.closest(".form-inline").find(".qty input");
-    if($qty.length>0) {
-        $qty.val(Math.floor($("#amount").val() / $t.data("threshold")));
-        $qty.change();
-    }
-});
-
-$(".qty input").change(function(ev){
-    var $t = $(this);
-    var ths = $t.closest(".form-inline").find("input[type=radio]").data("threshold");
-    var qty = $t.val();
-    var amt = $("#amount").val();
-    
-    if(ths*qty > amt){
-        $t.val(Math.floor(amt / ths));
-        $t.closest(".qty").addClass("has-warning");
-        setTimeout(function(){$t.closest(".qty").removeClass("has-warning");}, 2000);
-    }
-    
-    if($t.attr("id")=="qty3"){
-        tshirtSection($t.val());
-    }
-});
-
-function tshirtSection(qty){
-    var currentSections = $(".tshirt_chooser");
-    var $copy;
-    var diff = qty - currentSections.length;
-    
-    if(diff > 0){
-        for(var i = 0; i < diff; i++){
-            $copy = currentSections.first().clone();
-            $copy.find("input[type=radio]").attr("name", "shirt-type"+(currentSections.length+i)).prop("checked", false);
-            $copy.find("option").prop("selected", false);
-            $copy.appendTo("#tshirt_data");
-        }
-    }
-    else if(diff < 0){
-        currentSections.slice(diff).remove();
-    }
-}
-
-function amountChange(value) {
-    $("#handle-label span").text(value+"€");
-    $("#amount").val(value);
-    $("#donation_slider").slider("value", value);
-    $(".donation_objective").each(function(){
-        if($(this).data("threshold")<=value){
-            //Do things
-        }
-    });
-    $("input[name=chosenReward]").each(function(){
-        var $t=$(this);
-        var thr = $t.data("threshold") || 0;
-        if(thr<=value){
-            $t.prop("disabled", false);
-        }
-        else{
-            $t.prop("disabled", true);
-            if($t.prop("checked")){
-                $t.prop("checked", false);
-            }
-        }
-    });
-}
-
-', 'script_on_ready');
+    ?>;
+</script>
