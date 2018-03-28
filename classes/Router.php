@@ -27,6 +27,9 @@ class Router{
         $lang = Site::getParam("languages", []);
         if(in_array($boom[0], $lang)){
             $this->language = array_shift($boom);
+            if(empty($boom)){//Home page with a language specified
+                $boom = array_filter(explode('/', Site::getParam('default_page')));
+            }
         }
         else{
             $this->language = Site::getParam('default_language');
