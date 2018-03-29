@@ -310,11 +310,17 @@ body.donation_controller.index_action .donation_objective#obj2{
 body.donation_controller.index_action .donation_objective#obj3{
     left: 66.6%;
 }
+
+body.donation_controller.index_action #error_box{
+    text-align: center;
+    margin-top: 120px;
+}
+
 body.donation_controller.index_action #donation_data{
     box-shadow: 1px 1px 3px #000000;
     border-radius: 5px;
     padding: 20px;
-    margin: 120px auto 80px auto;
+    margin: 0 auto 80px auto;
 }
 body.donation_controller.index_action #donation_data input,
 body.donation_controller.index_action #donation_data select{
@@ -343,6 +349,11 @@ body.donation_controller.index_action #donation_data input#tel{
 }
 body.donation_controller.index_action #donation_data input#amount{
     width: 75px;
+}
+
+body.donation_controller.index_action #donation_data label.input_disabled{
+    cursor: not-allowed;
+    color: #AAAAAA;
 }
 body.donation_controller.index_action #donation_data .form-inline .qty{
     vertical-align: unset;/* Don't know why but this is needed to actually align in the middle */
