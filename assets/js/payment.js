@@ -43,6 +43,8 @@ $(function(){
             $qty.val(maxQty);
             $qty.change();
         }
+
+        setRequiredFields();
     });
 
     $(".qty input").change(function(ev){
@@ -179,6 +181,22 @@ function amountChange(value) {
         }
     });
     $(".qty input:not(:disabled)").change();
+}
+
+function setRequiredFields(){
+    var dynamicRequire = $("#nome, #cognome, #email, #tel");
+
+    if($("#reward0").prop("checked")){
+        dynamicRequire.siblings("label").find(".required").remove();
+    }
+    else{
+        dynamicRequire.each(function(){
+            var $label = $(this).siblings("label");
+            var content = $label.html();
+            var colon = content.indexOf(":");
+            $label.html(content.slice(0, colon)+'<span class="required">&nbsp;*</span>'+content.slice(colon));
+        });
+    }
 }
 
 function build_pay_data(){

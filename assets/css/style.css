@@ -326,6 +326,13 @@ body.donation_controller.index_action #donation_data input,
 body.donation_controller.index_action #donation_data select{
     background-color: #F2F2F2;
 }
+body.donation_controller.index_action #donation_data #required_legend{
+    color: #CC1100;
+    text-align: right;
+}
+body.donation_controller.index_action #donation_data .required{
+    color: #CC1100;
+}
 body.donation_controller.index_action #donation_data .form-inline .form-group{
     margin: 0 20px 10px 20px;
 }

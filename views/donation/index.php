@@ -31,6 +31,7 @@ define('REWARD_THRESHOLD3', 10);
 </section>
     <section id="error_box" class="text-danger"></section>
     <section id="donation_data">
+        <div id="required_legend"><?= Html::escape(l("I campi segnati con * sono obbligatori")); ?></div>
         <div id="general_data">
             <div class="form-inline">
                 <div class="form-group">
@@ -57,7 +58,8 @@ define('REWARD_THRESHOLD3', 10);
             </div>
             <div class="form-inline">
                 <div class="form-group">
-                    <label for="amount" class="control-label"><?= l('Ammontare della Donazione'); ?>:</label>
+                    <label for="amount" class="control-label"><?= l('Ammontare della Donazione'); ?><span
+                          class="required">&nbsp;*</span>:</label>
                     <div class="input-group">
                         <input type="number" name="amount" id="amount" class="form-control" value="<?= $amount ?>" />
                         <div class="input-group-addon">&euro;</div>
@@ -137,7 +139,8 @@ define('REWARD_THRESHOLD3', 10);
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="shirt-size"><?= Html::escape(l('Scegli la taglia')); ?>:</label>
+                        <label for="shirt-size"><?= Html::escape(l('Scegli la taglia')); ?><span
+                              class="required">&nbsp;*</span>:</label>
                         <select class="form-control" name="shirt-size" id="shirt-size">
                             <option value="XS">XS</option>
                             <option value="S">S</option>
@@ -153,7 +156,7 @@ define('REWARD_THRESHOLD3', 10);
                 <legend><?= Html::escape(l('Indica dove preferisci ritirare le tue ricompense')); ?></legend>
                 <p><?= Html::escape(l('Per ragioni organizzative non possiamo spedire gli oggetti a un tuo domicilio, li
                     consegneremo invece personalmente presso i nostri stand nelle sedi del Politecnico organizzati
-                    durante il mese di Giugno')); ?></p>
+                    durante il mese di Giugno')); ?><span class="required">&nbsp;*</span></p>
                 <div class="radio">
                     <label><input type="radio" name="location" value="leonardo" />Leonardo</label>
                 </div>
