@@ -37,8 +37,10 @@ $(function(){
         var $t = $(this);
         var $qty = $t.closest(".form-inline").find(".qty input");
         if($qty.length>0) {
+            var maxQty = Math.floor($("#amount").val() / $t.data("threshold"));
             $qty.prop("disabled", false);
-            $qty.val(Math.floor($("#amount").val() / $t.data("threshold")));
+            $qty.attr("max", maxQty);
+            $qty.val(maxQty);
             $qty.change();
         }
     });
@@ -60,8 +62,6 @@ $(function(){
         }
     });
 
-    $("#email, #email2").change(validate_emails);
-
     paypal.Button.render({
         env: 'sandbox',
         locale: payPalLocale,
@@ -72,51 +72,28 @@ $(function(){
             shape: 'rect',
             label: 'paypal'
         },
-        payment: function(data, actions){
-            return new paypal.Promise(function(resolve, reject) {
-                $.ajax({
-                    lang: backendLang,
-                    url: BACKEND_URL + '/create',
-                    method: 'post',
-                    crossDomain: true,
-                    contentType: 'application/json; charset=UTF-8',
-                    dataType: 'json',
-                    jsonp: false,
-                    data: JSON.stringify(build_pay_data())
-                }).done(function (data, tstatus, xhr) {
-                    resolve(data.paymentID);
-                }).fail(function(xhr, tstatus, error){
-                    var resp = JSON.parse(xhr.responseText);
-                    backendErrorHandler(resp);
-                    reject(new Error(resp.message));
-                });
-            });
+        validate: function(actions) {
+            form_is_valid()?actions.enable():actions.disable();
 
-            /*
-            if(form_is_valid()) {
-                return $.ajax({
-                    lang: backendLang,
-                    url: BACKEND_URL + '/create',
-                    method: 'post',
-                    crossDomain: true,
-                    contentType: 'application/json; charset=UTF-8',
-                    dataType: 'json',
-                    jsonp: false,
-                    data: JSON.stringify(build_pay_data())
-                }).then(function (data, tstatus, xhr) {
-                    return data.paymentID;
-                }, function(xhr, tstatus, error){
-                    throw JSON.parse(xhr.responseText);
-                });
-            }
-            else{
-                if(backendLang=='it'){
-                    throw {message: "Verifica gli errori nel modulo di donazione"};
-                }
-                else if (backendLang=='en'){
-                    throw {message: "Check the errors in the form"};
-                }
-            }*/
+            onFormChangedValue(actions);
+        },
+        payment: function(resolve, reject){
+            return $.ajax({
+                lang: backendLang,
+                url: BACKEND_URL + '/create',
+                method: 'post',
+                crossDomain: true,
+                contentType: 'application/json; charset=UTF-8',
+                dataType: 'json',
+                jsonp: false,
+                data: JSON.stringify(build_pay_data())
+            }).done(function (data) {
+                resolve(data.paymentID);
+            }).fail(function(xhr){
+                var resp = JSON.parse(xhr.responseText);
+                backendErrorHandler(resp);
+                reject(new Error());
+            });
         },
         onAuthorize: function(data, actions){
             return $.ajax({
@@ -134,7 +111,8 @@ $(function(){
             }).then(function(){
                 alert("Success!!!");
             }, function(xhr){
-                throw JSON.parse(xhr.responseText);
+                var resp = JSON.parse(xhr.responseText);
+                backendErrorHandler(resp);
             });
         },
         onCancel: function(data, actions){
@@ -142,17 +120,18 @@ $(function(){
             console.log(actions);
         },
         onError: function(data, actions){
-            console.log(typeof data);
             console.log(data);
-            console.log(data.message);
-            backendErrorHandler(data);
+            console.log(actions);
         }
     }, '#pay-button');
 
 });
 
-function backendErrorHandler(response){
-    $("#error_box").text(response.message);
+function onFormChangedValue(actions){
+    $('#donation_data input, #donation_data select').change(function(){
+        //Using setTimeout to give time to other event handlers on the fields to do their job
+        setTimeout(function(){form_is_valid()?actions.enable():actions.disable()}, 10);
+    });
 }
 
 function tshirtSection(qty){
@@ -233,7 +212,7 @@ function build_shirts_data() {
         var $t = $(this);
         output.push({
             size: $t.find('select[name=shirt-size]').val(),
-            type: $t.find('input[name=shirt-type]').val()
+            type: $t.find('input:checked').val()
         });
     });
 
@@ -242,33 +221,47 @@ function build_shirts_data() {
 
 function form_is_valid(){
     var ret = true;
-    var $nome = $('#nome');
-    if($.trim($nome.val())==''){
-        $nome.closest('.form-group').addClass("has-error");
-        ret = ret && false;
+    var ret2;
+
+    if(!$('#reward0').prop("checked")) {//General info is optional if there is no gadget to order
+        var $nome = $('#nome');
+        if ($.trim($nome.val()) == '') {
+            $nome.closest('.form-group').addClass("has-error");
+            ret = ret && false;
+        }
+        else {
+            $nome.closest('.form-group').removeClass("has-error");
+        }
+
+        var $cognome = $('#cognome');
+        if ($.trim($cognome.val()) == '') {
+            $cognome.closest('.form-group').addClass("has-error");
+            ret = ret && false;
+        }
+        else {
+            $cognome.closest('.form-group').removeClass("has-error");
+        }
+
+        var $tel = $('#tel');
+        if ($.trim($tel.val()) == '') {
+            $tel.closest('.form-group').addClass("has-error");
+            ret = ret && false;
+        }
+        else {
+            $tel.closest('.form-group').removeClass("has-error");
+        }
+
+        var $email = $('#email');
+        if ($.trim($email.val()) == '') {
+            $email.closest('.form-group').addClass("has-error");
+            ret = ret && false;
+        }
+        else {
+            $email.closest('.form-group').removeClass("has-error");
+        }
     }
     else{
-        $nome.closest('.form-group').removeClass("has-error");
-    }
-
-    var $cognome = $('#cognome');
-    if($.trim($cognome.val())==''){
-        $cognome.closest('.form-group').addClass("has-error");
-        ret = ret && false;
-    }
-    else{
-        $cognome.closest('.form-group').removeClass("has-error");
-    }
-
-    ret = validate_emails() && ret;
-
-    var $tel = $('#tel');
-    if($.trim($tel.val())==''){
-        $tel.closest('.form-group').addClass("has-error");
-        ret = ret && false;
-    }
-    else{
-        $tel.closest('.form-group').removeClass("has-error");
+        $("#general_data input").closest('.form-group').removeClass("has-error");
     }
 
     var $amt = $('#amount');
@@ -280,24 +273,10 @@ function form_is_valid(){
         $amt.closest('.form-group').removeClass("has-error");
     }
 
-    ret = validate_rewards() && ret;
+    ret2 = validate_rewards();
+    ret = ret && ret2;
 
     return ret;
-}
-
-function validate_emails(){
-    var $e1 = $("#email");
-    var $e2 = $("#email2");
-    if($e1.val()==$e2.val() && $e1.val()!=''){
-        $e1.closest(".form-group").removeClass("has-error").addClass("has-success");
-        $e2.closest(".form-group").removeClass("has-error").addClass("has-success");
-        return true;
-    }
-    else{
-        $e1.closest(".form-group").removeClass("has-success").addClass("has-error");
-        $e2.closest(".form-group").removeClass("has-success").addClass("has-error");
-        return false;
-    }
 }
 
 function validate_rewards(){
@@ -322,12 +301,15 @@ function validate_rewards(){
     }
 
     var ret = true;
+    var ret2;
     switch($selected.attr('id')){
         case 'reward3':
-            ret = ret && validate_tshirts();
+            ret2 = validate_tshirts();//This is to avoid short-circuir behaviour in &&
+            ret = ret && ret2;
         case 'reward1':
         case 'reward2':
-            ret = ret && validate_location();
+            ret2 = validate_location();
+            ret = ret && ret2;
             break;
     }
 
@@ -357,4 +339,8 @@ function validate_location(){
         $('input[name=location]').closest(".form-group").removeClass("has-error");
         return true;
     }
+}
+
+function backendErrorHandler(response){
+    $("#error_box").text(response.message);
 }

@@ -340,8 +340,7 @@ body.donation_controller.index_action #general_data .form-inline input:not([type
     display: block;
     width: 350px;
 }
-body.donation_controller.index_action #donation_data .form-inline input#email,
-body.donation_controller.index_action #donation_data .form-inline input#email2{
+body.donation_controller.index_action #donation_data .form-inline input#email {
     width: 430px;
 }
 body.donation_controller.index_action #donation_data input#tel{

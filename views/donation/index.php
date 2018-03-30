@@ -46,16 +46,14 @@ define('REWARD_THRESHOLD3', 10);
                 <div class="form-group">
                     <label for="email" class="control-label"><?= l('Email'); ?>:</label>
                     <input type="email" name="email" id="email" class="form-control" />
+                    <div class="help-block"><?= Html::escape(l('Sarà utilizzata per tutte le comunicazioni sulla tua 
+                    donazione')); ?></div>
                 </div>
                 <div class="form-group">
-                    <label for="email2" class="control-label"><?= l('Conferma Email'); ?>:</label>
-                    <input type="email" name="email2" id="email2" class="form-control" />
+                    <label for="tel" class="control-label"><?= l('Numero di Telefono') ?>:</label>
+                    <input type="tel" name="tel" id="tel" class="form-control">
+                    <div class="help-block"><?= Html::escape(l('Sarà utilizzato solo in caso non riuscissimo a contattarti per email')) ?></div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="tel" class="control-label"><?= l('Numero di Telefono') ?>:</label>
-                <input type="tel" name="tel" id="tel" class="form-control">
-                <div class="help-block"><?= Html::escape(l('Sarà utilizzato solo in caso di emergenza o se non riuscissimo a contattarti in nessun altro modo')) ?></div>
             </div>
             <div class="form-inline">
                 <div class="form-group">
@@ -87,7 +85,8 @@ define('REWARD_THRESHOLD3', 10);
                     <label class="sr-only" for="qty1"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
                         <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
-                        <input type="number" name="qty1" id="qty1" disabled="disabled" class="form-control" value="0" />
+                        <input type="number" name="qty1" id="qty1" disabled="disabled" class="form-control" value="0"
+                       min="0" />
                     </div>
                 </div>
             </div>
@@ -102,7 +101,8 @@ define('REWARD_THRESHOLD3', 10);
                     <label class="sr-only" for="qty2"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
                         <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
-                        <input type="number" name="qty2" id="qty2" disabled="disabled" class="form-control" value="0" />
+                        <input type="number" name="qty2" id="qty2" disabled="disabled" class="form-control" value="0"
+                       min="0" />
                     </div>
                 </div>
             </div>
@@ -115,7 +115,8 @@ define('REWARD_THRESHOLD3', 10);
                     <label class="sr-only" for="qty3"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
                         <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
-                        <input type="number" name="qty3" id="qty3" class="form-control" disabled="disabled" value="0" />
+                        <input type="number" name="qty3" id="qty3" class="form-control" disabled="disabled" value="0"
+                       min="0" />
                     </div>
                 </div>
             </div>
