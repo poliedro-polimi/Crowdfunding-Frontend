@@ -189,4 +189,9 @@ define('REWARD_THRESHOLD3', 10);
             break;
     }
     ?>;
+    var confirm_url = <?= json_encode(Url::to("donation/confirmation")); ?>;
+
+    var validation_error_msg = <?= json_encode(l('Verifica i dati inseriti!')); ?>;
+    var paypal_error_msg = <?= json_encode(l('Si è verificato un errore in PayPal. Riprova')); ?>;
+    var app_error_msg = <?= json_encode('Si è verificato un errore nel nostro sistema. Riprova') ?>;
 </script>

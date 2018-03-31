@@ -16,4 +16,8 @@ class DonationController extends Controller
         $amount = empty($_GET['amount'])?0:(int)$_GET['amount'];
         return self::renderView("donation/index", ['amount' => $amount]);
     }
+
+    public function actionConfirmation() {
+        return self::renderView("donation/confirmation");
+    }
 }

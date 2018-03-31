@@ -111,7 +111,7 @@ $(function(){
                     payerID: data.payerID
                 })
             }).then(function(){
-                alert("Success!!!");
+                window.location.href = confirm_url;
             }, function(xhr){
                 var resp = JSON.parse(xhr.responseText);
                 backendErrorHandler(resp);
@@ -360,5 +360,19 @@ function validate_location(){
 }
 
 function backendErrorHandler(response){
-    $("#error_box").text(response.message);
+    if(typeof (response.error.type) != 'undefined'){
+        switch(response.error.type){
+            case '_VALIDATION_ERROR':
+                $("#error_box").text(validation_error_msg);
+                break;
+            case '_PAYPAL_ERROR':
+                $("#error_box").text(paypal_error_msg);
+                break;
+            case '_APP_ERROR':
+                $("#error_box").text(app_error_msg);
+                break;
+            default:
+                $("#error_box").text(response.error.type+": "+response.error.message);
+        }
+    }
 }
