@@ -265,15 +265,6 @@ body.site_controller #donate a{
     background-color: #E91E63;
     color: #FFFFFF;
 }
-/*
-body.donation_controller.index_action section#header{
-    background: url(/assets/imgs/banner2.png) top center no-repeat;
-    background-size: cover;
-}
-body.donation_controller.confirmation_action section#header{
-    background: url(/assets/imgs/banner3.png) top center no-repeat;
-    background-size: cover;
-}*/
 
 body.donation_controller.index_action #donation_amount{
     margin: 50px auto;
@@ -414,4 +405,20 @@ body.donation_controller.index_action #tshirt_data .tshirt_chooser img{
 }
 body.donation_controller.index_action #donation_data #pay-button{
     text-align: center;
+}
+
+body.donation_controller.confirmation_action #confirmation{
+    text-align: center;
+}
+body.donation_controller.confirmation_action #confirmation h1{
+    color: #E91E63;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+body.donation_controller.confirmation_action #confirmation p{
+    margin: auto;
+    width: 640px;
+}
+body.donation_controller.confirmation_action #optional_info{
+    margin: 50px auto 100px auto;
 }

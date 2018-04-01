@@ -195,6 +195,6 @@ define('REWARD_THRESHOLD3', 10);
 
     var validation_error_msg = <?= json_encode(l('Verifica i dati inseriti!')); ?>;
     var paypal_error_msg = <?= json_encode(l('Si è verificato un errore in PayPal. Riprova')); ?>;
-    var app_error_msg = <?= json_encode('Si è verificato un errore nel nostro sistema. Riprova') ?>;
-    var donation_id_msg = <?= json_encode('Per problemi puoi contattarci indicando il tuo ID di pagamento: ') ?>;
+    var app_error_msg = <?= json_encode(l('Si è verificato un errore nel nostro sistema. Riprova')) ?>;
+    var donation_id_msg = <?= json_encode(l('Per problemi puoi contattarci indicando il tuo ID di pagamento: ')) ?>;
 </script>

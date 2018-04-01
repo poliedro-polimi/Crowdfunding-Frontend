@@ -110,8 +110,8 @@ $(function(){
                     paymentID: data.paymentID,
                     payerID: data.payerID
                 })
-            }).then(function(){
-                window.location.href = confirm_url+"?reward="+($('#reward0').prop('checked')?0:1)+(typeof(data.donation_id)!='undefined'?'&donation='+data.donation_id:'');
+            }).then(function(data){
+                window.location.href = confirmationUrl(typeof(data.donation_id)!='undefined'?data.donation_id:null, wasMailSent(data));
             }, function(xhr){
                 var resp = JSON.parse(xhr.responseText);
                 backendErrorHandler(resp);
@@ -361,6 +361,19 @@ function validate_location(){
         $('input[name=location]').closest(".form-group").removeClass("has-error");
         return true;
     }
+}
+
+function confirmationUrl(donation_id, mail_sent){
+    return confirm_url+"?reward="+($('#reward0').prop('checked')?0:1)
+      +(donation_id?'&donation='+encodeURIComponent(donation_id):'')
+      +(mail_sent?'':'&mail_fail=1');
+}
+
+function wasMailSent(data){
+    if(typeof(data.error) != 'undefined' && data.error.type == '_MAIL_ERROR'){
+        return false;
+    }
+    return true
 }
 
 function backendErrorHandler(response){
