@@ -111,7 +111,7 @@ $(function(){
                     payerID: data.payerID
                 })
             }).then(function(){
-                window.location.href = confirm_url+'?donation='+data;
+                window.location.href = confirm_url+'?donation='+data.donation_id+"&reward="+($('#reward0').prop('checked')?0:1);
             }, function(xhr){
                 var resp = JSON.parse(xhr.responseText);
                 backendErrorHandler(resp);

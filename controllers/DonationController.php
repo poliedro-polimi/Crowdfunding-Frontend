@@ -18,6 +18,8 @@ class DonationController extends Controller
     }
 
     public function actionConfirmation() {
-        return self::renderView("donation/confirmation");
+        return self::renderView("donation/confirmation", [
+          'donation_id' => empty($_GET['donation'])?'':$_GET['donation'],
+          'reward' => empty($_GET['reward'])?false:(bool)$_GET['reward']]);
     }
 }
