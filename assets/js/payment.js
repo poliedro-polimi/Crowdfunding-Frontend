@@ -90,7 +90,7 @@ $(function(){
                 jsonp: false,
                 data: JSON.stringify(build_pay_data())
             }).done(function (data) {
-                resolve(data.paymentID);
+                resolve(data.payment_id);
             }).fail(function(xhr){
                 var resp = JSON.parse(xhr.responseText);
                 backendErrorHandler(resp);
@@ -111,7 +111,7 @@ $(function(){
                     payerID: data.payerID
                 })
             }).then(function(){
-                window.location.href = confirm_url+'?donation='+data.donation_id+"&reward="+($('#reward0').prop('checked')?0:1);
+                window.location.href = confirm_url+"?reward="+($('#reward0').prop('checked')?0:1)+(typeof(data.donation_id)!='undefined'?'&donation='+data.donation_id:'');
             }, function(xhr){
                 var resp = JSON.parse(xhr.responseText);
                 backendErrorHandler(resp);
@@ -132,6 +132,10 @@ $(function(){
 function onFormChangedValue(actions){
     $('#donation_data input, #donation_data select').change(function(){
         //Using setTimeout to give time to other event handlers on the fields to do their job
+        setTimeout(function(){form_is_valid()?actions.enable():actions.disable()}, 10);
+    });
+
+    $("#donation_slider").on('slide', function(){
         setTimeout(function(){form_is_valid()?actions.enable():actions.disable()}, 10);
     });
 }
