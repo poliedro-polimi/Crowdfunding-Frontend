@@ -10,6 +10,7 @@ use nigiri\views\Html;
 use nigiri\views\Url;
 
 class CrowdfundingTheme extends Theme {
+    protected $banner_img;
 
     public function render()
     {
@@ -19,6 +20,10 @@ class CrowdfundingTheme extends Theme {
         }
         catch (FileNotFound $e){
             $social = '';
+        }
+
+        if(empty($this->banner_img)){
+            $this->banner_img = Url::resource("assets/imgs/banner1.png");
         }
 
         $ready = '';
@@ -59,7 +64,8 @@ READY;
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">'.l('Commuta navigazione').'</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="https://poliedro-polimi.it">'.page_include(dirname(__DIR__).'/assets/imgs/poliedro.svg').'</a>
+                <a class="navbar-brand page-scroll" href="'.Url::to('/').'">'.page_include(dirname(__DIR__)
+            .'/assets/imgs/polimipride_linear.svg').'</a>
                 <div class="navbar-lang">
                     <p>'.Html::a(Url::to('', '', false, 'it'),'IT').'</p>
                     <p>'.Html::a(Url::to('', '', false, 'en'),'EN').'</p>
@@ -78,6 +84,7 @@ READY;
     </nav>
     
     <section class="jumbotron" id="header">
+        <img src="'.$this->banner_img.'" id="banner_background" />
         <div class="container">
             <h1 class="section-title"><span id="countdown"><span class="days">00</span>d&nbsp;&nbsp;<span 
             class="hours">00</span>h&nbsp;&nbsp;<span class="minutes">00</span>m&nbsp;&nbsp;<span class="seconds">00</span>s</span></h1>

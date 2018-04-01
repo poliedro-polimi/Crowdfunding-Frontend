@@ -7,6 +7,8 @@ use nigiri\views\Url;
 
 Site::getTheme()->append('<script src="https://www.paypalobjects.com/api/checkout.js"></script>', 'head');
 Site::getTheme()->append('<script src="'.Url::resource('assets/js/payment.js').'" type="application/javascript"></script>', 'script');
+Site::getTheme()->resetPart("banner_img");
+Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img');
 
 define('REWARD_THRESHOLD1', 2);
 define('REWARD_THRESHOLD2', 5);
@@ -194,4 +196,5 @@ define('REWARD_THRESHOLD3', 10);
     var validation_error_msg = <?= json_encode(l('Verifica i dati inseriti!')); ?>;
     var paypal_error_msg = <?= json_encode(l('Si è verificato un errore in PayPal. Riprova')); ?>;
     var app_error_msg = <?= json_encode('Si è verificato un errore nel nostro sistema. Riprova') ?>;
+    var donation_id_msg = <?= json_encode('Per problemi puoi contattarci indicando il tuo ID di pagamento: ') ?>;
 </script>

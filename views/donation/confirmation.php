@@ -1,5 +1,10 @@
 <?php
+
+use nigiri\Site;
 use nigiri\views\Html;
+use nigiri\views\Url;
+
+Site::getTheme()->append(Url::resource("assets/imgs/banner3.png"), 'banner_img');
 ?>
 <h1><?= Html::escape(l("Donazione confermata!")); ?></h1>
 <h3><?= Html::escape(l('Ti ringraziamo per la tua donazione a sostegno delle attività di PoliEdro!')); ?></h3>

@@ -111,7 +111,7 @@ $(function(){
                     payerID: data.payerID
                 })
             }).then(function(){
-                window.location.href = confirm_url;
+                window.location.href = confirm_url+'?donation='+data;
             }, function(xhr){
                 var resp = JSON.parse(xhr.responseText);
                 backendErrorHandler(resp);
@@ -361,18 +361,25 @@ function validate_location(){
 
 function backendErrorHandler(response){
     if(typeof (response.error.type) != 'undefined'){
+        var msg;
         switch(response.error.type){
             case '_VALIDATION_ERROR':
-                $("#error_box").text(validation_error_msg);
+                msg = validation_error_msg;
                 break;
             case '_PAYPAL_ERROR':
-                $("#error_box").text(paypal_error_msg);
+                msg = paypal_error_msg;
                 break;
             case '_APP_ERROR':
-                $("#error_box").text(app_error_msg);
+                msg = app_error_msg;
                 break;
             default:
-                $("#error_box").text(response.error.type+": "+response.error.message);
+                msg = response.error.type+": "+response.error.message;
         }
+
+        if(response.error.donation_id){
+            msg += "\n"+donation_id_msg+" "+response.error.donation_id;
+        }
+
+        $("#error_box").text(msg);
     }
 }
