@@ -20,7 +20,7 @@ use nigiri\views\Html;
     </div>
 </section>
 <section id="rewards">
-    <h1>Ricompense</h1>
+    <h1><?= Html::escape(l('Ricompense')); ?></h1>
     <div class="row">
         <div class="col-xs-2 col-xs-offset-2 reward">
             <div class="reward-box">
