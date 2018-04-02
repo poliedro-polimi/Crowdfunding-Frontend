@@ -87,7 +87,11 @@ class Url
         }
 
         if (Site::getParam('url_prefix') != '') {
-            $url = '/' . Site::getParam('url_prefix') . $url;
+            $pre = Site::getParam('url_prefix');
+            if($pre[0]!='/'){
+                $pre = '/'.$pre;
+            }
+            $url = $pre . $url;
         } else {
             $url = '/' . $url;
         }
