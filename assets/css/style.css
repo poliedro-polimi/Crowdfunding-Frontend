@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Roboto+Slab');
+
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -132,29 +134,6 @@ section#header .section-title {
     font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-footer{
-    background-color: #000000;
-    min-height: 200px;
-    color: #FFFFFF;
-    margin-top: 50px;
-}
-footer h2, footer h3{
-    text-transform: none;
-}
-footer #social-feed {
-    text-align: justify;
-}
-footer #initiative-sign div{
-    text-align: justify;
-}
-footer #initiative-sign #contacts{
-    text-align: right;
-    font-size: 1.5em;
-}
-footer #initiative-sign #contacts a{
-    margin: 0 7px;
-    color: #FFFFFF;
-}
 
 /** Pages styles */
 body.site_controller section#how_to_help{
@@ -431,4 +410,140 @@ body.donation_controller.confirmation_action #confirmation p{
 }
 body.donation_controller.confirmation_action #optional_info{
     margin: 50px auto 100px auto;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 16px;
+    line-height: 1.75;
+    font-family: 'Roboto Slab', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+footer a,
+footer a:hover,
+footer a:visited,
+footer a:active,
+footer a:focus {
+    color: white;
+    text-decoration: underline;
+}
+
+/*
+svg.poliedro-logo-lands {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    svg.poliedro-logo-lands {
+        display: block;
+    }
+
+    svg.poliedro-logo-portr {
+        display: none;
+    }
+}
+*/
+
+footer .poliedro-x-polimipride svg {
+    fill: white;
+    height: 20px;
+}
+
+footer .section-title,
+footer .section-social {
+    text-align: center;
+}
+
+footer .section-title {
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    footer .row [class*=" col-"] {
+        max-height: 200px;
+    }
+}
+
+footer .col-poliedro-logo {
+    text-align: center;
+}
+
+footer .col-poliedro-logo svg {
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    footer .col-poliedro-logo {
+        padding-bottom: 60px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    footer .col-poliedro-logo svg {
+        height: 100%;
+        max-width: 100%;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    footer .section-social {
+        padding: 1rem;
+    }
+}
+
+footer .col-details,
+footer .col-details div {
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+
+footer .col-details p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.section-copyright {
+    text-align: center;
+    padding-top: 20px;
+    color: gray;
+    font-size: 14px;
+}
+
+.section-copyright a,
+.section-copyright a:hover,
+.section-copyright a:active,
+.section-copyright a:focus,
+.section-copyright a:visited {
+    color: gray;
+}
+
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex;
+}
+
+.align-middle {
+    vertical-align: middle !important;
+}
+
+.align-items-end {
+    -webkit-box-align: end !important;
+    -ms-flex-align: end !important;
+    align-items: flex-end !important;
+}
+
+footer .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
