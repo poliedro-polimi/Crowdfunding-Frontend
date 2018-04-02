@@ -60,7 +60,9 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
 </nav>
 
 <section class="jumbotron" id="header">
-    <img src="<?=$banner_img?>" id="banner_background" />
+    <div class="banner-wrapper">
+        <img src="<?= $banner_img ?>" id="banner_background"/>
+    </div>
     <div class="container">
         <h1 class="section-title"><span id="countdown"><span class="days">00</span>d&nbsp;&nbsp;<span
                     class="hours">00</span>h&nbsp;&nbsp;<span class="minutes">00</span>m&nbsp;&nbsp;<span class="seconds">00</span>s</span></h1>

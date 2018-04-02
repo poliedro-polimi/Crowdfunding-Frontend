@@ -91,14 +91,23 @@ section#header {
         font-size: 6em;
     }
 }
-section#header img#banner_background{
+
+section#header .banner-wrapper {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section#header img#banner_background{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
     filter: blur(5px);
     -ms-filter: blur(5px);
     -webkit-filter: blur(5px);
