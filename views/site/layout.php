@@ -32,7 +32,7 @@ use \nigiri\views\Url;
     <?= $head; ?>
 </head>
 <body class="<?= Controller::camelCaseToUnderscore(Site::getRouter()->getControllerName())?> <?=
-Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>'_action">
+Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action">
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container">
 
