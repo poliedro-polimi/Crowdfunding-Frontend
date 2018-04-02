@@ -159,6 +159,7 @@ footer #initiative-sign #contacts a{
 /** Pages styles */
 body.site_controller section#how_to_help{
     text-align: center;
+    padding-top: 50px;
 }
 
 body.site_controller section#how_to_help .section-title{
