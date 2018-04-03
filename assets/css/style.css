@@ -575,3 +575,10 @@ footer .row {
   margin-right: -15px;
   margin-left: -15px;
 }
+
+@media screen and (max-width: 768px) {
+    .paypal-button.paypal-button-size-large.paypal-button-layout-horizontal > div.xcomponent-outlet,
+    .paypal-button.paypal-button-size-large.paypal-button-layout-horizontal div.xcomponent-outlet iframe.xcomponent-component-frame.xcomponent-visible{
+        width: 100% !important;
+    }
+}
