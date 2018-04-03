@@ -112,12 +112,11 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
                             . '/assets/imgs/polimipride_linear.svg') ?>
                     </p>
                     <p class="text-left">
-                        <?= l("The initiative <strong>PoliMi Pride</strong> is funded by") ?>
+                        <?= l("L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo del") ?>
                         <a href="https://polimi.it" rel="noopener" target="_blank">Politecnico di Milano</a>.
                     </p>
                     <p class="text-left">
-                        <?= l("Visit <a href='https://poliedro-polimi.it/en/'>our website</a> to discover all of our other
-                        activities.") ?>
+                        <?= l("Visita <a href='https://poliedro-polimi.it/en/'>il nostro sito</a> per scoprire tutte le altre nostre attività.") ?>
                     </p>
                     <p class="section-social">
                         <a href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/#contatti"><i class="fas fa-at"></i></a>
@@ -136,7 +135,7 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         </div>
         <div class="section-copyright">
             <?= l("&copy; PoliEdro 2018") ?> | <a
-                    href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/<?= l("credits") ?>/"><?= l("Credits") ?></a>
+                    href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/credits/"><?= Html::escape(l("Credits")); ?></a>
         </div>
     </div>
 </footer>
