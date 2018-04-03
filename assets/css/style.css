@@ -362,6 +362,18 @@ body.donation_controller.index_action #donation_data .form-inline .form-group:la
     width: 49%;
 }
 
+@media screen and (max-width: 768px) {
+  .form-group-amount,
+  body.donation_controller.index_action #donation_data .form-inline .form-group:first-child{
+    margin-left: 0;
+    width: 100%;
+  }
+  body.donation_controller.index_action #donation_data .form-inline .form-group:last-child{
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
 body.donation_controller.index_action #donation_data .form-inline {
     padding: 5px 0;
 }
