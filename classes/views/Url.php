@@ -49,7 +49,7 @@ class Url
         }
 
         if (!Site::getParam('clean_urls')) {
-            $url = 'index.php?page=' . $url;
+            $url = 'index.php?show_page=' . $url;
         }
 
         return self::make($url, $query, $absolute);
