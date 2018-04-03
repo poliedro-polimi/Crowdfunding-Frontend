@@ -4,7 +4,7 @@ $(function(){
 
     $("#donation_slider").slider({
         min: 0,
-        max: 15,
+        max: 16,
         value: initialAmount,
         slide: function(ev, ui){
             amountChange(ui.value);
