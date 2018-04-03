@@ -59,7 +59,7 @@ define('REWARD_THRESHOLD3', 12);
                 </div>
             </div>
             <div class="form-inline">
-                <div class="form-group">
+                <div class="form-group form-group-amount">
                     <label for="amount" class="control-label"><?= l('Ammontare della Donazione'); ?><span
                           class="required">&nbsp;*</span>:</label>
                     <div class="input-group">
