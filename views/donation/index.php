@@ -10,9 +10,9 @@ Site::getTheme()->append('<script src="'.Url::resource('assets/js/payment.js').'
 Site::getTheme()->resetPart("banner_img");
 Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img');
 
-define('REWARD_THRESHOLD1', 2);
-define('REWARD_THRESHOLD2', 5);
-define('REWARD_THRESHOLD3', 10);
+define('REWARD_THRESHOLD1', 4);
+define('REWARD_THRESHOLD2', 8);
+define('REWARD_THRESHOLD3', 12);
 ?>
 <div class="container">
 <h1><?= Html::escape(l('Donazioni')); ?></h1>
