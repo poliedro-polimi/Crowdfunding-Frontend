@@ -4,26 +4,24 @@
 use nigiri\Site;
 use nigiri\views\Html;
 use nigiri\views\Url;
+use \site\controllers\DonationController;
 
 Site::getTheme()->append('<script src="https://www.paypalobjects.com/api/checkout.js"></script>', 'head');
 Site::getTheme()->append('<script src="'.Url::resource('assets/js/payment.js').'" type="application/javascript"></script>', 'script');
 Site::getTheme()->resetPart("banner_img");
 Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img');
 
-define('REWARD_THRESHOLD1', 4);
-define('REWARD_THRESHOLD2', 8);
-define('REWARD_THRESHOLD3', 12);
 ?>
 <div class="container">
 <h1><?= Html::escape(l('Donazioni')); ?></h1>
 
 <section id="donation_amount">
     <div id="donation_objectives">
-        <div class="donation_objective" id="obj1" data-threshold="<?= REWARD_THRESHOLD1 ?>"><img src="" /><div
+        <div class="donation_objective" id="obj1" data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"><img src="" /><div
               class="objective_arrow"></div></div>
-        <div class="donation_objective" id="obj2" data-threshold="<?= REWARD_THRESHOLD2 ?>"><img src="" /><div
+        <div class="donation_objective" id="obj2" data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"><img src="" /><div
               class="objective_arrow"></div></div>
-        <div class="donation_objective" id="obj3" data-threshold="<?= REWARD_THRESHOLD3 ?>"><img src="" /><div
+        <div class="donation_objective" id="obj3" data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"><img src="" /><div
               class="objective_arrow"></div></div>
     </div>
     <div id="donation_slider">
@@ -82,8 +80,8 @@ define('REWARD_THRESHOLD3', 12);
             <div class="form-inline">
                 <label class="radio-inline control-label">
                     <input type="radio" name="chosenReward" id="reward1" value="1" disabled="disabled"
-                           data-threshold="<?= REWARD_THRESHOLD1 ?>" />
-                    <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)', REWARD_THRESHOLD1)); ?>
+                           data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>" />
+                    <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)', DonationController::REWARD_THRESHOLD1)); ?>
                 </label>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty1"><?= Html::escape(l('Quantità')); ?></label>
@@ -97,9 +95,9 @@ define('REWARD_THRESHOLD3', 12);
             <div class="form-inline">
                 <label class="radio-inline control-label">
                     <input type="radio" name="chosenReward" id="reward2" value="2" disabled="disabled"
-                           data-threshold="<?= REWARD_THRESHOLD2 ?>" />
+                           data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>" />
                     <?= Html::escape(l('Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)',
-                    REWARD_THRESHOLD2)); ?>
+                    DonationController::REWARD_THRESHOLD2)); ?>
                 </label>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty2"><?= Html::escape(l('Quantità')); ?></label>
@@ -112,8 +110,8 @@ define('REWARD_THRESHOLD3', 12);
             </div>
             <div class="form-inline">
                 <label class="radio-inline control-label">
-                    <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled" data-threshold="<?= REWARD_THRESHOLD3 ?>" />
-                    <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima %s€)', REWARD_THRESHOLD3)); ?>
+                    <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled" data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>" />
+                    <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima %s€)', DonationController::REWARD_THRESHOLD3)); ?>
                 </label>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty3"><?= Html::escape(l('Quantità')); ?></label>
