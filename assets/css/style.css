@@ -123,6 +123,9 @@ section#header .section-content {
 }
 
 section#header .section-title {
+    font-weight: lighter;
+}
+section#header .section-title #countdown span{
     font-weight: bold;
 }
 
