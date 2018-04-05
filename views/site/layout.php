@@ -135,7 +135,7 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         </div>
         <div class="section-copyright">
             <?= l("&copy; PoliEdro 2018") ?> | <a
-                    href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/<?= l('crediti') ?>/"><?= Html::escape(l("Credits")); ?></a>
+                    href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/<?= l('crediti') ?>/"><?= Html::escape(l("Crediti")); ?></a>
         </div>
     </div>
 </footer>
