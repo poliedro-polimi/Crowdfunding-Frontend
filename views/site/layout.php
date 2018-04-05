@@ -56,7 +56,7 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
                 <li class="hidden"><a href="#page-top"></a></li>
                 <li><a class="extern" href="https://poliedro-polimi.it" id=""><?= l('Chi Siamo') ?> <i
                                 class="fa fa-external-link"></i></a></li>
-                <li><a class="extern" href="https://polimipride.it" id="">PoliMi Pride <i
+                <li><a class="extern" href="https://polimipride.it" id=""><?= l('Il Progetto') ?> <i
                                 class="fa fa-external-link"></i></a></li>
                 <li><a href="<?= Url::to('/') ?>#rewards" id=""><?= l('Dona') ?></a></li>
                 <li><a href="https://poliedro-polimi.it#contatti" id="" class="extern"><?= l('Contatti') ?> <i
@@ -74,7 +74,7 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         <h1 class="section-title"><span id="countdown"><span class="days">00</span>d&nbsp;&nbsp;<span
                         class="hours">00</span>h&nbsp;&nbsp;<span class="minutes">00</span>m&nbsp;&nbsp;<span
                         class="seconds">00</span>s</span></h1>
-        <h2 class="section-content"><?= l('al PoliMi Pride') ?></h2>
+        <h2 class="section-content"><?= l('alla Milano Pride Week') ?></h2>
     </div>
 </section>
 <?= $body ?>

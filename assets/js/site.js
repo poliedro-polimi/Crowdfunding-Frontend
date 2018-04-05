@@ -1,4 +1,4 @@
-var countDownGoal = new Date('2018-06-30 15:00:00');
+var countDownGoal = new Date('2018-06-23 15:00:00');
 
 $(function () {
     $(document).on('click', 'a.extern', function(ev){
