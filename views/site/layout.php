@@ -54,13 +54,10 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden"><a href="#page-top"></a></li>
-                <li><a class="extern" href="https://poliedro-polimi.it" id=""><?= l('Chi Siamo') ?> <i
-                                class="fa fa-external-link"></i></a></li>
-                <li><a class="extern" href="https://polimipride.it" id=""><?= l('Il Progetto') ?> <i
-                                class="fa fa-external-link"></i></a></li>
+                <li><a class="extern" href="https://poliedro-polimi.it" id=""><?= l('Chi Siamo') ?></a></li>
+                <li><a class="extern" href="https://polimipride.it" id=""><?= l('Il Progetto') ?></a></li>
                 <li><a href="<?= Url::to('/') ?>#rewards" id=""><?= l('Dona') ?></a></li>
-                <li><a href="https://poliedro-polimi.it#contatti" id="" class="extern"><?= l('Contatti') ?> <i
-                                class="fa fa-external-link"></i></a></li>
+                <li><a href="https://poliedro-polimi.it#contatti" id="" class="extern"><?= l('Contatti') ?></a></li>
             </ul>
         </div>
     </div>
