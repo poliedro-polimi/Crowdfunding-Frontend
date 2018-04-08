@@ -198,6 +198,13 @@ body.site_controller #rewards h1{
     margin-bottom: 50px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    body.site_controller #rewards .row {
+        position: relative;
+        left: 4.16666667%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     body.site_controller #rewards .reward {
         margin-bottom: 65px;

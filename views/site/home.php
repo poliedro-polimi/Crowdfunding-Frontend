@@ -23,7 +23,7 @@ use site\controllers\DonationController;
 <section id="rewards">
     <h1><?= Html::escape(l('Ricompense')); ?></h1>
     <div class="row">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-1 col-md-2 col-md-offset-2 reward">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-2 reward">
             <div class="reward-box">
                 <img src="https://www.muscaspromo.com/image/cache/catalog/Shopper/sp15145-borse-in-cotone-colorate-130-grmq-sp15145-borse-in-cotone-colorate-130-grmq-1200x900.jpg" alt="Spille e Adesivi PoliMi Pride" />
                 <div class="reward-contribution">
