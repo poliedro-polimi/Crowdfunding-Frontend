@@ -196,9 +196,11 @@ function setRequiredFields(){
     else{
         dynamicRequire.each(function(){
             var $label = $(this).siblings("label");
-            var content = $label.html();
-            var colon = content.indexOf(":");
-            $label.html(content.slice(0, colon)+'<span class="required">&nbsp;*</span>'+content.slice(colon));
+            if($label.find('.required').length==0) {
+                var content = $label.html();
+                var colon = content.indexOf(":");
+                $label.html(content.slice(0, colon) + '<span class="required">&nbsp;*</span>' + content.slice(colon));
+            }
         });
     }
 }
