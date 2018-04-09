@@ -21,11 +21,11 @@ use site\controllers\DonationController;
     </div>
 </section>
 <section id="rewards">
-    <h1><?= Html::escape(l('Ricompense')); ?></h1>
+    <h1><?= Html::escape(l('Abbiamo Realizzato Per Te')); ?></h1>
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-2 reward">
             <div class="reward-box">
-                <img src="https://www.muscaspromo.com/image/cache/catalog/Shopper/sp15145-borse-in-cotone-colorate-130-grmq-sp15145-borse-in-cotone-colorate-130-grmq-1200x900.jpg" alt="Spille e Adesivi PoliMi Pride" />
+                <img src="<?= Url::resource("assets/imgs/sacca.png"); ?>" alt="<?= Html::escape(l('Sacca Zainetto PoliMi Pride')); ?>" />
                 <div class="reward-contribution">
                     <div class="contribution-label"><?= l('Contributo Minimo Volontario') ?>:</div>
                     <div class="reward-amount"><?= DonationController::REWARD_THRESHOLD1 ?>&euro;</div>
@@ -33,12 +33,12 @@ use site\controllers\DonationController;
                 <a href="<?= Url::to('donation', ['amount'=> DonationController::REWARD_THRESHOLD1]) ?>"><?= l('Ricevi') ?></a>
             </div>
             <div class="reward-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id libero pretium, accumsan justo sit amet, euismod quam. Nullam et malesuada sem. Etiam vel urna ut diam pretium pulvinar ut et nibh. Ut diam ligula, sodales at mauris at, auctor feugiat lacus.
+                <?= Html::escape(l('Le sacche zainetto PoliMi Pride sono perfette per affrontare la parata del Milano Pride! Le sacche in nylon 34x43cm sono utilissime per portarsi dietro bottiglie d\'acqua, bandiere e tutto il necessario per essere favolosi!')) ?>
             </div>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-1 col-md-2 col-md-offset-1 reward">
             <div class="reward-box">
-                <img src="https://www.muscaspromo.com/image/cache/catalog/Shopper/sp15145-borse-in-cotone-colorate-130-grmq-sp15145-borse-in-cotone-colorate-130-grmq-1200x900.jpg" alt="Spille, Adesivi e Shopper PoliMi Pride" />
+                <img src="<?= Url::resource('assets/imgs/adesivi_spille.png') ?>" alt="Spille, Adesivi e Shopper PoliMi Pride" />
                 <div class="reward-contribution">
                     <div class="contribution-label"><?= l('Contributo Minimo Volontario') ?>:</div>
                     <div class="reward-amount"><?= DonationController::REWARD_THRESHOLD2 ?>&euro;</div>
@@ -46,12 +46,12 @@ use site\controllers\DonationController;
                 <a href="<?= Url::to('donation', ['amount'=> DonationController::REWARD_THRESHOLD2]) ?>"><?= l('Ricevi') ?></a>
             </div>
             <div class="reward-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id libero pretium, accumsan justo sit amet, euismod quam. Nullam et malesuada sem. Etiam vel urna ut diam pretium pulvinar ut et nibh. Ut diam ligula, sodales at mauris at, auctor feugiat lacus.
+                <?= Html::escape(l("Mostra il tuo orgoglio! Con gli adesivi e le spille PoliMi Pride potrai mostrare ovunque il tuo supporto al PoliMi Pride. Usali per personalizzare i tuoi oggetti, dal pc al tuo zaino! E con la sacca PoliMi Pride sei pronto per la parata!")); ?>
             </div>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-1 col-md-2 col-md-offset-1 reward">
             <div class="reward-box">
-                <img src="https://www.muscaspromo.com/image/cache/catalog/Shopper/sp15145-borse-in-cotone-colorate-130-grmq-sp15145-borse-in-cotone-colorate-130-grmq-1200x900.jpg" alt="Kit Completo PoliMi Pride" />
+                <img src="<?= Url::resource('assets/imgs/maglia.png') ?>" />
                 <div class="reward-contribution">
                     <div class="contribution-label"><?= l('Contributo Minimo Volontario') ?>:</div>
                     <div class="reward-amount"><?= DonationController::REWARD_THRESHOLD3 ?>&euro;</div>
@@ -59,11 +59,11 @@ use site\controllers\DonationController;
                 <a href="<?= Url::to('donation', ['amount' => DonationController::REWARD_THRESHOLD3]) ?>"><?= l('Ricevi') ?></a>
             </div>
             <div class="reward-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id libero pretium, accumsan justo sit amet, euismod quam. Nullam et malesuada sem. Etiam vel urna ut diam pretium pulvinar ut et nibh. Ut diam ligula, sodales at mauris at, auctor feugiat lacus.
+                <?= Html::escape(l("Non perderti la maglietta PoliMi Pride! Con il suo design rinnovato è disponibile sia in formato t-shirt che come canotta, scegli quella che fa più per te! Il Kit completo PoliMi Pride è perfetto affrontare tutti i Pride e mostrare al mondo chi sei!")); ?>
             </div>
         </div>
     </div>
 </section>
 <section id="donate">
-    <a href="<?= Url::to('donation') ?>" class="btn"><?= l('Dona'); ?></a>
+    <a href="<?= Url::to('donation') ?>" class="btn"><?= l('Sostienici'); ?></a>
 </section>

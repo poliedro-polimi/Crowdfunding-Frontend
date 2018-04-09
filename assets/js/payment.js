@@ -164,7 +164,10 @@ function amountChange(value) {
     $("#donation_slider").slider("value", value);
     $(".donation_objective").each(function(){
         if($(this).data("threshold")<=value){
-            //Do things
+            $(this).find('img.overlay').show();
+        }
+        else{
+            $(this).find('img.overlay').hide();
         }
     });
     $("input[name=chosenReward]").each(function(){

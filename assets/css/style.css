@@ -220,6 +220,7 @@ body.site_controller #rewards .reward .reward-box{
 }
 body.site_controller #rewards .reward .reward-box img{
     width: 90%;
+    margin-bottom: 20px;
 }
 body.site_controller #rewards .reward .reward-box .reward-contribution{
     background-color: #FFFFFF;
@@ -326,6 +327,24 @@ body.donation_controller.index_action .donation_objective{
     border-radius: 5px;
     background-color: #EEEEEE;
     transform: translate(-50%, 0);
+}
+body.donation_controller.index_action .donation_objective img.item{
+    max-width: 95%;
+    display: block;
+    margin: 10px auto;
+}
+body.donation_controller.index_action .donation_objective img.overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    z-index: 2;
+    border-radius: 5px;
+    opacity: 0.6;
 }
 body.donation_controller.index_action .donation_objective .objective_arrow{
     position: absolute;
