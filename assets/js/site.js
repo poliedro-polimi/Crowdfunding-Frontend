@@ -6,18 +6,19 @@ $(function () {
         window.open($(this).attr('href'));
     });
 
-    $(window).on('scroll load', navBarState);
+    $(window).on('scroll load', setNavbarTransparency);
 
-    $("button.navbar-toggle").click(function () {
+    $("button.navbar-toggler").click(function () {
+        var togglebtn = $(this);
         setTimeout(function () {
             var navbar = $("nav#mainNav");
-
-            if (!$(this).hasClass("collapsed")) {
+            if (!togglebtn.hasClass("collapsed")) {
                 navbar.addClass("menu-open");
-                if (!navbar.hasClass("affix"))
-                    navbar.addClass("affix");
+                if (navbar.hasClass("transparent"))
+                    navbar.removeClass("transparent");
             } else {
-                navbar.removeClass("menu-open");
+                navbar.addClass("menu-open");
+                setNavbarTransparency();
             }
         }, 100);
     });
@@ -27,34 +28,32 @@ $(function () {
     setInterval(updateCountDown, 1000);
 });
 
-function navBarState(){
+function setNavbarTransparency() {
     var obj = $("section#header");
     var navbar = $("nav#mainNav");
-    var togglebtn = $("button.navbar-toggle");
     var top = $(window).scrollTop();
-    var max = obj.height() * .90;
+    var max = obj.height() * .2;
 
-    if (togglebtn.is(":visible") && !togglebtn.hasClass("collapsed"))
-        return;
-
-    if (top >= max && !navbar.hasClass("affix"))
-        navbar.addClass("affix");
-    else if (top < max && navbar.hasClass("affix"))
-        navbar.removeClass("affix");
+    if (top >= max && navbar.hasClass("transparent"))
+        navbar.removeClass("transparent");
+    else if (top < max && !navbar.hasClass("transparent"))
+        navbar.addClass("transparent");
 }
 
 function updateCountDown(){
     var $countd = $('#countdown');
 
     var timeToGo = Math.floor((countDownGoal - (new Date()))/1000);
-    var days, hours, minutes, seconds;
+    var days = 0, hours = 0, minutes = 0, seconds = 0;
 
-    days = Math.floor(timeToGo / 86400);
-    timeToGo = timeToGo % 86400;
-    hours = Math.floor(timeToGo / 3600);
-    timeToGo = timeToGo % 3600;
-    minutes = Math.floor(timeToGo / 60);
-    seconds = timeToGo % 60;
+    if(timeToGo>0) {
+        days = Math.floor(timeToGo / 86400);
+        timeToGo = timeToGo % 86400;
+        hours = Math.floor(timeToGo / 3600);
+        timeToGo = timeToGo % 3600;
+        minutes = Math.floor(timeToGo / 60);
+        seconds = timeToGo % 60;
+    }
 
     $countd.find('.days').text(days>=10?days:"0"+days.toString());
     $countd.find('.hours').text(hours>=10?hours:"0"+hours.toString());

@@ -7,7 +7,6 @@ use \nigiri\views\Url;
 
 /** @var string $title */
 /** @var string $head */
-/** @var string $banner_img */
 /** @var string $body */
 /** @var string $script */
 /** @var string $ready */
@@ -23,10 +22,7 @@ use \nigiri\views\Url;
     <meta name="theme-color" content="#b0003a">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://poliedro-polimi.it/wp-content/themes/passivello/inc/css/passivello.css"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
           integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/>
@@ -36,42 +32,62 @@ use \nigiri\views\Url;
 </head>
 <body class="<?= Controller::camelCaseToUnderscore(Site::getRouter()->getControllerName()) ?> <?=
 Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action">
-<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container">
 
+<nav id="mainNav" class="navbar navbar-light navbar-expand-lg navbar-custom fixed-top justify-content-between affix transparent">
+    <div class="container container-navbar">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only"><?= l('Commuta navigazione') ?></span> Menu <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="<?= Url::to('/') ?>"><?= page_include(dirname(dirname(__DIR__))
-                    . '/assets/imgs/polimipride_linear.svg') ?></a>
+            <a class="navbar-brand page-scroll" href="<?= Url::to('/') ?>">
+                <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/polimipride_linear.svg') ?>
+            </a>
+
             <div class="navbar-lang">
                 <p><?= Html::a(Url::to('', '', false, 'it'), 'IT') ?></p>
                 <p><?= Html::a(Url::to('', '', false, 'en'), 'EN') ?></p>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden"><a href="#page-top"></a></li>
-                <li><a class="extern" href="https://poliedro-polimi.it" id=""><?= l('Chi Siamo') ?></a></li>
-                <li><a class="extern" href="https://polimipride.it" id=""><?= l('Il Progetto') ?></a></li>
-                <li><a href="<?= Url::to('/') ?>#rewards" id=""><?= l('Dona') ?></a></li>
-                <li><a href="https://poliedro-polimi.it#contatti" id="" class="extern"><?= l('Contatti') ?></a></li>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="<?= l('Commuta Navigazione') ?>">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="page-scroll nav-link" href="https://poliedro-polimi.it"><?= Html::escape(l('Chi siamo')
+                        ) ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="page-scroll nav-link" href="https://polimipride.it/#project"><?= Html::escape(l('L\'Iniziativa'))
+                        ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="page-scroll nav-link" href="https://polimipride.it/#support"><?= Html::escape(l('Supportaci')) ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="page-scroll nav-link" href="https://poliedro-polimi.it/it/#contatti"><?= Html::escape(l
+                        ('Contatti')) ?></a>
+                </li>
+                <li class="nav-item nav-important">
+                    <a class="page-scroll nav-link" href="<?= Url::to('/')?>"><?= Html::escape(l('Sostienici Ora'))
+                        ?></a>
+                </li>
             </ul>
         </div>
+        <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container-fluid -->
 </nav>
 
 <section class="jumbotron" id="header">
-    <div class="banner-wrapper">
-        <img src="<?= $banner_img ?>" id="banner_background"/>
-    </div>
     <div class="container">
         <h1 class="section-title"><span id="countdown"><span class="days">00</span>d&nbsp;&nbsp;<span
                         class="hours">00</span>h&nbsp;&nbsp;<span class="minutes">00</span>m&nbsp;&nbsp;<span
                         class="seconds">00</span>s</span></h1>
-        <h2 class="section-content"><?= l('alla Milano Pride Week') ?></h2>
+        <h2 class="section-content"><?= l('alla Pride Week') ?></h2>
     </div>
 </section>
 <?= $body ?>
@@ -142,9 +158,8 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="<?= Url::resource('/assets/js/site.js') ?>"></script>
 
 <?= $script ?>

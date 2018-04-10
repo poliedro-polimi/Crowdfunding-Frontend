@@ -10,8 +10,6 @@ use nigiri\views\Html;
 use nigiri\views\Url;
 
 class CrowdfundingTheme extends Theme {
-    protected $banner_img;
-
     public function render()
     {
         $this->title .= (empty($this->title)?'':' - ').Site::getParam('site_name');
