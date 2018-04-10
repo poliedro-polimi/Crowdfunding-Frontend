@@ -1,0 +1,327 @@
+# Crowdfunding
+# Copyright (C) 2018 PoliEdro
+# This file is distributed under the same license as the Crowdfunding-Frontend package.
+# Stefano Campanella <stefano.campanella@mail.polimi.it>, 2018.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-10 02:35+0200\n"
+"PO-Revision-Date: 2018-04-1 02:35+0200\n"
+"Last-Translator: Stefano Campanella <stefano.campanella@mail.polimi.it>\n"
+"Language-Team: Italian <LL@li.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:14
+msgid "Donazione confermata!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:15
+msgid ""
+"Ti ringraziamo per la tua donazione a sostegno delle attività di PoliEdro!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:16
+msgid ""
+"Queste donazioni ci permettono di far fronte alle spese di tutti i giorni "
+"per la gestione dell'associazione"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:16
+msgid "e per sostenere la realizzazione di iniziative come PoliMi Pride"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:20
+#, php-format
+msgid ""
+"L'identificativo della tua donazione è %s, se hai bisogno di contattarci \n"
+"ricordati di includerlo nel tuo messaggio!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:26
+msgid ""
+"Ti abbiamo inviato per email tutte le informazioni di conferma della tua "
+"donazione"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:29
+msgid "Non siamo riusciti a inviarti l'email di conferma della tua donazione!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:32
+msgid ""
+"Segnati l'identificativo della tua donazione, ti servirà per \n"
+"        ritirare i tuoi gadget! Se desideri essere sicuro contattaci, ti "
+"invieremo manualmente l'email di conferma!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:40
+msgid ""
+"Durante la donazione hai selezionato delle ricompense da ricevere: ti "
+"contatteremo per email non appena tutti i materiali saranno pronti!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:41
+msgid ""
+"Ti ricordiamo che i gadget PoliMi Pride saranno consegnati agli stand nei "
+"campus del Politecnico di Milano\n"
+"    durante il mese di Giugno. Per restare informato sulle date esatte "
+"seguici su nostri social e tieni d'occhio la\n"
+"    tua casella email."
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:16
+msgid "Donazioni"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:40
+msgid "I campi segnati con * sono obbligatori"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:44
+msgid "Nome"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:48
+msgid "Cognome"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:54
+msgid "Email"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:56
+msgid ""
+"Sarà utilizzata per tutte le comunicazioni sulla tua \n"
+"                    donazione"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:60
+msgid "Numero di Telefono"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:62
+msgid "Sarà utilizzato solo in caso non riuscissimo a contattarti per email"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:67
+msgid "Ammontare della Donazione"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:77
+msgid "Ricompensa"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:78
+msgid ""
+"Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i "
+"seguenti pacchetti\n"
+"             di gadget"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:83
+msgid "Non desidero alcuna ricompensa"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:90
+#, php-format
+msgid "Adesivi e Spilla PoliMi Pride (donazione minima %s€)"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:93
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:109
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:123
+msgid "Quantità"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:95
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:111
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:125
+msgid "Qtà"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:105
+#, php-format
+msgid "Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:120
+#, php-format
+msgid ""
+"Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione "
+"minima %s€)"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:131
+msgid ""
+"Puoi scegliere quantità maggiori delle ricompense con una donazione almeno "
+"pari a un multiplo della donazione minima"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:133
+msgid "Scegli la tua T-Shirt"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:138
+msgid "T-shirt classica"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:144
+msgid "Canotta"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:148
+msgid "Scegli la taglia"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:162
+msgid "Indica dove preferisci ritirare le tue ricompense"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:163
+msgid ""
+"Per ragioni organizzative non possiamo spedire gli oggetti a un tuo "
+"domicilio, li\n"
+"                    consegneremo invece personalmente presso i nostri stand "
+"nelle sedi del Politecnico organizzati\n"
+"                    durante il mese di Giugno"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:175
+msgid "Note Addizionali"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:180
+msgid "Hai già fatto una donazione e hai bisogno di modificarla?"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:181
+msgid "Contattaci"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:200
+msgid "Verifica i dati inseriti!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:201
+msgid "Si è verificato un errore in PayPal. Riprova"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:202
+msgid "Si è verificato un errore nel nostro sistema. Riprova"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:203
+msgid "Per problemi puoi contattarci indicando il tuo ID di pagamento: "
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:8
+msgid "Come puoi aiutarci?"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:9
+msgid ""
+"Quest'anno l'organizzazione dell'evento, prevede la consegna\n"
+"            di alcuni gadget targati \"Polimi Pride\" in seguito alla "
+"donazione di un contributo minimo\n"
+"            volontario."
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:24
+msgid "Abbiamo Realizzato Per Te"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:28
+msgid "Sacca Zainetto PoliMi Pride"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:30
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:43
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:56
+msgid "Contributo Minimo Volontario"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:33
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:46
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:59
+msgid "Ricevi"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:36
+msgid ""
+"Le sacche zainetto PoliMi Pride sono perfette per affrontare la parata del "
+"Milano Pride! Le sacche in nylon 34x43cm sono utilissime per portarsi dietro "
+"bottiglie d'acqua, bandiere e tutto il necessario per essere favolosi!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:49
+msgid ""
+"Mostra il tuo orgoglio! Con gli adesivi e le spille PoliMi Pride potrai "
+"mostrare ovunque il tuo supporto al PoliMi Pride. Usali per personalizzare i "
+"tuoi oggetti, dal pc al tuo zaino! E con la sacca PoliMi Pride sei pronto "
+"per la parata!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:62
+msgid ""
+"Non perderti la maglietta PoliMi Pride! Con il suo design rinnovato è "
+"disponibile sia in formato t-shirt che come canotta, scegli quella che fa "
+"più per te! Il Kit completo PoliMi Pride è perfetto affrontare tutti i Pride "
+"e mostrare al mondo chi sei!"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:68
+msgid "Sostienici"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:45
+msgid "Commuta navigazione"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:57
+msgid "Chi Siamo"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:58
+msgid "Il Progetto"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:59
+msgid "Dona"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:60
+msgid "Contatti"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:74
+msgid "alla Milano Pride Week"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:112
+msgid ""
+"L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo del"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:116
+msgid ""
+"Visita <a href='https://poliedro-polimi.it/en/'>il nostro sito</a> per "
+"scoprire tutte le altre nostre attività."
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:134
+msgid "&copy; PoliEdro 2018"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:135
+msgid "Crediti"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:135
+msgid "crediti"
+msgstr ""
