@@ -26,7 +26,7 @@ return [
         /** An array of parameters to pass to the set_locale function, for each configured language */
         'locales' => [
           'it' => ['it_IT.utf8','ita.utf8', 'it_IT.utf-8','ita.utf-8','it_IT','ita'],
-          'en' => ['en_UK.utf8', 'en_UK', 'en', 'eng']
+          'en' => ['en_GB.utf8', 'en_GB', 'en', 'eng']
         ],
 
         /** The timezone to use in the website */
