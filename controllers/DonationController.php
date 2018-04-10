@@ -13,7 +13,7 @@ use nigiri\Controller;
 class DonationController extends Controller
 {
     const REWARD_THRESHOLD1 = 4;
-    const REWARD_THRESHOLD2 = 8;
+    const REWARD_THRESHOLD2 = 6;
     const REWARD_THRESHOLD3 = 12;
 
     public function actionIndex(){

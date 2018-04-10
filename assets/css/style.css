@@ -317,12 +317,12 @@ body.donation_controller.index_action #donation_slider #handle-label-arrow{
 }
 body.donation_controller.index_action #donation_objectives{
     position: relative;
-    height: 170px;
+    height: 150px;
 }
 body.donation_controller.index_action .donation_objective{
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 135px;
+    height: 135px;
     padding: 5px;
     border-radius: 5px;
     background-color: #EEEEEE;
@@ -362,7 +362,7 @@ body.donation_controller.index_action .donation_objective#obj1{
     left: 25%;
 }
 body.donation_controller.index_action .donation_objective#obj2{
-    left: 50%;
+    left: 37.5%;
 }
 body.donation_controller.index_action .donation_objective#obj3{
     left: 75%;
