@@ -22,8 +22,7 @@ use site\controllers\DonationController;
                     <div class="contribution-label"><?= Html::escape(l('Contributo Minimo Volontario')); ?>:</div>
                     <div class="reward-amount"><?= DonationController::REWARD_THRESHOLD1 ?>&euro;</div>
                 </div>
-                <a href="<?= Url::to('donation', ['amount'=> DonationController::REWARD_THRESHOLD1]) ?>"><?=
-                    Html::escape(l('Dona')) ?></a>
+                <a href="<?= Url::to('donation', ['reward'=> 1]) ?>"><?= Html::escape(l('Dona')) ?></a>
             </div>
             <div class="reward-description">
                 <?= Html::escape(l('Le sacche zainetto PoliMi Pride sono perfette per affrontare la parata del Milano Pride! Le sacche in nylon 34x43cm sono utilissime per portarsi dietro bottiglie d\'acqua, bandiere e tutto il necessario per essere favolosi!')) ?>
@@ -36,8 +35,7 @@ use site\controllers\DonationController;
                     <div class="contribution-label"><?= Html::escape(l('Contributo Minimo Volontario')); ?>:</div>
                     <div class="reward-amount"><?= DonationController::REWARD_THRESHOLD2 ?>&euro;</div>
                 </div>
-                <a href="<?= Url::to('donation', ['amount'=> DonationController::REWARD_THRESHOLD2]) ?>"><?=
-                    Html::escape(l('Dona')); ?></a>
+                <a href="<?= Url::to('donation', ['reward'=> 2]) ?>"><?= Html::escape(l('Dona')); ?></a>
             </div>
             <div class="reward-description">
                 <?= Html::escape(l("Mostra il tuo orgoglio! Con gli adesivi e la spilla PoliMi Pride potrai mostrare ovunque il tuo supporto all'iniziativa. Usali per personalizzare i tuoi oggetti, dal pc al tuo zaino!")); ?><br /><?= Html::escape(l('(Sacca zainetto inclusa)')) ?>
@@ -50,8 +48,7 @@ use site\controllers\DonationController;
                     <div class="contribution-label"><?= Html::escape(l('Contributo Minimo Volontario')); ?>:</div>
                     <div class="reward-amount"><?= DonationController::REWARD_THRESHOLD3 ?>&euro;</div>
                 </div>
-                <a href="<?= Url::to('donation', ['amount' => DonationController::REWARD_THRESHOLD3]) ?>"><?=
-                    Html::escape(l('Dona')); ?></a>
+                <a href="<?= Url::to('donation', ['reward' => 3]) ?>"><?= Html::escape(l('Dona')); ?></a>
             </div>
             <div class="reward-description">
                 <?= Html::escape(l("Non perderti la maglietta PoliMi Pride! Con il suo design rinnovato è disponibile sia in formato t-shirt che come canotta, scegli quella che fa più per te!")); ?><br /><?= Html::escape(l('(Sacca, spilla e adesivi inclusi)')) ?>
@@ -60,5 +57,5 @@ use site\controllers\DonationController;
     </div>
 </section>
 <section id="donate">
-    <a href="<?= Url::to('donation') ?>" class="btn"><?= l('Ricevi'); ?></a>
+    <a href="<?= Url::to('donation') ?>" class="btn"><?= Html::escape(l('Ricevi')); ?></a>
 </section>

@@ -1,5 +1,6 @@
 <?php
 /** @var int $amount */
+/** @var int $reward */
 
 use nigiri\Site;
 use nigiri\views\Html;
@@ -79,14 +80,15 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
              di gadget')); ?>:</p>
             <div class="radio">
                 <label class="control-label">
-                    <input type="radio" name="chosenReward" id="reward0" value="0" checked="checked" />
+                    <input type="radio" name="chosenReward" id="reward0" value="0" <?= (empty($reward)?'checked="checked"':'') ?> />
                     <?= Html::escape(l('Non desidero alcuna ricompensa')); ?>
                 </label>
             </div>
             <div class="form-inline">
                 <label class="radio-inline control-label">
                     <input type="radio" name="chosenReward" id="reward1" value="1" disabled="disabled"
-                           data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>" />
+                           data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"
+                      <?= ($reward==1?'checked="checked"':'') ?>/>
                     <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)', DonationController::REWARD_THRESHOLD1)); ?>
                 </label>
                 <div class="form-group qty">
@@ -101,7 +103,8 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
             <div class="form-inline">
                 <label class="radio-inline control-label">
                     <input type="radio" name="chosenReward" id="reward2" value="2" disabled="disabled"
-                           data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>" />
+                           data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"
+                      <?= ($reward==2?'checked="checked"':'') ?>/>
                     <?= Html::escape(l('Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)',
                     DonationController::REWARD_THRESHOLD2)); ?>
                 </label>
@@ -116,7 +119,9 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
             </div>
             <div class="form-inline">
                 <label class="radio-inline control-label">
-                    <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled" data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>" />
+                    <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled"
+                           data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"
+                      <?= ($reward==3?'checked="checked"':'') ?>/>
                     <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima %s€)', DonationController::REWARD_THRESHOLD3)); ?>
                 </label>
                 <div class="form-group qty">
