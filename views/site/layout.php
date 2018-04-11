@@ -91,38 +91,19 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
     </div>
 </section>
 <?= $body ?>
-<?php /*footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-3 col-xs-offset-1" id="social-feed">
-                <h3>#polimipride</h3>
-            </div>
-            <div class="col-xs-4 col-xs-offset-2" id="initiative-sign">
-                <h2>PoliEdro x <strong>PoliMi</strong> Pride</h2>
-                <div><?=l('PoliEdro dal 2012 vuole essere un punto di riferimento per tutti gli studenti del Politecnico di Milano, in particolar modo per gli studenti LGBTI+ (Lesbiche, Gay, Bisex, Trans, ...). Organizziamo eventi di carattere culturale (cineforum, conferenze), oltre ad eventi ricreativi, come divertenti serate tra amici nei locali di Milano. Dal 2017 organizza PoliMi Pride per portare il volto del Politecnico al Milano Pride.')?></div>
-                <div id="contacts"><a href="https://www.facebook.com/poliedro.polimi" class="extern"><i
-                            class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/poliedro.polimi" class="extern"><i
-                            class="fab fa-instagram"></i></a><a href="https://t.me/PoliEdro" class="extern"><i class="fab fa-telegram-plane"></i></a></div>
-            </div>
-        </div>
-        <div id="legal"><a href="<?=Url::to('site/legal')?>">Condizioni di Utilizzo e Privacy Policy</a></div>
-    </div>
-</footer*/ ?>
 <footer class="site-footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-poliedro-logo">
+            <div class="col-12 col-md-6 col-poliedro-logo">
                 <?= page_include(dirname(dirname(__DIR__))
                     . '/assets/imgs/footer_logos.svg') ?>
             </div>
-            <div class="col-sm-12 col-md-6 col-details d-flex align-items-end">
+            <div class="col-12 col-md-6 col-details d-flex align-items-end">
                 <div class="align-middle">
                     <p class="poliedro-x-polimipride section-title">
-                        <?= page_include(dirname(dirname(__DIR__))
-                            . '/assets/imgs/poliedro.svg') ?>
+                        <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/poliedro.svg') ?>
                         ✕&nbsp;
-                        <?= page_include(dirname(dirname(__DIR__))
-                            . '/assets/imgs/polimipride_linear.svg') ?>
+                        <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/polimipride_linear.svg') ?>
                     </p>
                     <p class="text-left">
                         <?= l("L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo del") ?>
