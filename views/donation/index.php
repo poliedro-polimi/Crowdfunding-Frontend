@@ -1,5 +1,6 @@
 <?php
 /** @var int $amount */
+
 /** @var int $reward */
 
 use nigiri\Site;
@@ -8,34 +9,45 @@ use nigiri\views\Url;
 use \site\controllers\DonationController;
 
 Site::getTheme()->append('<script src="https://www.paypalobjects.com/api/checkout.js"></script>', 'head');
-Site::getTheme()->append('<script src="'.Url::resource('assets/js/payment.js').'" type="application/javascript"></script>', 'script');
+Site::getTheme()->append('<script src="' . Url::resource('assets/js/payment.js') . '" type="application/javascript"></script>',
+  'script');
 Site::getTheme()->resetPart("banner_img");
 Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img');
 
 ?>
 <div class="container">
-<h1><?= Html::escape(l('Donazioni')); ?></h1>
+    <h1><?= Html::escape(l('Donazioni')); ?></h1>
 
-<section id="donation_amount">
-    <div id="donation_objectives">
-        <div class="donation_objective" id="obj1" data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"><img
-              src="<?= Url::resource('assets/imgs/sacca.png') ?>" class="item" /><img
-              src="<?= Url::resource('assets/imgs/filter1.png') ?>" class="overlay" /><div
-              class="objective_arrow"></div></div>
-        <div class="donation_objective" id="obj2" data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"><img
-              src="<?= Url::resource('assets/imgs/adesivi_spille.png') ?>" class="item" /><img
-              src="<?= Url::resource('assets/imgs/filter2.png') ?>" class="overlay" /><div
-              class="objective_arrow"></div></div>
-        <div class="donation_objective" id="obj3" data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"><img
-              src="<?= Url::resource('assets/imgs/maglia.png') ?>" class="item" /><img
-              src="<?= Url::resource('assets/imgs/filter3.png') ?>" class="overlay" /><div
-              class="objective_arrow"></div></div>
-    </div>
-    <div id="donation_slider">
-        <div class="ui-slider-handle"><div id="handle-label"><div id="handle-label-arrow"></div><span><?= $amount
-                    ?>&euro;</span></div></div>
-    </div>
-</section>
+    <section id="donation_amount">
+        <div id="donation_objectives">
+            <div class="donation_objective" id="obj1" data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"><img
+                  src="<?= Url::resource('assets/imgs/sacca.png') ?>" class="item"/><img
+                  src="<?= Url::resource('assets/imgs/filter1.png') ?>" class="overlay"/>
+                <div
+                  class="objective_arrow"></div>
+            </div>
+            <div class="donation_objective" id="obj2" data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"><img
+                  src="<?= Url::resource('assets/imgs/adesivi_spille.png') ?>" class="item"/><img
+                  src="<?= Url::resource('assets/imgs/filter2.png') ?>" class="overlay"/>
+                <div
+                  class="objective_arrow"></div>
+            </div>
+            <div class="donation_objective" id="obj3" data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"><img
+                  src="<?= Url::resource('assets/imgs/maglia.png') ?>" class="item"/><img
+                  src="<?= Url::resource('assets/imgs/filter3.png') ?>" class="overlay"/>
+                <div
+                  class="objective_arrow"></div>
+            </div>
+        </div>
+        <div id="donation_slider">
+            <div class="ui-slider-handle">
+                <div id="handle-label">
+                    <div id="handle-label-arrow"></div>
+                    <span><?= $amount
+                        ?>&euro;</span></div>
+            </div>
+        </div>
+    </section>
     <section id="error_box" class="text-danger"></section>
     <section id="donation_data">
         <div id="required_legend"><?= Html::escape(l("I campi segnati con * sono obbligatori")); ?></div>
@@ -43,24 +55,25 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
             <div class="form-inline">
                 <div class="form-group">
                     <label for="nome" class="control-label"><?= l('Nome'); ?>:</label>
-                    <input type="text" name="nome" id="nome" class="form-control" />
+                    <input type="text" name="nome" id="nome" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label for="cognome" class="control-label"><?= l('Cognome'); ?>:</label>
-                    <input type="text" name="cognome" id="cognome" class="form-control" />
+                    <input type="text" name="cognome" id="cognome" class="form-control"/>
                 </div>
             </div>
             <div class="form-inline">
                 <div class="form-group">
                     <label for="email" class="control-label"><?= l('Email'); ?>:</label>
-                    <input type="email" name="email" id="email" class="form-control" />
+                    <input type="email" name="email" id="email" class="form-control"/>
                     <div class="help-block"><?= Html::escape(l('Sarà utilizzata per tutte le comunicazioni sulla tua 
                     donazione')); ?></div>
                 </div>
                 <div class="form-group">
                     <label for="tel" class="control-label"><?= l('Numero di Telefono') ?>:</label>
                     <input type="tel" name="tel" id="tel" class="form-control">
-                    <div class="help-block"><?= Html::escape(l('Sarà utilizzato solo in caso non riuscissimo a contattarti per email')) ?></div>
+                    <div
+                      class="help-block"><?= Html::escape(l('Sarà utilizzato solo in caso non riuscissimo a contattarti per email')) ?></div>
                 </div>
             </div>
             <div class="form-inline">
@@ -68,7 +81,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                     <label for="amount" class="control-label"><?= l('Ammontare della Donazione'); ?><span
                           class="required">&nbsp;*</span>:</label>
                     <div class="input-group">
-                        <input type="number" name="amount" id="amount" class="form-control" value="<?= $amount ?>" />
+                        <input type="number" name="amount" id="amount" class="form-control" value="<?= $amount ?>"/>
                         <div class="input-group-addon">&euro;</div>
                     </div>
                 </div>
@@ -80,7 +93,8 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
              di gadget')); ?>:</p>
             <div class="radio">
                 <label class="control-label">
-                    <input type="radio" name="chosenReward" id="reward0" value="0" <?= (empty($reward)?'checked="checked"':'') ?> />
+                    <input type="radio" name="chosenReward" id="reward0"
+                           value="0" <?= (empty($reward) ? 'checked="checked"' : '') ?> />
                     <?= Html::escape(l('Non desidero alcuna ricompensa')); ?>
                 </label>
             </div>
@@ -88,15 +102,16 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                 <label class="radio-inline control-label">
                     <input type="radio" name="chosenReward" id="reward1" value="1" disabled="disabled"
                            data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"
-                      <?= ($reward==1?'checked="checked"':'') ?>/>
-                    <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)', DonationController::REWARD_THRESHOLD1)); ?>
+                      <?= ($reward == 1 ? 'checked="checked"' : '') ?>/>
+                    <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)',
+                      DonationController::REWARD_THRESHOLD1)); ?>
                 </label>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty1"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
                         <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
                         <input type="number" name="qty1" id="qty1" disabled="disabled" class="form-control" value="0"
-                       min="0" />
+                               min="0"/>
                     </div>
                 </div>
             </div>
@@ -104,16 +119,16 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                 <label class="radio-inline control-label">
                     <input type="radio" name="chosenReward" id="reward2" value="2" disabled="disabled"
                            data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"
-                      <?= ($reward==2?'checked="checked"':'') ?>/>
+                      <?= ($reward == 2 ? 'checked="checked"' : '') ?>/>
                     <?= Html::escape(l('Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)',
-                    DonationController::REWARD_THRESHOLD2)); ?>
+                      DonationController::REWARD_THRESHOLD2)); ?>
                 </label>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty2"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
                         <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
                         <input type="number" name="qty2" id="qty2" disabled="disabled" class="form-control" value="0"
-                       min="0" />
+                               min="0"/>
                     </div>
                 </div>
             </div>
@@ -121,32 +136,36 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                 <label class="radio-inline control-label">
                     <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled"
                            data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"
-                      <?= ($reward==3?'checked="checked"':'') ?>/>
-                    <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima %s€)', DonationController::REWARD_THRESHOLD3)); ?>
+                      <?= ($reward == 3 ? 'checked="checked"' : '') ?>/>
+                    <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima %s€)',
+                      DonationController::REWARD_THRESHOLD3)); ?>
                 </label>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty3"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
                         <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
                         <input type="number" name="qty3" id="qty3" class="form-control" disabled="disabled" value="0"
-                       min="0" />
+                               min="0"/>
                     </div>
                 </div>
             </div>
-            <div class="help-block"><?= Html::escape(l('Puoi scegliere quantità maggiori delle ricompense con una donazione almeno pari a un multiplo della donazione minima')); ?></div>
+            <div
+              class="help-block"><?= Html::escape(l('Puoi scegliere quantità maggiori delle ricompense con una donazione almeno pari a un multiplo della donazione minima')); ?></div>
             <fieldset id="tshirt_data">
                 <legend><?= Html::escape(l('Scegli la tua T-Shirt')); ?></legend>
                 <div class="tshirt_chooser col-xs-3">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="shirt-type" value="t-shirt" />
-                            <?= Html::escape(l('T-shirt classica')); ?><br /><img src="https://ae01.alicdn.com/kf/HTB1FnwySFXXXXa0XVXXq6xXFXXXo/Men-s-Leisure-Rainbow-Sheep-Of-The-Family-LGBT-T-shirt-White-Short-Sleeve-Custom-T.jpg_640x640.jpg" />
+                            <input type="radio" name="shirt-type" value="t-shirt"/>
+                            <?= Html::escape(l('T-shirt classica')); ?><br/><img
+                              src="https://ae01.alicdn.com/kf/HTB1FnwySFXXXXa0XVXXq6xXFXXXo/Men-s-Leisure-Rainbow-Sheep-Of-The-Family-LGBT-T-shirt-White-Short-Sleeve-Custom-T.jpg_640x640.jpg"/>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="shirt-type" value="tank-top" />
-                            <?= Html::escape(l('Canotta')); ?><br /><img src="https://www.pianetaoutlet.it/59072-large_default/adidas-trefoil-tank-canotta-uomo-nera.jpg" />
+                            <input type="radio" name="shirt-type" value="tank-top"/>
+                            <?= Html::escape(l('Canotta')); ?><br/><img
+                              src="https://www.pianetaoutlet.it/59072-large_default/adidas-trefoil-tank-canotta-uomo-nera.jpg"/>
                         </label>
                     </div>
                     <div class="form-group">
@@ -169,10 +188,10 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                     consegneremo invece personalmente presso i nostri stand nelle sedi del Politecnico organizzati
                     durante il mese di Giugno')); ?><span class="required">&nbsp;*</span></p>
                 <div class="radio">
-                    <label><input type="radio" name="location" value="leonardo" />Leonardo</label>
+                    <label><input type="radio" name="location" value="leonardo"/>Leonardo</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="location" value="bovisa" />Bovisa</label>
+                    <label><input type="radio" name="location" value="bovisa"/>Bovisa</label>
                 </div>
             </fieldset>
         </fieldset>
@@ -191,15 +210,15 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
     var initialAmount = <?= $amount ?>;
     var backendLang = <?= json_encode(Site::getRouter()->getRequestedLanguage()); ?>;
     var payPalLocale = <?php
-    switch(Site::getRouter()->getRequestedLanguage()){
-        case 'it':
-            echo json_encode('it_IT');
-            break;
-        case 'en':
-            echo json_encode('en_GB');
-            break;
-    }
-    ?>;
+      switch (Site::getRouter()->getRequestedLanguage()) {
+          case 'it':
+              echo json_encode('it_IT');
+              break;
+          case 'en':
+              echo json_encode('en_GB');
+              break;
+      }
+      ?>;
     var confirm_url = <?= json_encode(Url::to("donation/confirmation")); ?>;
 
     var validation_error_msg = <?= json_encode(l('Verifica i dati inseriti!')); ?>;
