@@ -65,7 +65,6 @@ $(function(){
     });
 
     paypal.Button.render({
-        env: 'sandbox',
         locale: payPalLocale,
         commit: true,
         style: {
