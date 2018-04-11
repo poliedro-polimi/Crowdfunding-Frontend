@@ -195,9 +195,9 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 
 /** Define consistent border, margin, and padding. */
 fieldset {
-    border: 1px solid #c0c0c0;
+    /*border: 1px solid #c0c0c0;
     margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
+    padding: 0.35em 0.625em 0.75em;*/
 }
 
 /** 1. Correct `color` not being inherited in IE 8/9/10/11. 2. Remove padding so people aren't caught out if they zero out fieldsets. */
@@ -701,9 +701,6 @@ body.site_controller #donate a{
     border-radius: 10px;
 }
 
-body.donation_controller.index_action #donation_amount{
-    margin: 50px auto;
-}
 body.donation_controller.index_action #donation_slider .ui-slider-handle{
     border-radius: 10px;
     border: 1px solid #000000;
@@ -796,14 +793,11 @@ body.donation_controller.index_action #donation_data{
     padding: 20px;
     margin: 0 auto 80px auto;
 }
+
+
 body.donation_controller.index_action #donation_data input,
 body.donation_controller.index_action #donation_data select{
     background-color: #F2F2F2;
-}
-
-body.donation_controller.index_action #donation_data input:not([type=radio]):not([type=checkbox]),
-body.donation_controller.index_action #donation_data .form-group-amount div.input-group {
-    width: 100%
 }
 
 body.donation_controller.index_action #donation_data #required_legend{
@@ -813,62 +807,27 @@ body.donation_controller.index_action #donation_data #required_legend{
 body.donation_controller.index_action #donation_data .required{
     color: #CC1100;
 }
-/*body.donation_controller.index_action #donation_data .form-inline .form-group{
-    margin: 0 20px 10px 20px;
-}*/
-.form-group-amount,
-body.donation_controller.index_action #donation_data .form-inline .form-group:first-child{
-    margin-left: 0;
-    width: 49%;
-}
-body.donation_controller.index_action #donation_data .form-inline .form-group:last-child{
-    margin-right: 0;
-    width: 49%;
-}
-
-@media screen and (max-width: 768px) {
-  .form-group-amount,
-  body.donation_controller.index_action #donation_data .form-inline .form-group:first-child{
-    margin-left: 0;
-    width: 100%;
-  }
-  body.donation_controller.index_action #donation_data .form-inline .form-group:last-child{
-    margin-right: 0;
-    width: 100%;
-  }
-}
-
-body.donation_controller.index_action #donation_data .form-inline {
-    padding: 5px 0;
-}
-
 /*
-body.donation_controller.index_action #general_data .form-inline label,
-body.donation_controller.index_action #general_data .form-inline input:not([type=radio]):not([type=checkbox]){
-    display: block;
-    width: 350px;
-}
-body.donation_controller.index_action #donation_data .form-inline input#email {
-    width: 430px;
-}
-body.donation_controller.index_action #donation_data input#tel{
-    width: 300px;
-}
-body.donation_controller.index_action #donation_data input#amount{
-    width: 75px;
-}
-*/
-
 body.donation_controller.index_action #donation_data label.input_disabled{
     cursor: not-allowed;
     color: #AAAAAA;
+}*/
+body.donation_controller.index_action #donation_data .reward-line{
+    margin: 20px auto;
 }
-body.donation_controller.index_action #donation_data .form-inline .qty{
-    vertical-align: unset;/* Don't know why but this is needed to actually align in the middle */
+
+body.donation_controller.index_action #donation_data .reward-line .qty{
+    margin-left: 15px;
 }
-body.donation_controller.index_action #donation_data .form-inline .form-group.qty input{
-    display: inherit;
+body.donation_controller.index_action #donation_data .reward-line .qty input{
     width: 50px;
+}
+
+body.donation_controller.index_action #donation_data .reward-line .form-text{
+    padding-left: 20px;
+}
+body.donation_controller.index_action #donation_data .reward-line .form-text table{
+    width: 50%;
 }
 
 body.donation_controller.index_action #donation_data #tshirt_data,

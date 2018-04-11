@@ -52,37 +52,39 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
     <section id="donation_data">
         <div id="required_legend"><?= Html::escape(l("I campi segnati con * sono obbligatori")); ?></div>
         <div id="general_data">
-            <div class="form-inline">
-                <div class="form-group">
-                    <label for="nome" class="control-label"><?= l('Nome'); ?>:</label>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="nome" class="control-label"><?= Html::escape(l('Nome')); ?>:</label>
                     <input type="text" name="nome" id="nome" class="form-control"/>
                 </div>
-                <div class="form-group">
-                    <label for="cognome" class="control-label"><?= l('Cognome'); ?>:</label>
+                <div class="form-group col">
+                    <label for="cognome" class="control-label"><?= Html::escape(l('Cognome')); ?>:</label>
                     <input type="text" name="cognome" id="cognome" class="form-control"/>
                 </div>
             </div>
-            <div class="form-inline">
-                <div class="form-group">
-                    <label for="email" class="control-label"><?= l('Email'); ?>:</label>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="email" class="control-label"><?= Html::escape(l('Email')); ?>:</label>
                     <input type="email" name="email" id="email" class="form-control"/>
-                    <div class="help-block"><?= Html::escape(l('Sarà utilizzata per tutte le comunicazioni sulla tua 
-                    donazione')); ?></div>
+                    <small class="form-text text-muted"><?= Html::escape(l('Sarà utilizzata per tutte le comunicazioni sulla tua 
+                    donazione')); ?></small>
                 </div>
-                <div class="form-group">
-                    <label for="tel" class="control-label"><?= l('Numero di Telefono') ?>:</label>
+                <div class="form-group col">
+                    <label for="tel" class="control-label"><?= Html::escape(l('Numero di Telefono')); ?>:</label>
                     <input type="tel" name="tel" id="tel" class="form-control">
-                    <div
-                      class="help-block"><?= Html::escape(l('Sarà utilizzato solo in caso non riuscissimo a contattarti per email')) ?></div>
+                    <small
+                      class="form-text text-muted"><?= Html::escape(l('Sarà utilizzato solo in caso non riuscissimo a contattarti per email')) ?></small>
                 </div>
             </div>
-            <div class="form-inline">
-                <div class="form-group form-group-amount">
-                    <label for="amount" class="control-label"><?= l('Ammontare della Donazione'); ?><span
+            <div class="form-row">
+                <div class="form-group col-auto">
+                    <label for="amount" class="control-label"><?= Html::escape(l('Ammontare della Donazione')); ?><span
                           class="required">&nbsp;*</span>:</label>
                     <div class="input-group">
                         <input type="number" name="amount" id="amount" class="form-control" value="<?= $amount ?>"/>
-                        <div class="input-group-addon">&euro;</div>
+                        <div class="input-group-append">
+                            <div class="input-group-text">&euro;</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,67 +92,124 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
         <fieldset>
             <legend><?= l('Ricompensa') ?></legend>
             <p><?= Html::escape(l('Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti pacchetti
-             di gadget')); ?>:</p>
-            <div class="radio">
-                <label class="control-label">
-                    <input type="radio" name="chosenReward" id="reward0"
-                           value="0" <?= (empty($reward) ? 'checked="checked"' : '') ?> />
+             di gadget')); ?></p>
+
+            <div class="form-check reward-line">
+                <input type="radio" name="chosenReward" id="reward0" value="0" class="form-check-input"
+                  <?= (empty($reward) ? 'checked="checked"' : '') ?> />
+                <label class="form-check-label" for="reward0">
                     <?= Html::escape(l('Non desidero alcuna ricompensa')); ?>
                 </label>
             </div>
-            <div class="form-inline">
-                <label class="radio-inline control-label">
+            <div class="form-inline reward-line">
+                <div class="form-check disabled">
                     <input type="radio" name="chosenReward" id="reward1" value="1" disabled="disabled"
+                           class="form-check-input"
                            data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"
-                      <?= ($reward == 1 ? 'checked="checked"' : '') ?>/>
-                    <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)',
-                      DonationController::REWARD_THRESHOLD1)); ?>
-                </label>
+                      <?= ($reward == 1 ? 'checked="checked"' : '') ?> />
+                    <label class="form-check-label" for="reward1">
+                        <?= Html::escape(l('Sacca zainetto (donazione minima %s€)',
+                          DonationController::REWARD_THRESHOLD1)); ?>
+                    </label>
+                </div>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty1"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
-                        <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><?= Html::escape(l('Q.tà')) ?></div>
+                        </div>
                         <input type="number" name="qty1" id="qty1" disabled="disabled" class="form-control" value="0"
                                min="0"/>
                     </div>
                 </div>
+                <small class="form-text text-muted">Sacca Zainetto in Nylon, decorata con il nuovo logo
+                    PoliMi Pride, 43x34cm</small>
             </div>
-            <div class="form-inline">
-                <label class="radio-inline control-label">
+            <div class="form-inline reward-line">
+                <div class="form-check disabled">
                     <input type="radio" name="chosenReward" id="reward2" value="2" disabled="disabled"
+                           class="form-check-input"
                            data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"
                       <?= ($reward == 2 ? 'checked="checked"' : '') ?>/>
-                    <?= Html::escape(l('Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)',
-                      DonationController::REWARD_THRESHOLD2)); ?>
-                </label>
+                    <label class="form-check-label" for="reward2">
+                        <?= Html::escape(l('Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)',
+                          DonationController::REWARD_THRESHOLD2)); ?>
+                    </label>
+                </div>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty2"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
-                        <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><?= Html::escape(l('Q.tà')) ?></div>
+                        </div>
                         <input type="number" name="qty2" id="qty2" disabled="disabled" class="form-control" value="0"
                                min="0"/>
                     </div>
                 </div>
+                <small class="form-text text-muted">Adesivi tondi PoliMi Pride, spilla circolare da 44mm (include
+                    anche la sacca zainetto)</small>
             </div>
-            <div class="form-inline">
-                <label class="radio-inline control-label">
+            <div class="form-inline reward-line">
+                <div class="form-check disabled">
                     <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled"
+                           class="form-check-input"
                            data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"
-                      <?= ($reward == 3 ? 'checked="checked"' : '') ?>/>
-                    <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima %s€)',
-                      DonationController::REWARD_THRESHOLD3)); ?>
-                </label>
+                      <?= ($reward == 3 ? 'checked="checked"' : '') ?> />
+                    <label class="form-check-label" for="reward3">
+                        <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione minima %s€)',
+                          DonationController::REWARD_THRESHOLD3)); ?>
+                    </label>
+                </div>
                 <div class="form-group qty">
                     <label class="sr-only" for="qty3"><?= Html::escape(l('Quantità')); ?></label>
                     <div class="input-group">
-                        <div class="input-group-addon"><?= Html::escape(l('Qtà')) ?></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><?= Html::escape(l('Q.tà')) ?></div>
+                        </div>
                         <input type="number" name="qty3" id="qty3" class="form-control" disabled="disabled" value="0"
                                min="0"/>
                     </div>
                 </div>
+                <small class="form-text text-muted">Maglietta di cotone con stampa
+                    digitale del nuovo logo PoliMi Pride. Disponibile in 6 taglie, sia come t-shirt che come
+                    canottiera.<br />
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Approx. 3%</td>
+                                <th scope="col">XS</th>
+                                <th scope="col">S</th>
+                                <th scope="col">M</th>
+                                <th scope="col">L</th>
+                                <th scope="col">XL</th>
+                                <th scope="col">XXL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Larghezza (cm)</th>
+                                <td>48</td>
+                                <td>51</td>
+                                <td>53.5</td>
+                                <td>56</td>
+                                <td>58</td>
+                                <td>61</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Lunghezza (cm)</th>
+                                <td>68</td>
+                                <td>70</td>
+                                <td>72</td>
+                                <td>74</td>
+                                <td>76</td>
+                                <td>78</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </small>
             </div>
-            <div
-              class="help-block"><?= Html::escape(l('Puoi scegliere quantità maggiori delle ricompense con una donazione almeno pari a un multiplo della donazione minima')); ?></div>
+            <small
+              class="help-block"><?= Html::escape(l('Puoi scegliere quantità maggiori delle ricompense con una donazione almeno pari a un multiplo della donazione minima')); ?></small>
             <fieldset id="tshirt_data">
                 <legend><?= Html::escape(l('Scegli la tua T-Shirt')); ?></legend>
                 <div class="tshirt_chooser col-xs-3">
