@@ -578,7 +578,6 @@ section#header .section-content {
 section#header .section-title, section#header .section-content {
     color: #FFFFFF;
     font-weight: lighter;
-    font-style: normal;
 }
 section#header .section-title #countdown span{
     font-weight: bold;
