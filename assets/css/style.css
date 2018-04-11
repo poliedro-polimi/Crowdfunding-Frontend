@@ -268,6 +268,16 @@ a:hover {
     text-decoration: underline;
 }
 
+.section-title {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #E60F6D;
+    font-style: italic;
+}
+
+.section-content {
+    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .container-navbar {
     max-width: 75%;
 }
@@ -525,7 +535,6 @@ ul.navbar-nav {
 
 section#header {
     height: 41.09vw;
-    color: white;
     position: relative;
     overflow: hidden;
     background: transparent url(../imgs/banner1.png) no-repeat top center;
@@ -567,20 +576,13 @@ section#header .section-content {
 }
 
 section#header .section-title, section#header .section-content {
+    color: #FFFFFF;
     font-weight: lighter;
+    font-style: normal;
 }
 section#header .section-title #countdown span{
     font-weight: bold;
 }
-
-.section-title {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.section-content {
-    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 
 /** Pages styles */
 body.site_controller section#how_to_help{
@@ -592,10 +594,11 @@ body.site_controller section#how_to_help .section-title{
     font-size: 32px;
 }
 body.site_controller section#how_to_help .section-content{
-    color: #B0B0B0;
+    color: #000000;
     font-size: 1.5em;
-    width: 50%;
+    width: 70%;
     margin: auto;
+    text-align: justify;
 }
 @media screen and (max-width: 768px) {
     body.site_controller section#how_to_help .section-content {
@@ -620,7 +623,7 @@ body.site_controller #rewards h1{
     margin-bottom: 50px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     body.site_controller #rewards .reward {
         margin-bottom: 65px;
     }
@@ -679,6 +682,7 @@ body.site_controller #rewards .reward .reward-box a:hover{
 body.site_controller #rewards .reward .reward-description{
     text-align: justify;
 }
+
 body.site_controller #donate {
     text-align: center;
     margin: 150px 0 100px 0;
@@ -688,15 +692,14 @@ body.site_controller #donate {
         margin: 0 0 100px 0;
     }
 }
-
 body.site_controller #donate a{
-    font-size: 2.3em;
-    font-weight: bolder;
+    font-size: 2.1em;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    padding: 10px 90px;
-    background-color: #E91E63;
+    padding: 10px 70px;
+    background-color: #E3162E;
     color: #FFFFFF;
+    border-radius: 10px;
 }
 
 body.donation_controller.index_action #donation_amount{
@@ -949,6 +952,8 @@ footer .section-social {
 
 footer .section-title {
     margin-top: 1rem;
+    color: #FFFFFF;
+    font-style: normal;
 }
 
 @media (min-width: 768px) {
