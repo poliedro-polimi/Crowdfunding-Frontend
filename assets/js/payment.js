@@ -169,12 +169,17 @@ function amountChange(value) {
     $("#handle-label").find("span").text(value+"€");
     $("#amount").val(value);
     $("#donation_slider").slider("value", value);
+
+    var z=1;
     $(".donation_objective").each(function(){
         if($(this).data("threshold")<=value){
             $(this).find('img.overlay').show();
+            $(this).css('z-index', z);//Make sure the higher active reward is shown
+            z++;
         }
         else{
             $(this).find('img.overlay').hide();
+            $(this).css('z-index', 0);
         }
     });
     $("input[name=chosenReward]").each(function(){
