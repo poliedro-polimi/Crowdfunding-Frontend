@@ -868,9 +868,12 @@ body.donation_controller.confirmation_action #confirmation{
     text-align: center;
 }
 body.donation_controller.confirmation_action #confirmation h1{
-    color: #E91E63;
+    color: #EE9724;
     margin-top: 100px;
     margin-bottom: 50px;
+}
+body.donation_controller.confirmation_action #confirmation h3{
+    color: #000000;
 }
 body.donation_controller.confirmation_action #confirmation p{
     margin: auto;
