@@ -53,24 +53,24 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
         <form novalidate>
             <div id="required_legend"><?= Html::escape(l("I campi segnati con * sono obbligatori")); ?></div>
             <div id="general_data">
-                <div class="form-row">
-                    <div class="form-group col">
+                <div class="form-row justify-content-around">
+                    <div class="form-group col-xs-10 col-sm-6">
                         <label for="nome" class="control-label"><?= Html::escape(l('Nome')); ?>:</label>
                         <input type="text" name="nome" id="nome" class="form-control"/>
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-xs-10 col-sm-6">
                         <label for="cognome" class="control-label"><?= Html::escape(l('Cognome')); ?>:</label>
                         <input type="text" name="cognome" id="cognome" class="form-control"/>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col">
+                <div class="form-row justify-content-around">
+                    <div class="form-group col-xs-10 col-sm-6">
                         <label for="email" class="control-label"><?= Html::escape(l('Email')); ?>:</label>
                         <input type="email" name="email" id="email" class="form-control"/>
                         <small class="form-text text-muted"><?= Html::escape(l('Sarà utilizzata per tutte le comunicazioni sulla tua 
                     donazione')); ?></small>
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-xs-10 col-sm-6">
                         <label for="tel" class="control-label"><?= Html::escape(l('Numero di Telefono')); ?>:</label>
                         <input type="tel" name="tel" id="tel" class="form-control">
                         <small
@@ -182,7 +182,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                 <fieldset id="tshirt_data">
                     <legend><?= Html::escape(l('Scegli la tua T-Shirt')); ?></legend>
                     <div class="form-row justify-content-around">
-                        <div class="tshirt_chooser col-xs-10 col-3">
+                        <div class="tshirt_chooser col-xs-10 col-sm-5 col-md-4 col-lg-3">
                             <div class="radio">
                                 <label>
                                     <input type="radio" name="shirt-type" value="t-shirt"/>
