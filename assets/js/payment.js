@@ -53,16 +53,24 @@ $(function(){
         var qty = $t.val();
         var amt = $("#amount").val();
 
+        if(qty == 0){//If you really want 0 items then select "no reward", you fuck everything up if you put 0
+            $("#reward0").prop("checked", true).change();
+            return;
+        }
+
         if(ths*qty > amt){
             $t.val(Math.floor(amt / ths));
-            $t.closest(".qty").addClass("has-warning");
-            setTimeout(function(){$t.closest(".qty").removeClass("has-warning");}, 2000);
+            $t.addClass("warning");
+            setTimeout(function(){$t.removeClass("warning");}, 2000);
         }
 
         if($t.attr("id")=="qty3"){
             tshirtSection($t.val());
         }
     });
+
+    //Set things up correctly if there is already a reward chosen at the beginning
+    $("input[name=chosenReward]:checked").change();
 
     paypal.Button.render({
         locale: payPalLocale,
@@ -149,7 +157,7 @@ function tshirtSection(qty){
             $copy = currentSections.first().clone();
             $copy.find("input[type=radio]").attr("name", "shirt-type"+(currentSections.length+i)).prop("checked", false);
             $copy.find("option").prop("selected", false);
-            $copy.appendTo("#tshirt_data");
+            $copy.appendTo("#tshirt_data .form-row");
         }
     }
     else if(diff < 0){
@@ -174,12 +182,13 @@ function amountChange(value) {
         var thr = $t.data("threshold") || 0;
         if(thr<=value){
             $t.prop("disabled", false);
-            $t.closest('label').removeClass("input_disabled");
+            $t.siblings('label').removeClass("input_disabled");
+            $t.closest(".form-inline").find(".qty input").attr('max', Math.floor(value/thr));
         }
         else{
             $t.prop("disabled", true);
-            $t.closest('label').addClass("input_disabled");
-            $t.closest(".form-inline").find(".qty input").prop("disabled", true);
+            $t.siblings('label').addClass("input_disabled");
+            $t.closest(".form-inline").find(".qty input").prop("disabled", true).val(0);
             if($t.prop("checked")){
                 $t.prop("checked", false);
                 $("#reward0").prop("checked", true);
@@ -193,9 +202,11 @@ function setRequiredFields(){
     var dynamicRequire = $("#nome, #cognome, #email, #tel");
 
     if($("#reward0").prop("checked")){
+        dynamicRequire.prop("required", false);
         dynamicRequire.siblings("label").find(".required").remove();
     }
     else{
+        dynamicRequire.prop("required", true);
         dynamicRequire.each(function(){
             var $label = $(this).siblings("label");
             if($label.find('.required').length==0) {
@@ -252,55 +263,57 @@ function form_is_valid(){
     if(!$('#reward0').prop("checked")) {//General info is optional if there is no gadget to order
         var $nome = $('#nome');
         if ($.trim($nome.val()) == '') {
-            $nome.closest('.form-group').addClass("has-error");
+            $nome.addClass('is-invalid');
             ret = ret && false;
         }
         else {
-            $nome.closest('.form-group').removeClass("has-error");
+            $nome.removeClass("is-invalid");
         }
 
         var $cognome = $('#cognome');
         if ($.trim($cognome.val()) == '') {
-            $cognome.closest('.form-group').addClass("has-error");
+            $cognome.addClass("is-invalid");
             ret = ret && false;
         }
         else {
-            $cognome.closest('.form-group').removeClass("has-error");
+            $cognome.removeClass("is-invalid");
         }
 
         var $tel = $('#tel');
         if ($.trim($tel.val()) == '') {
-            $tel.closest('.form-group').addClass("has-error");
+            $tel.addClass("is-invalid");
             ret = ret && false;
         }
         else {
-            $tel.closest('.form-group').removeClass("has-error");
+            $tel.removeClass("is-invalid");
         }
 
         var $email = $('#email');
         if ($.trim($email.val()) == '') {
-            $email.closest('.form-group').addClass("has-error");
+            $email.addClass("is-invalid");
             ret = ret && false;
         }
         else {
-            $email.closest('.form-group').removeClass("has-error");
+            $email.removeClass("is-invalid");
         }
     }
     else{
-        $("#general_data input").closest('.form-group').removeClass("has-error");
+        $("#general_data input").removeClass("is-invalid");
     }
 
     var $amt = $('#amount');
     if($.trim($amt.val())=='' || $amt.val()<=0){
-        $amt.closest('.form-group').addClass("has-error");
+        $amt.addClass("is-invalid");
         ret = ret && false;
     }
     else{
-        $amt.closest('.form-group').removeClass("has-error");
+        $amt.removeClass("is-invalid");
     }
 
     ret2 = validate_rewards();
     ret = ret && ret2;
+
+    $('#donation_data form').addClass('was-validated');
 
     return ret;
 }
@@ -311,19 +324,19 @@ function validate_rewards(){
     var amt = $("#amount").val();
 
     if($selected.length==0){
-        $("input[name=chosenReward]").closest(".form-group").addClass("has-error");
+        $("input[name=chosenReward]").addClass("is-invalid");
         return false;
     }
     else{
-        $("input[name=chosenReward]").closest(".form-group").removeClass("has-error");
+        $("input[name=chosenReward]").removeClass("is-invalid");
     }
 
     if($qty.val()<=0 || $selected.data('threshold') * $qty.val() <= amt){
-        $qty.closest('.form-group').addClass("has-error");
+        $qty.addClass("is-invalid");
         return false;
     }
     else{
-        $qty.closest('.form-group').removeClass("has-error");
+        $qty.removeClass("is-invalid");
     }
 
     var ret = true;
@@ -347,9 +360,12 @@ function validate_tshirts(){
     $('.tshirt_chooser').each(function(){
         var $t = $(this);
         if($t.find("input[type=radio]:checked").length!=1){
+            $t.find("input[type=radio]").addClass("is-invalid");
             ret = ret && false;
         }
-        return true;
+        else{
+            $t.find("input[type=radio]").removeClass("is-invalid");
+        }
     });
 
     return ret;
@@ -358,11 +374,11 @@ function validate_tshirts(){
 function validate_location(){
     var $loc = $('[name=location]:checked');
     if($loc.length==0){
-        $('input[name=location]').closest(".form-group").addClass("has-error");
+        $('input[name=location]').addClass("is-invalid");
         return false;
     }
     else{
-        $('input[name=location]').closest(".form-group").removeClass("has-error");
+        $('input[name=location]').removeClass("is-invalid");
         return true;
     }
 }

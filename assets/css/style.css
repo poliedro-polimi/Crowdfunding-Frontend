@@ -807,11 +807,16 @@ body.donation_controller.index_action #donation_data #required_legend{
 body.donation_controller.index_action #donation_data .required{
     color: #CC1100;
 }
-/*
+
 body.donation_controller.index_action #donation_data label.input_disabled{
     cursor: not-allowed;
     color: #AAAAAA;
-}*/
+}
+
+body.donation_controller.index_action #donation_data fieldset{
+    margin-top: 30px;
+}
+
 body.donation_controller.index_action #donation_data .reward-line{
     margin: 20px auto;
 }
@@ -820,19 +825,27 @@ body.donation_controller.index_action #donation_data .reward-line .qty{
     margin-left: 15px;
 }
 body.donation_controller.index_action #donation_data .reward-line .qty input{
-    width: 50px;
+    width: 70px;
+}
+body.donation_controller.index_action #donation_data .reward-line .qty input.warning {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+body.donation_controller.index_action #donation_data .reward-line .qty input:disabled{
+    background-color: #DDDDDD;
 }
 
 body.donation_controller.index_action #donation_data .reward-line .form-text{
     padding-left: 20px;
 }
-body.donation_controller.index_action #donation_data .reward-line .form-text table{
-    width: 50%;
-}
 
 body.donation_controller.index_action #donation_data #tshirt_data,
 body.donation_controller.index_action #donation_data #location_data{
     display: none;
+}
+body.donation_controller.index_action #donation_data #tshirt_data table{
+    width: 50%;
+    font-size: 0.8em;
 }
 body.donation_controller.index_action #tshirt_data .tshirt_chooser{
     text-align: left;
