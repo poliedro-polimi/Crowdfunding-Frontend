@@ -859,6 +859,12 @@ body.donation_controller.index_action #tshirt_data .tshirt_chooser img{
 body.donation_controller.index_action #donation_data #pay-button{
     text-align: center;
 }
+@media screen and (max-width: 768px) {
+    .paypal-button.paypal-button-size-large.paypal-button-layout-horizontal > div.xcomponent-outlet,
+    .paypal-button.paypal-button-size-large.paypal-button-layout-horizontal div.xcomponent-outlet iframe.xcomponent-component-frame.xcomponent-visible{
+        width: 100% !important;
+    }
+}
 
 body.donation_controller.confirmation_action #confirmation{
     text-align: center;
@@ -875,15 +881,11 @@ body.donation_controller.confirmation_action #confirmation p{
 body.donation_controller.confirmation_action #optional_info{
     margin: 50px auto 100px auto;
 }
-
 footer {
     background-color: black;
     color: white;
     padding-top: 60px;
     padding-bottom: 60px;
-    font-size: 16px;
-    line-height: 1.75;
-    font-family: 'Roboto Slab', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 footer a,
@@ -924,7 +926,6 @@ footer .section-social {
 footer .section-title {
     margin-top: 1rem;
     color: #FFFFFF;
-    font-style: normal;
 }
 
 @media (min-width: 768px) {
@@ -938,39 +939,41 @@ footer .col-poliedro-logo {
 }
 
 footer .col-poliedro-logo svg {
-    height: 100%;
+    width: 100%;
+    padding-top: 30px;
+}
+
+footer .col-details div {
+    margin: auto;
+    text-align: justify;
 }
 
 @media (max-width: 768px) {
     footer .col-poliedro-logo {
         padding-bottom: 60px;
-        padding-left: 10%;
-        padding-right: 10%;
     }
 
     footer .col-poliedro-logo svg {
+        width: auto;
         height: 100%;
         max-width: 100%;
-        width: 100%;
         padding: 1rem;
     }
 
     footer .section-social {
         padding: 1rem;
     }
+
+    footer .col-details div {
+        text-align: center;
+    }
 }
 
-footer .col-details,
-footer .col-details div {
-    margin: auto;
-    font-size: 16px;
-    line-height: 1.75;
-}
-
-
-footer .col-details p {
-  font-size: 16px;
-  line-height: 1.75;
+@media (min-width: 768px) {
+    .col-details, .col-poliedro-logo {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 }
 
 .section-copyright {
@@ -986,37 +989,4 @@ footer .col-details p {
 .section-copyright a:focus,
 .section-copyright a:visited {
     color: gray;
-}
-
-.d-flex {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex;
-}
-
-.align-middle {
-    vertical-align: middle !important;
-}
-
-.align-items-end {
-    -webkit-box-align: end !important;
-    -ms-flex-align: end !important;
-    align-items: flex-end !important;
-}
-
-footer .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-@media screen and (max-width: 768px) {
-    .paypal-button.paypal-button-size-large.paypal-button-layout-horizontal > div.xcomponent-outlet,
-    .paypal-button.paypal-button-size-large.paypal-button-layout-horizontal div.xcomponent-outlet iframe.xcomponent-component-frame.xcomponent-visible{
-        width: 100% !important;
-    }
 }

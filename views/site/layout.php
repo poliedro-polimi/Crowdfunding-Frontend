@@ -93,12 +93,12 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
     </div>
 </section>
 <?= $body ?>
+
 <footer class="site-footer">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 col-poliedro-logo">
-                <?= page_include(dirname(dirname(__DIR__))
-                    . '/assets/imgs/footer_logos.svg') ?>
+                <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/footer_logos.svg') ?>
             </div>
             <div class="col-12 col-md-6 col-details d-flex align-items-end">
                 <div class="align-middle">
@@ -107,15 +107,15 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
                         ✕&nbsp;
                         <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/polimipride_linear.svg') ?>
                     </p>
-                    <p class="text-left">
-                        <?= l("L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo del") ?>
+                    <p>
+                        L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo del
                         <a href="https://polimi.it" rel="noopener" target="_blank">Politecnico di Milano</a>.
                     </p>
-                    <p class="text-left">
-                        <?= l("Visita <a href='https://poliedro-polimi.it/en/'>il nostro sito</a> per scoprire tutte le altre nostre attività.") ?>
+                    <p>
+                        Visita il nostro <a href='https://poliedro-polimi.it'>sito</a> per scoprire tutte le altre nostre attività.
                     </p>
                     <p class="section-social">
-                        <a href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/#contatti"><i class="fas fa-at"></i></a>
+                        <a href="https://poliedro-polimi.it/it/#contatti"><i class="fas fa-at"></i></a>
                         |
                         <a href="https://facebook.com/poliedro.polimi/" target="_blank" rel="noopener"><i
                                     class="fab fa-facebook-f"></i></a>
@@ -130,12 +130,11 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
             </div>
         </div>
         <div class="section-copyright">
-            <?= l("&copy; PoliEdro 2018") ?> | <a
-                    href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/<?= l('crediti') ?>/"><?= Html::escape(l("Crediti")); ?></a>
+            &copy; PoliEdro 2018 | <a
+                    href="https://poliedro-polimi.it/it/crediti/">Crediti</a>
         </div>
     </div>
 </footer>
-
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
