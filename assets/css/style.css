@@ -535,11 +535,16 @@ ul.navbar-nav {
 
 section#header {
     height: 41.09vw;
+    margin-top: 30px;
     position: relative;
     overflow: hidden;
     background: transparent url(../imgs/banner1.png) no-repeat top center;
     -webkit-background-size: contain;
     background-size: contain;
+}
+section#header .container{
+    width: 100%;
+    max-width: none;
 }
 
 body.donation_controller.index_action section#header{
