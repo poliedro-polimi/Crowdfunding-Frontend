@@ -603,7 +603,7 @@ body.site_controller #page_content section .section-content{
     text-align: justify;
 }
 @media screen and (max-width: 768px) {
-    body.site_controller section#how_to_help .section-content {
+    body.site_controller #page_content section .section-content {
         width: 90%;
     }
 }
@@ -687,7 +687,7 @@ body.site_controller #rewards .reward .reward-description{
 
 body.site_controller #donate {
     text-align: center;
-    margin: 150px 0 100px 0;
+    margin: 70px 0 100px 0;
 }
 @media screen and (max-width: 768px){
     body.site_controller #donate {

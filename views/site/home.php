@@ -16,11 +16,11 @@ use site\controllers\DonationController;
         <div class="section-content"><?= Html::escape(l('Il funzionamento dell\'iniziativa è molto semplice e si riassume in pochi semplici passi:'))
             ?>
             <ol>
-                <li><?= Html::escape(l('Fai una donazione a PoliEdro dell\ammontare che preferisci')) ?></li>
+                <li><?= Html::escape(l('Fai una donazione a PoliEdro dell\'ammontare che preferisci')) ?></li>
                 <li><?= Html::escape(l('In base all\'ammontare della tua donazione scegli il pacchetto di gadget che più ti piace'))
                     ?></li>
-                <li><?= Html::escape(l('Fino all\'11 Giugno 2018 il crowdfunding resterà aperto alle donazioni.'))?></li>
-                <li><?= Html::escape(l('Alla chiusura del crowdfunding partiranno tutti gli ordini dei gadget, che avremo pronti da distribuire durante la Pride Week ai nostri stand nei campus (Leonardo e Bovisa) del Politecnico')) ?></li>
+                <li><?= Html::escape(l('Fino al 10 Giugno il crowdfunding resterà aperto alle donazioni.'))?></li>
+                <li><?= Html::escape(l('Alla chiusura del crowdfunding partiranno tutti gli ordini dei gadget, che avremo pronti da distribuire durante la Pride Week ai nostri stand nei campus del Politecnico (Leonardo e Bovisa)')) ?></li>
                 <li><?= Html::escape(l('Per ritirare i tuoi gadget presentati agli stand con il tuo numero di donazione o l\'email di conferma')) ?></li>
             </ol></div>
     </div>
