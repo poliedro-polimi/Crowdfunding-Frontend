@@ -124,8 +124,8 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                                    min="0"/>
                         </div>
                     </div>
-                    <small class="form-text text-muted">Sacca Zainetto in Nylon, decorata con il nuovo logo
-                        PoliMi Pride, 43x34cm</small>
+                    <small class="form-text text-muted"><?= Html::escape(l('Sacca Zainetto in Nylon, decorata con il 
+                    nuovo logo PoliMi Pride, 43x34cm')) ?></small>
                 </div>
                 <div class="form-inline reward-line">
                     <div class="form-check disabled">
@@ -148,8 +148,8 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                                    min="0"/>
                         </div>
                     </div>
-                    <small class="form-text text-muted">Adesivi tondi PoliMi Pride, spilla circolare da 44mm (include
-                        anche la sacca zainetto)</small>
+                    <small class="form-text text-muted"><?= Html::escape(l('Adesivi tondi PoliMi Pride, spilla 
+                    circolare da 44mm (include anche la sacca zainetto)')) ?></small>
                 </div>
                 <div class="form-inline reward-line">
                     <div class="form-check disabled">
@@ -172,9 +172,9 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                                    min="0"/>
                         </div>
                     </div>
-                    <small class="form-text text-muted">Maglietta di cotone con stampa
+                    <small class="form-text text-muted"><?= Html::escape(l('Maglietta di cotone con stampa
                         digitale del nuovo logo PoliMi Pride. Disponibile in 6 taglie, sia come t-shirt che come
-                        canottiera.<br />
+                        canottiera.')) ?><br />
                     </small>
                 </div>
                 <small
