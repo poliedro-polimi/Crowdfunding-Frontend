@@ -92,7 +92,9 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         <h2 class="section-content"><?= l('alla Pride Week') ?></h2>
     </div>
 </section>
+<div id="page_content">
 <?= $body ?>
+</div>
 
 <footer class="site-footer">
     <div class="container">
