@@ -134,7 +134,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                                data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"
                           <?= ($reward == 2 ? 'checked="checked"' : '') ?>/>
                         <label class="form-check-label" for="reward2">
-                            <?= Html::escape(l('Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)',
+                            <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)',
                               DonationController::REWARD_THRESHOLD2)); ?>
                         </label>
                     </div>
