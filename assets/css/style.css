@@ -587,15 +587,15 @@ section#header .section-title #countdown span{
 }
 
 /** Pages styles */
-body.site_controller section#how_to_help{
+body.site_controller #page_content section{
     text-align: center;
     padding-top: 50px;
 }
 
-body.site_controller section#how_to_help .section-title{
+body.site_controller #page_content section .section-title{
     font-size: 32px;
 }
-body.site_controller section#how_to_help .section-content{
+body.site_controller #page_content section .section-content{
     color: #000000;
     font-size: 1.5em;
     width: 70%;

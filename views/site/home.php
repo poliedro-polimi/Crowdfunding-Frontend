@@ -6,12 +6,23 @@ use site\controllers\DonationController;
 <section id="how_to_help">
     <div class="container">
         <h1 class="section-title"><?= Html::escape(l('Come sostenere il progetto?')); ?></h1>
-        <div class="section-content"><?= Html::escape(l('Quest\'anno PoliMi Pride ha tanti gadget colorati in più! Le sacche/zainetto, gli adesivi e le spille completano il set di gadget targati "Polimi Pride" insieme alla maglietta!')) ?><br /><?= l('Ma per realizzarli abbiamo bisogno del vostro sostegno: abbiamo lanciato una <strong>campagna di crowdfunding</strong> per raccogliere le partecipazioni e mettere insieme i fondi per ordinare i materiali targati PolimiPride.') ?><br />
-        <?= Html::escape(l('In cambio di una donazione al nostro progetto:')) ?>
-        <ul>
-            <li><?= Html::escape(l('Tu ottieni spille, adesivi, zainetto e magliette targate PoliMi Pride')) ?></li>
-            <li><?= Html::escape(l('Noi otteniamo la disponibilità per fare gli ordini dei gadget, provvedere alle spese degli eventi e organizzare iniziative sempre migliori in futuro!')) ?></li>
-        </ul></div>
+        <div class="section-content"><?= Html::escape(l('Quest\'anno PoliMi Pride ha tanti gadget colorati in più! Le sacche/zainetto, gli adesivi e le spille completano il set di gadget targati "Polimi Pride" insieme alla maglietta!')) ?><br /><?= l('Ma per realizzarli abbiamo bisogno del vostro sostegno: abbiamo lanciato una <strong>campagna di crowdfunding</strong> per raccogliere le partecipazioni e mettere insieme i fondi per ordinare i materiali targati PolimiPride.') ?>
+        </div>
+    </div>
+</section>
+<section id="how_it_works">
+    <div class="container">
+        <h1 class="section-title"><?= Html::escape(l('Come funziona?')); ?></h1>
+        <div class="section-content"><?= Html::escape(l('Il funzionamento dell\'iniziativa è molto semplice e si riassume in pochi semplici passi:'))
+            ?>
+            <ol>
+                <li><?= Html::escape(l('Fai una donazione a PoliEdro dell\ammontare che preferisci')) ?></li>
+                <li><?= Html::escape(l('In base all\'ammontare della tua donazione scegli il pacchetto di gadget che più ti piace'))
+                    ?></li>
+                <li><?= Html::escape(l('Fino all\'11 Giugno 2018 il crowdfunding resterà aperto alle donazioni.'))?></li>
+                <li><?= Html::escape(l('Alla chiusura del crowdfunding partiranno tutti gli ordini dei gadget, che avremo pronti da distribuire durante la Pride Week ai nostri stand nei campus (Leonardo e Bovisa) del Politecnico')) ?></li>
+                <li><?= Html::escape(l('Per ritirare i tuoi gadget presentati agli stand con il tuo numero di donazione o l\'email di conferma')) ?></li>
+            </ol></div>
     </div>
 </section>
 <section id="sequence">
