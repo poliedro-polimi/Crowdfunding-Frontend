@@ -194,7 +194,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                                 <label>
                                     <input type="radio" name="shirt-type" value="tank-top"/>
                                     <?= Html::escape(l('Canotta')); ?><br/><img
-                                      src="https://www.pianetaoutlet.it/59072-large_default/adidas-trefoil-tank-canotta-uomo-nera.jpg"/>
+                                      src="<?= Url::resource('assets/imgs/canotta.png') ?>"/>
                                 </label>
                             </div>
                             <div class="form-group">
