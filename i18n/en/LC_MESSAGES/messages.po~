@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 02:18+0200\n"
-"PO-Revision-Date: 2018-04-14 02:11+0200\n"
+"POT-Creation-Date: 2018-04-14 03:41+0200\n"
+"PO-Revision-Date: 2018-04-14 02:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: English (British)\n"
 "Language: en_GB\n"
@@ -174,11 +174,6 @@ msgstr ""
 msgid "Adesivi e Spilla PoliMi Pride (donazione minima %s€)"
 msgstr "Stickers and Pin PoliMi Pride (minimum donation %s€)"
 
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:137
-#, php-format
-msgid "Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)"
-msgstr ""
-
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:151
 msgid ""
 "Adesivi tondi PoliMi Pride, spilla \n"
@@ -191,15 +186,6 @@ msgstr ""
 #, php-format
 msgid ""
 "Kit PoliMi Pride Completo: Adesivi, Spilla, Sacca e T-Shirt (donazione "
-"minima %s€)"
-msgstr ""
-"Full PoliMi Pride Kit: Stickers, Pin, Sackpack and T-Shirt (minimum donation "
-"%s€)"
-
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:161
-#, fuzzy, php-format
-msgid ""
-"Kit PoliMi Pride Completo: Adesivi, Spilla, Shopper e T-Shirt (donazione "
 "minima %s€)"
 msgstr ""
 "Full PoliMi Pride Kit: Stickers, Pin, Sackpack and T-Shirt (minimum donation "
@@ -287,6 +273,17 @@ msgstr "If you have any problem you can contact us specifing your payment ID:"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:8
 msgid "Come sostenere il progetto?"
 msgstr "How to support the project?"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:9
+#, fuzzy
+msgid ""
+"Ma per realizzarli abbiamo bisogno del vostro sostegno: abbiamo lanciato una "
+"<strong>campagna di crowdfunding</strong> per mettere insieme i fondi per "
+"ordinare tutti i materiali targati PolimiPride."
+msgstr ""
+"But to make them we need your support: have have launched a "
+"<strong>crowdfunding compaign</strong> to gather the participations and put "
+"together the funds to order the materials braded PoliMi Pride."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:9
 msgid ""
@@ -450,6 +447,9 @@ msgid ""
 "                        <a href=\"https://polimi.it\" rel=\"noopener\" "
 "target=\"_blank\">Politecnico di Milano</a>."
 msgstr ""
+"The <strong>PoliMi Pride</strong> project is realised with the contribution "
+"of <a href=\"https://polimi.it\" rel=\"noopener\" target=\"_blank"
+"\">Politecnico di Milano</a>."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:117
 msgid ""
@@ -457,11 +457,13 @@ msgid ""
 "scoprire tutte le\n"
 "                        altre nostre attività."
 msgstr ""
+"Visit our <a href=\"https://poliedro-polimi.it\">website</a> to find out "
+"about all of our activities."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:137
 msgid "Crediti"
-msgstr ""
+msgstr "Credits"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:137
 msgid "crediti"
-msgstr ""
+msgstr "credits"
