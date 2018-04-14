@@ -104,7 +104,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                     </label>
                 </div>
                 <div class="form-inline reward-line">
-                    <div class="form-check disabled">
+                    <div class="form-check">
                         <input type="radio" name="chosenReward" id="reward1" value="1" disabled="disabled"
                                class="form-check-input"
                                data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"
@@ -128,7 +128,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                     nuovo logo PoliMi Pride, 43x34cm')) ?></small>
                 </div>
                 <div class="form-inline reward-line">
-                    <div class="form-check disabled">
+                    <div class="form-check">
                         <input type="radio" name="chosenReward" id="reward2" value="2" disabled="disabled"
                                class="form-check-input"
                                data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"
@@ -152,7 +152,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
                     circolare da 44mm (include anche la sacca zainetto)')) ?></small>
                 </div>
                 <div class="form-inline reward-line">
-                    <div class="form-check disabled">
+                    <div class="form-check">
                         <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled"
                                class="form-check-input"
                                data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"
