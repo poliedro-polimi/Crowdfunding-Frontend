@@ -32,7 +32,7 @@ return [
         /** The timezone to use in the website */
         'timezone' => 'Europe/Rome',
 
-        'debug' => true,
+        'debug' => false,
 
         /** Defines views to be used to render each type of Exception.
          * Keys of the array must be Exception names (with full namespace) values must be in the format "ThemeClass:ViewFileName */
