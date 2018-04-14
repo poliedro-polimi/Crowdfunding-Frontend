@@ -110,11 +110,12 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
                         <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/polimipride_linear.svg') ?>
                     </p>
                     <p>
-                        L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo del
-                        <a href="https://polimi.it" rel="noopener" target="_blank">Politecnico di Milano</a>.
+                        <?= l('L\'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo del
+                        <a href="https://polimi.it" rel="noopener" target="_blank">Politecnico di Milano</a>.') ?>
                     </p>
                     <p>
-                        Visita il nostro <a href='https://poliedro-polimi.it'>sito</a> per scoprire tutte le altre nostre attività.
+                        <?= l('Visita il nostro <a href="https://poliedro-polimi.it">sito</a> per scoprire tutte le
+                        altre nostre attività.') ?>
                     </p>
                     <p class="section-social">
                         <a href="https://poliedro-polimi.it/it/#contatti"><i class="fas fa-at"></i></a>
@@ -133,7 +134,7 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         </div>
         <div class="section-copyright">
             &copy; PoliEdro 2018 | <a
-                    href="https://poliedro-polimi.it/it/crediti/">Crediti</a>
+                    href="https://poliedro-polimi.it/it/<?= l('crediti') ?>/"><?= Html::escape(l('Crediti')) ?></a>
         </div>
     </div>
 </footer>

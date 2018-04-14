@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 01:50+0200\n"
-"PO-Revision-Date: 2018-04-14 02:11+0200\n"
+"POT-Creation-Date: 2018-04-14 02:18+0200\n"
+"PO-Revision-Date: 2018-04-14 02:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: English (British)\n"
 "Language: en_GB\n"
@@ -173,11 +173,6 @@ msgstr ""
 #, php-format
 msgid "Adesivi e Spilla PoliMi Pride (donazione minima %s€)"
 msgstr "Stickers and Pin PoliMi Pride (minimum donation %s€)"
-
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:137
-#, php-format
-msgid "Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)"
-msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:151
 msgid ""
@@ -433,3 +428,31 @@ msgstr "Support Now"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:92
 msgid "alla Pride Week"
 msgstr "to the Pride Week"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:113
+msgid ""
+"L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo "
+"del\n"
+"                        <a href=\"https://polimi.it\" rel=\"noopener\" "
+"target=\"_blank\">Politecnico di Milano</a>."
+msgstr ""
+"The <strong>PoliMi Pride</strong> project is realizes with the contribution "
+"of <a href=\"https://polimi.it\" rel=\"noopener\" target=\"_blank"
+"\">Politecnico di Milano</a>."
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:117
+msgid ""
+"Visita il nostro <a href=\"https://poliedro-polimi.it\">sito</a> per "
+"scoprire tutte le\n"
+"                        altre nostre attività."
+msgstr ""
+"Visit our <a href=\"https://poliedro-polimi.it\">website</a> to find out "
+"about all of our activities."
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:137
+msgid "Crediti"
+msgstr "Credits"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:137
+msgid "crediti"
+msgstr "credits"
