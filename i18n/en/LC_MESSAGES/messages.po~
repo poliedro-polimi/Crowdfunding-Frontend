@@ -1,40 +1,43 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR PoliEdro
+# English translations for PACKAGE package.
+# Copyright (C) 2018 PoliEdro
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Stefano Campanella <stefano.campanella@mail.polimi.it>, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 01:50+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2018-04-14 01:45+0200\n"
+"PO-Revision-Date: 2018-04-14 01:50+0200\n"
+"Last-Translator: \n"
+"Language-Team: English (British)\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:14
 msgid "Donazione confermata!"
-msgstr ""
+msgstr "Donation confirmed!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:15
 msgid ""
 "Ti ringraziamo per la tua donazione a sostegno delle attività di PoliEdro!"
-msgstr ""
+msgstr "Thank you for your donation to support out activities!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:16
 msgid ""
 "Queste donazioni ci permettono di far fronte alle spese di tutti i giorni "
 "per la gestione dell'associazione"
 msgstr ""
+"These donations allow us to provide against the every day expenses to manage "
+"the association"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:16
 msgid "e per sostenere la realizzazione di iniziative come PoliMi Pride"
-msgstr ""
+msgstr "and to support initiatives like PoliMi Pride"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:20
 #, php-format
@@ -42,16 +45,18 @@ msgid ""
 "L'identificativo della tua donazione è %s, se hai bisogno di contattarci \n"
 "ricordati di includerlo nel tuo messaggio!"
 msgstr ""
+"The id of your donation is %s, if you need to contact us\n"
+"remember to include it in your message!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:26
 msgid ""
 "Ti abbiamo inviato per email tutte le informazioni di conferma della tua "
 "donazione"
-msgstr ""
+msgstr "We sent you all the confirmation information of your donation by email"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:29
 msgid "Non siamo riusciti a inviarti l'email di conferma della tua donazione!"
-msgstr ""
+msgstr "We weren't able to send you a confirmation email for your donation!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:32
 msgid ""
@@ -59,12 +64,17 @@ msgid ""
 "        ritirare i tuoi gadget! Se desideri essere sicuro contattaci, ti "
 "invieremo manualmente l'email di conferma!"
 msgstr ""
+"Take note of the id of your donation, you will need it to \n"
+"pick up your gadgets! If you want to be sure contact us, we will manually "
+"send you the confirmation email!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:40
 msgid ""
 "Durante la donazione hai selezionato delle ricompense da ricevere: ti "
 "contatteremo per email non appena tutti i materiali saranno pronti!"
 msgstr ""
+"With your donation you have selected some rewards to receive: we will "
+"contact you by email as soon as all the materials will be ready!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:41
 msgid ""
@@ -74,48 +84,52 @@ msgid ""
 "seguici su nostri social e tieni d'occhio la\n"
 "    tua casella email."
 msgstr ""
+"We remind you that the PoliMi Pride gadgets will be consigned at the booths "
+"in Politecnico di Milano's campuses\n"
+"during the month of June. To be informed about the exact dates follow us on "
+"our social medias and keep an eye on your email."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:19
 msgid "Donazioni"
-msgstr ""
+msgstr "Donations"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:54
 msgid "I campi segnati con * sono obbligatori"
-msgstr ""
+msgstr "The fields marked with * are required"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:58
 msgid "Nome"
-msgstr ""
+msgstr "First Name"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:62
 msgid "Cognome"
-msgstr ""
+msgstr "Last Name"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:68
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:70
 msgid ""
 "Sarà utilizzata per tutte le comunicazioni sulla tua \n"
 "                    donazione"
-msgstr ""
+msgstr "It will be used for all the messages about your donation"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:74
 msgid "Numero di Telefono"
-msgstr ""
+msgstr "Phone Number"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:77
 msgid "Sarà utilizzato solo in caso non riuscissimo a contattarti per email"
-msgstr ""
+msgstr "It will be used only if we're not able to contact you by email"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:82
 msgid "Ammontare della Donazione"
-msgstr ""
+msgstr "Amount of the Donation"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:95
 msgid "Ricompensa"
-msgstr ""
+msgstr "Reward"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:96
 msgid ""
@@ -123,56 +137,50 @@ msgid ""
 "seguenti pacchetti\n"
 "             di gadget"
 msgstr ""
+"To thank you of your donation to PoliEdro you can choose between these "
+"gadget packs"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:103
 msgid "Non desidero alcuna ricompensa"
-msgstr ""
+msgstr "I do not wish any reward"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:113
 #, php-format
 msgid "Sacca zainetto (donazione minima %s€)"
-msgstr ""
+msgstr "Sackpack (minimum donation %s€)"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:118
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:142
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:166
 msgid "Quantità"
-msgstr ""
+msgstr "Quantity"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:121
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:145
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:169
 msgid "Q.tà"
-msgstr ""
+msgstr "Q.ty"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:127
 msgid ""
 "Sacca Zainetto in Nylon, decorata con il \n"
 "                    nuovo logo PoliMi Pride, 43x34cm"
 msgstr ""
+"Sackpack made of Nylon, adorned with the\n"
+"new PoliMi Pride Logo, 43x34cm"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:137
 #, php-format
 msgid "Adesivi e Spilla PoliMi Pride (donazione minima %s€)"
-msgstr ""
-
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:137
-#, php-format
-msgid "Adesivi, Spilla e Shopper PoliMi Pride (donazione minima %s€)"
-msgstr ""
+msgstr "Stickers and Pin PoliMi Pride (minimum donation %s€)"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:151
 msgid ""
 "Adesivi tondi PoliMi Pride, spilla \n"
 "                    circolare da 44mm (include anche la sacca zainetto)"
 msgstr ""
-
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:161
-#, php-format
-msgid ""
-"Kit PoliMi Pride Completo: Adesivi, Spilla, Sacca e T-Shirt (donazione "
-"minima %s€)"
-msgstr ""
+"Round stickers branded PoliMi Pride, circular pin \n"
+"with 44mm diam. (includes the sackpack)"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:161
 #, php-format
