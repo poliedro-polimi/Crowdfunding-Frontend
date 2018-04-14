@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 03:42+0200\n"
+"POT-Creation-Date: 2018-04-14 04:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -352,11 +352,8 @@ msgstr ""
 msgid "Commuta Navigazione"
 msgstr ""
 
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:62
-msgid "Chi siamo"
-msgstr ""
-
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:66
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:67
 msgid "L'Iniziativa"
 msgstr ""
 
@@ -364,19 +361,27 @@ msgstr ""
 msgid "Supportaci"
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:71
+msgid "Chi Siamo"
+msgstr ""
+
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:74
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:75
 msgid "Contatti"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:77
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:78
 msgid "Sostienici Ora"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:92
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:94
 msgid "alla Pride Week"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:113
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:115
 msgid ""
 "L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo "
 "del\n"
@@ -385,6 +390,7 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:117
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:119
 msgid ""
 "Visita il nostro <a href=\"https://poliedro-polimi.it\">sito</a> per "
 "scoprire tutte le\n"
@@ -392,9 +398,11 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:137
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:139
 msgid "Crediti"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:137
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:139
 msgid "crediti"
 msgstr ""

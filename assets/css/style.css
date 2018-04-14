@@ -287,7 +287,6 @@ a:hover {
         max-width: 100%;
     }
 }
-
 .navbar-custom {
     border-color: transparent;
     z-index: 10;
@@ -437,7 +436,7 @@ div.navbar-lang p a {
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
-    transition: all 0.5s;
+    transition: all 0.5;
 }
 
 div.navbar-lang p a:hover {
@@ -487,10 +486,27 @@ nav#mainNav.navbar-custom .navbar-toggler:focus {
     border-color: transparent;
 }
 
-/*nav#mainNav.navbar-custom.menu-open .navbar-toggler {
-    border-color: #9a2d48;
-    transition: border-color linear 300ms;
-}*/
+.navbar-custom button.navbar-toggler {
+    position: relative;
+    padding-right: 0;
+    outline: none;
+}
+
+.navbar-toggler .navbar-red-bullet {
+    color: #e3162e;
+    position: absolute;
+    top: 11px;
+    right: -8px;
+    font-size: 40px;
+    font-family: serif;
+    line-height: 0;
+}
+
+@media screen and (min-width: 990px) {
+    .navbar-toggler .navbar-red-bullet {
+        display: none;
+    }
+}
 
 nav#mainNav .navbar-lang {
     text-transform: uppercase;
@@ -503,14 +519,20 @@ nav#mainNav.navbar-custom.navbar-dark .navbar-nav li.nav-item a.nav-link {
 nav#mainNav .nav-important {
     background-color: #e3162e;
     border-radius: 5px;
+    margin-left: 8px;
 }
 
 nav#mainNav .nav-important a.nav-link {
     color: white;
 }
 
+
 section p {
-    text-align: center;
+    text-align: justify;
+}
+
+ul.navbar-nav {
+    position: relative;
 }
 
 ul.navbar-nav {
@@ -519,11 +541,16 @@ ul.navbar-nav {
 
 @media screen and (max-width: 990px) {
     .nav-important {
-        width: 150px;
+        margin-left: 0;
+        max-width: 164px;
         text-align: center;
         position: absolute;
         bottom: 0px;
         right: 0;
+    }
+
+    li.nav-important a.nav-link {
+        padding: 8px;
     }
 }
 
@@ -531,6 +558,12 @@ ul.navbar-nav {
     .nav-important {
         bottom: 5px;
     }
+}
+
+nav .nav-link .fas.fa-external-link-alt {
+    font-size: 10px;
+    position: relative;
+    top: -2px;
 }
 
 section#header {

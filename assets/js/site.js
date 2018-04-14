@@ -10,9 +10,10 @@ $(function () {
 
     $("button.navbar-toggler").click(function () {
         var togglebtn = $(this);
+        var navbar = $("nav#mainNav");
         setTimeout(function () {
-            var navbar = $("nav#mainNav");
             if (!togglebtn.hasClass("collapsed")) {
+                $(".navbar-toggler .navbar-red-bullet").fadeOut();
                 navbar.addClass("menu-open");
                 if (navbar.hasClass("transparent"))
                     navbar.removeClass("transparent");

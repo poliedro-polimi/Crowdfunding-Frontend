@@ -35,11 +35,13 @@ use \nigiri\views\Url;
 <body class="<?= Controller::camelCaseToUnderscore(Site::getRouter()->getControllerName()) ?> <?=
 Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action">
 
-<nav id="mainNav" class="navbar navbar-light navbar-expand-lg navbar-custom fixed-top justify-content-between affix transparent">
+
+<nav id="mainNav"
+     class="navbar navbar-light navbar-expand-lg navbar-custom fixed-top justify-content-between affix transparent">
     <div class="container container-navbar">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-            <a class="navbar-brand page-scroll" href="<?= Url::to('/') ?>">
+            <a class="navbar-brand page-scroll" href="https://polimipride.it">
                 <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/polimipride_linear.svg') ?>
             </a>
 
@@ -51,32 +53,32 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
 
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="<?= l('Commuta Navigazione') ?>">
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
+            <span class="navbar-red-bullet">&bullet;</span>
         </button>
         <!-- Collect the nav links, forms, and other content for toggling -->
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="page-scroll nav-link" href="https://poliedro-polimi.it"><?= Html::escape(l('Chi siamo')
-                        ) ?></a>
-                </li>
+
+
                 <li class="nav-item">
                     <a class="page-scroll nav-link" href="https://polimipride.it/#project"><?= Html::escape(l('L\'Iniziativa'))
                         ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="page-scroll nav-link" href="https://polimipride.it/#support"><?= Html::escape(l('Supportaci')) ?></a>
+                    <a class="page-scroll nav-link" href="https://polimipride.it/#about"><?= Html::escape(l('Chi Siamo')) ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="page-scroll nav-link" href="https://poliedro-polimi.it/it/#contatti"><?= Html::escape(l
-                        ('Contatti')) ?></a>
+                    <a class="nav-link"
+                       href="https://poliedro-polimi.it/en/#contatti"><?= Html::escape(l('Contatti')) ?></a>
                 </li>
                 <li class="nav-item nav-important">
-                    <a class="page-scroll nav-link" href="<?= Url::to('/')?>"><?= Html::escape(l('Sostienici Ora'))
-                        ?></a>
+                    <a class="page-scroll nav-link" href="<?= Url::to('/') ?>"><?= Html::escape(l('Sostienici Ora')) ?>
+                    </a>
                 </li>
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -107,7 +109,7 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
                     <p class="poliedro-x-polimipride section-title">
                         <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/poliedro.svg') ?>
                         ✕&nbsp;
-                        <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/polimipride_linear.svg') ?>
+                        <?= page_include(dirname(dirname(__DIR__)) . '/assets/imgs/polimipride_linear_nologo.svg') ?>
                     </p>
                     <p>
                         <?= l('L\'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo del
