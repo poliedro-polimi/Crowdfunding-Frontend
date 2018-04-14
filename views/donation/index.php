@@ -21,20 +21,17 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
     <section id="donation_amount">
         <div id="donation_objectives">
             <div class="donation_objective" id="obj1" data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"><img
-                  src="<?= Url::resource('assets/imgs/sacca.png') ?>" class="item"/><img
-                  src="<?= Url::resource('assets/imgs/filter1.png') ?>" class="overlay"/>
+                  src="<?= Url::resource('assets/imgs/sacca.png') ?>" class="item"/>
                 <div
                   class="objective_arrow"></div>
             </div>
             <div class="donation_objective" id="obj2" data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"><img
-                  src="<?= Url::resource('assets/imgs/adesivi_spille.png') ?>" class="item"/><img
-                  src="<?= Url::resource('assets/imgs/filter2.png') ?>" class="overlay"/>
+                  src="<?= Url::resource('assets/imgs/adesivi_spille.png') ?>" class="item"/>
                 <div
                   class="objective_arrow"></div>
             </div>
             <div class="donation_objective" id="obj3" data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"><img
-                  src="<?= Url::resource('assets/imgs/maglia.png') ?>" class="item"/><img
-                  src="<?= Url::resource('assets/imgs/filter3.png') ?>" class="overlay"/>
+                  src="<?= Url::resource('assets/imgs/maglia.png') ?>" class="item"/>
                 <div
                   class="objective_arrow"></div>
             </div>
