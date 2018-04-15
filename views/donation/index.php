@@ -285,5 +285,6 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
     var validation_error_msg = <?= json_encode(l('Verifica i dati inseriti!')); ?>;
     var paypal_error_msg = <?= json_encode(l('Si è verificato un errore in PayPal. Riprova')); ?>;
     var app_error_msg = <?= json_encode(l('Si è verificato un errore nel nostro sistema. Riprova')) ?>;
+    var instrument_declined_msg = <?= json_encode(l('Il tuo metodo di pagamento è stato rifiutato dal gestore o dalla banca, oppure non può essere utilizzato per questo tipo di pagamento. Controlla di avere abbastanza disponibilità e che i dati siano validi.')) ?>;
     var donation_id_msg = <?= json_encode(l('Per problemi puoi contattarci indicando il tuo ID di pagamento: ')) ?>;
 </script>

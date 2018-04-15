@@ -814,6 +814,7 @@ body.donation_controller.index_action .donation_objective#obj3{
 body.donation_controller.index_action #error_box{
     text-align: center;
     margin-top: 120px;
+    white-space: pre-line;
 }
 
 body.donation_controller.index_action #donation_data{

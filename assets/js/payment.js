@@ -117,20 +117,23 @@ $(function(){
                     paymentID: data.paymentID,
                     payerID: data.payerID
                 })
-            }).then(function(data){
-                window.location.href = confirmationUrl(typeof(data.donation_id)!='undefined'?data.donation_id:null, wasMailSent(data));
-            }, function(xhr){
+            }).done(function(data2){
+                window.location.href = confirmationUrl(typeof(data2.donation_id)!='undefined'?data2.donation_id:null, wasMailSent(data2));
+            }).fail(function(xhr){
                 var resp = JSON.parse(xhr.responseText);
                 backendErrorHandler(resp);
+                actions.close();
             });
         },
         onCancel: function(data, actions){
             console.log(data);
             console.log(actions);
+            actions.close();
         },
         onError: function(data, actions){
             console.log(data);
             console.log(actions);
+            actions.close();
         }
     }, '#pay-button');
 
@@ -414,6 +417,8 @@ function backendErrorHandler(response){
             case '_APP_ERROR':
                 msg = app_error_msg;
                 break;
+            case 'INSTRUMENT_DECLINED':
+                msg = instrument_declined_msg;
             default:
                 msg = response.error.type+": "+response.error.message;
         }
@@ -422,6 +427,8 @@ function backendErrorHandler(response){
             msg += "\n"+donation_id_msg+" "+response.error.donation_id;
         }
 
-        $("#error_box").text(msg);
+        $('html, body').animate({
+            scrollTop: $("#error_box").text(msg).offset().top + $('#mainNav').height()
+        }, 500);
     }
 }
