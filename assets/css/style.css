@@ -239,7 +239,7 @@ body {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #606c71;
+    color: #333333;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -271,7 +271,6 @@ a:hover {
 .section-title {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #E60F6D;
-    font-style: italic;
 }
 
 .section-content {
@@ -589,7 +588,7 @@ body.donation_controller.confirmation_action section#header{
 
 section#header .container{
     position: absolute;
-    height: 15vw;
+    height: 12.5vw;
     top: 0;
     bottom: 0;
     left: 0;
@@ -604,11 +603,12 @@ section#header .section-content {
 }
 
 section#header .section-title{
-    font-size: 8vw;
+    font-size: 7vw;
 }
 
 section#header .section-content{
     font-size: 3.5vw;
+    letter-spacing: 3px;
 }
 
 section#header .section-title, section#header .section-content {
@@ -620,6 +620,10 @@ section#header .section-title #countdown span{
 }
 
 /** Pages styles */
+.container-narrow {
+    max-width: 768px;
+}
+
 body.site_controller #page_content section{
     text-align: center;
     padding-top: 50px;
@@ -629,9 +633,6 @@ body.site_controller #page_content section .section-title{
     font-size: 32px;
 }
 body.site_controller #page_content section .section-content{
-    color: #000000;
-    font-size: 1.5em;
-    width: 70%;
     margin: auto;
     text-align: justify;
 }
@@ -951,7 +952,6 @@ footer .poliedro-x-polimipride svg {
     height: 20px;
 }
 
-footer .section-title,
 footer .section-social {
     text-align: center;
 }
