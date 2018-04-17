@@ -643,15 +643,11 @@ body.site_controller #page_content section .section-content{
 }
 
 body.site_controller section#sequence{
-    margin: 50px auto;
-    padding: 2.5vw 0;
-    height: 20.5vw;
     text-align: center;
-    background-color: #DC72B2;
 }
 
 body.site_controller section#sequence svg{
-    height: 100%;
+    width: 100%;
 }
 
 body.site_controller #rewards h1{
