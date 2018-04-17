@@ -121,8 +121,8 @@ $(function(){
                 window.location.href = confirmationUrl(typeof(data2.donation_id)!='undefined'?data2.donation_id:null, wasMailSent(data2));
             }).fail(function(xhr){
                 var resp = JSON.parse(xhr.responseText);
-                backendErrorHandler(resp);
                 actions.close();
+                backendErrorHandler(resp);
             });
         },
         onCancel: function(data, actions){
