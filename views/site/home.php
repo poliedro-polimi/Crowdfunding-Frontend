@@ -29,7 +29,9 @@ use site\controllers\DonationController;
     <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/infographics.svg') ?>
 </section>
 <section id="rewards">
-    <h1 class="section-title"><?= Html::escape(l('Abbiamo Realizzato Per Te...')); ?></h1>
+    <div class="container container-narrow">
+        <h1 class="section-title"><?= Html::escape(l('Abbiamo Realizzato Per Te...')); ?></h1>
+    </div>
     <div class="row justify-content-around no-gutters">
         <div class="col-10 col-md-5 col-lg-3 reward">
             <div class="reward-box">
