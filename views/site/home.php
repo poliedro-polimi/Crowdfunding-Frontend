@@ -1,4 +1,6 @@
 <?php
+
+use nigiri\Site;
 use nigiri\views\Url;
 use nigiri\views\Html;
 use site\controllers\DonationController;
@@ -26,7 +28,7 @@ use site\controllers\DonationController;
     </div>
 </section>
 <section id="sequence">
-    <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/infographics.svg') ?>
+    <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/infographics_'.Site::getRouter()->getRequestedLanguage().'.svg') ?>
 </section>
 <section id="rewards">
     <div class="container container-narrow">
