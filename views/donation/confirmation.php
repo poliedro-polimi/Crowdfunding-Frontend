@@ -10,12 +10,13 @@ use nigiri\views\Url;
 
 Site::getTheme()->append(Url::resource("assets/imgs/banner3.png"), 'banner_img');
 ?>
-<div id="confirmation">
-<h1><?= Html::escape(l("Donazione confermata!")); ?></h1>
-<h3><?= Html::escape(l('Ti ringraziamo per la tua donazione a sostegno delle attività di PoliEdro!')); ?></h3>
-<p><?= Html::escape(l('Queste donazioni ci permettono di far fronte alle spese di tutti i giorni per la gestione dell\'associazione')); ?> <a href="http://polimipride.it"><?= Html::escape(l('e per sostenere la realizzazione di iniziative come PoliMi Pride'));?></a>
+<section id="confirmation">
+    <div class="container-fluid">
+<h1 class="section-title"><?= Html::escape(l("Donazione confermata!")); ?></h1>
+<h3 class="section-title"><?= Html::escape(l('Ti ringraziamo per la tua donazione a sostegno delle attività di PoliEdro!')); ?></h3>
+<p class="section-content"><?= Html::escape(l('Queste donazioni ci permettono di far fronte alle spese di tutti i giorni per la gestione dell\'associazione')); ?> <a href="http://polimipride.it"><?= Html::escape(l('e per sostenere la realizzazione di iniziative come PoliMi Pride'));?></a>
 </p>
-    <div id="optional_info">
+    <div id="optional_info" class="section-content">
 <?php if(!empty($donation_id)): ?>
 <p class="text-muted" id="donation"><?= Html::escape(l("L'identificativo della tua donazione è %s, se hai bisogno di contattarci 
 ricordati di includerlo nel tuo messaggio!", $donation_id)); ?></p>
@@ -45,4 +46,5 @@ ricordati di includerlo nel tuo messaggio!", $donation_id)); ?></p>
 <?php endif;
 ?>
     </div>
-</div>
+    </div>
+</section>
