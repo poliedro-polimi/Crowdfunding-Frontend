@@ -288,11 +288,11 @@ a:hover {
 }
 .navbar-custom {
     border-color: transparent;
-    z-index: 999990;
+    z-index: 10;
 }
 
 nav {
-    z-index: 999999;
+    z-index: 16;
 }
 
 nav#mainNav div.container {
@@ -307,6 +307,7 @@ nav#mainNav div.container {
     background-color: #E91E63;
     border-color: #E91E63;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
     text-transform: uppercase;
     color: white;
     font-size: 12px;
@@ -445,33 +446,39 @@ div.navbar-lang p a:hover {
 
 nav#mainNav.navbar-custom.fixed-top {
     background: rgba(255, 255, 255, 1);
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(246, 246, 246, 1)));
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);
-    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0);
+    /*background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);*/
+    /*background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(246, 246, 246, 1)));*/
+    /*background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);*/
+    /*background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);*/
+    /*background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);*/
+    /*background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0);*/
 
     -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
 
-    transition: box-shadow 50ms linear, background 200ms linear;
+    transition: box-shadow 50ms linear, background 200ms linear, padding 200ms linear;
 }
 
 nav#mainNav.navbar-custom.fixed-top.transparent {
-    background: transparent;
+    background: rgba(255, 255, 255, 0);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    transition: box-shadow 50ms linear, background 200ms linear, padding 200ms linear;
+}
 
-    transition: box-shadow 50ms linear, background 200ms linear;
+@media screen and (min-width: 900px) {
+    nav#mainNav.navbar-custom.fixed-top.transparent {
+        padding: 20px 0;
+        transition: padding 200ms linear;
+    }
 }
 
 nav#mainNav.navbar-custom.fixed-top.menu-open {
     /*background: rgb(145, 0, 49);*/
-    transition: background linear 200ms;
+    transition: box-shadow 50ms linear, background 200ms linear, padding 200ms linear;
 }
 
 nav#mainNav a:hover svg {
@@ -525,15 +532,6 @@ nav#mainNav .nav-important a.nav-link {
     color: white;
 }
 
-
-section p {
-    text-align: justify;
-}
-
-ul.navbar-nav {
-    position: relative;
-}
-
 ul.navbar-nav {
     position: relative;
 }
@@ -563,6 +561,10 @@ nav .nav-link .fas.fa-external-link-alt {
     font-size: 10px;
     position: relative;
     top: -2px;
+}
+
+section p {
+    text-align: justify;
 }
 
 section#header {
@@ -643,15 +645,11 @@ body.site_controller #page_content section .section-content{
 }
 
 body.site_controller section#sequence{
-    margin: 50px auto;
-    padding: 2.5vw 0;
-    height: 20.5vw;
     text-align: center;
-    background-color: #DC72B2;
 }
 
 body.site_controller section#sequence svg{
-    height: 100%;
+    width: 100%;
 }
 
 body.site_controller #rewards h1{

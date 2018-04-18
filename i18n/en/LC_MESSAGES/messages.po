@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-15 21:02+0200\n"
-"PO-Revision-Date: 2018-04-15 21:04+0200\n"
+"POT-Creation-Date: 2018-04-18 02:09+0200\n"
+"PO-Revision-Date: 2018-04-18 02:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: English (British)\n"
 "Language: en_GB\n"
@@ -324,11 +324,11 @@ msgstr "How to support the project?"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:9
 msgid ""
 "Ma per realizzarli abbiamo bisogno del vostro sostegno: abbiamo lanciato una "
-"<strong>campagna di crowdfunding</strong> per mettere insieme i fondi per "
-"ordinare tutti i materiali targati PolimiPride."
+"<strong>campagna di crowdfunding</strong> per raccogliere i fondi per "
+"ordinare tutti i materiali PoliMi Pride."
 msgstr ""
 "But to make them we need your support: we have launched a "
-"<strong>crowdfunding compaign</strong> to gather all the funds we need to "
+"<strong>crowdfunding campaign</strong> to gather all the funds we need to "
 "order all PoliMi Pride gadgets."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:9
@@ -348,10 +348,10 @@ msgstr "How does it work?"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:16
 msgid ""
 "Il funzionamento dell'iniziativa è molto semplice e si riassume in pochi "
-"semplici passi:"
+"passi."
 msgstr ""
 "The working of the initiative is very simple and can be summarised in a few "
-"simple steps:"
+"steps."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:19
 msgid "Fai una donazione a PoliEdro dell'ammontare che preferisci"
@@ -366,8 +366,8 @@ msgstr ""
 "prefer"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:22
-msgid "Fino al 10 Giugno il crowdfunding resterà aperto alle donazioni."
-msgstr "The crowdfunding will be open until June 10th."
+msgid "Fino al 10 Giugno il crowdfunding resterà aperto alle donazioni"
+msgstr "The crowdfunding will be open until June 10th"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:23
 msgid ""
@@ -398,8 +398,8 @@ msgstr "PoliMi Pride Sackpack"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:38
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:51
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:64
-msgid "Contributo Minimo Volontario"
-msgstr "Minimum Voluntary Contribution"
+msgid "Contributo Minimo"
+msgstr "Minimum Contribution"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:41
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:54
@@ -410,7 +410,7 @@ msgstr "Donate"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:44
 msgid ""
 "Le sacche zainetto PoliMi Pride sono perfette per affrontare la parata del "
-"Milano Pride! Le sacche in nylon 34x43cm sono utilissime per portarsi dietro "
+"Milano Pride! Le sacche in nylon 34x43cm sono utilissime per portare con sè "
 "bottiglie d'acqua, bandiere e tutto il necessario per essere favolosi!"
 msgstr ""
 "The PoliMi Pride sackpacks are perfect to face the Milano Pride parade! The "
@@ -424,10 +424,10 @@ msgstr "(Sackpack included)"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:57
 msgid ""
 "Mostra il tuo orgoglio! Con gli adesivi e la spilla PoliMi Pride potrai "
-"mostrare ovunque il tuo supporto all'iniziativa. Usali per personalizzare i "
+"esprimere ovunque il tuo supporto all'iniziativa. Usali per personalizzare i "
 "tuoi oggetti, dal pc al tuo zaino!"
 msgstr ""
-"Show your pride! With the PoliMi Pride stickers and pin you can show you "
+"Show your pride! With the PoliMi Pride stickers and pin you can express your "
 "support for the initiative anywhere. Use them to customise your objects, "
 "from your pc to your backpack!"
 
@@ -437,11 +437,11 @@ msgstr "(Sackpack, pin and stickers included)"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:70
 msgid ""
-"Non perderti la maglietta PoliMi Pride! Con il suo design rinnovato è "
+"Non perderti la maglietta PoliMi Pride! Con la sua immagine rinnovata è "
 "disponibile sia in formato t-shirt che come canotta, scegli quella che fa "
 "più per te!"
 msgstr ""
-"Don't miss the PoliMi Pride t-shirt! With its renewed design it is available "
+"Don't miss the PoliMi Pride t-shirt! With its renewed image it is available "
 "both as a t-shirt or a tank top, choose the one you prefer!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:76
@@ -458,12 +458,13 @@ msgid "L'Iniziativa"
 msgstr "The Project"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:70
-msgid "Supportaci"
-msgstr "Support Us"
-
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:71
 msgid "Chi Siamo"
 msgstr "About Us"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:70
+msgid "Supportaci"
+msgstr "Support Us"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:74
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:75
@@ -476,11 +477,13 @@ msgid "Sostienici Ora"
 msgstr "Support Now"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:92
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:93
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:94
 msgid "alla Pride Week"
 msgstr "to the Pride Week"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:113
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:114
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:115
 msgid ""
 "L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo "
@@ -493,6 +496,7 @@ msgstr ""
 "\">Politecnico di Milano</a>."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:117
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:118
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:119
 msgid ""
 "Visita il nostro <a href=\"https://poliedro-polimi.it\">sito</a> per "
@@ -503,11 +507,62 @@ msgstr ""
 "about all of our activities."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:137
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:138
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:139
 msgid "Crediti"
 msgstr "Credits"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:137
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:138
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:139
 msgid "crediti"
 msgstr "credits"
+
+#~ msgid ""
+#~ "Ma per realizzarli abbiamo bisogno del vostro sostegno: abbiamo lanciato "
+#~ "una <strong>campagna di crowdfunding</strong> per mettere insieme i fondi "
+#~ "per ordinare tutti i materiali targati PolimiPride."
+#~ msgstr ""
+#~ "But to make them we need your support: we have launched a "
+#~ "<strong>crowdfunding compaign</strong> to gather all the funds we need to "
+#~ "order all PoliMi Pride gadgets."
+
+#~ msgid ""
+#~ "Il funzionamento dell'iniziativa è molto semplice e si riassume in pochi "
+#~ "semplici passi:"
+#~ msgstr ""
+#~ "The working of the initiative is very simple and can be summarised in a "
+#~ "few simple steps:"
+
+#~ msgid "Fino al 10 Giugno il crowdfunding resterà aperto alle donazioni."
+#~ msgstr "The crowdfunding will be open until June 10th."
+
+#~ msgid "Contributo Minimo Volontario"
+#~ msgstr "Minimum Voluntary Contribution"
+
+#~ msgid ""
+#~ "Le sacche zainetto PoliMi Pride sono perfette per affrontare la parata "
+#~ "del Milano Pride! Le sacche in nylon 34x43cm sono utilissime per portarsi "
+#~ "dietro bottiglie d'acqua, bandiere e tutto il necessario per essere "
+#~ "favolosi!"
+#~ msgstr ""
+#~ "The PoliMi Pride sackpacks are perfect to face the Milano Pride parade! "
+#~ "The nylon 34x43cm sackpacks are very useful to take with you water "
+#~ "bottles, flags and all you need to be fabulous!"
+
+#~ msgid ""
+#~ "Mostra il tuo orgoglio! Con gli adesivi e la spilla PoliMi Pride potrai "
+#~ "mostrare ovunque il tuo supporto all'iniziativa. Usali per personalizzare "
+#~ "i tuoi oggetti, dal pc al tuo zaino!"
+#~ msgstr ""
+#~ "Show your pride! With the PoliMi Pride stickers and pin you can show you "
+#~ "support for the initiative anywhere. Use them to customise your objects, "
+#~ "from your pc to your backpack!"
+
+#~ msgid ""
+#~ "Non perderti la maglietta PoliMi Pride! Con il suo design rinnovato è "
+#~ "disponibile sia in formato t-shirt che come canotta, scegli quella che fa "
+#~ "più per te!"
+#~ msgstr ""
+#~ "Don't miss the PoliMi Pride t-shirt! With its renewed design it is "
+#~ "available both as a t-shirt or a tank top, choose the one you prefer!"
