@@ -814,6 +814,7 @@ body.donation_controller.index_action #donation_data{
     border-radius: 5px;
     padding: 20px;
     margin: 0 auto 80px auto;
+    text-align: left;
 }
 
 
