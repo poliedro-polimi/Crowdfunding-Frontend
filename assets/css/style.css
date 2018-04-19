@@ -569,7 +569,7 @@ section p {
 
 section#header {
     height: 41.09vw;
-    margin-top: 30px;
+    margin-top: 70px;
     position: relative;
     overflow: hidden;
     background: transparent url(../imgs/banner1.png) no-repeat top center;
@@ -626,20 +626,20 @@ section#header .section-title #countdown span{
     max-width: 768px;
 }
 
-body.site_controller #page_content section{
+#page_content section{
     text-align: center;
     padding-top: 50px;
 }
 
-body.site_controller #page_content section .section-title{
+#page_content section .section-title{
     font-size: 32px;
 }
-body.site_controller #page_content section .section-content{
+#page_content section .section-content{
     margin: auto;
     text-align: justify;
 }
 @media screen and (max-width: 768px) {
-    body.site_controller #page_content section .section-content {
+    #page_content section .section-content {
         width: 90%;
     }
 }
@@ -814,6 +814,7 @@ body.donation_controller.index_action #donation_data{
     border-radius: 5px;
     padding: 20px;
     margin: 0 auto 80px auto;
+    text-align: left;
 }
 
 
@@ -901,7 +902,7 @@ body.donation_controller.confirmation_action #confirmation h3{
 }
 body.donation_controller.confirmation_action #confirmation p{
     margin: auto;
-    width: 640px;
+    text-align: center;
 }
 body.donation_controller.confirmation_action #optional_info{
     margin: 50px auto 100px auto;

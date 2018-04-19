@@ -63,15 +63,15 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
 
 
                 <li class="nav-item">
-                    <a class="page-scroll nav-link" href="https://polimipride.it/#project"><?= Html::escape(l('L\'Iniziativa'))
+                    <a class="page-scroll nav-link" href="https://polimipride.it/<?= Site::getRouter()->getRequestedLanguage() ?>/#project"><?= Html::escape(l('L\'Iniziativa'))
                         ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="page-scroll nav-link" href="https://polimipride.it/#about"><?= Html::escape(l('Chi Siamo')) ?></a>
+                    <a class="page-scroll nav-link" href="https://polimipride.it/<?= Site::getRouter()->getRequestedLanguage() ?>/#about"><?= Html::escape(l('Chi Siamo')) ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"
-                       href="https://poliedro-polimi.it/en/#contatti"><?= Html::escape(l('Contatti')) ?></a>
+                       href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/#contatti"><?= Html::escape(l('Contatti')) ?></a>
                 </li>
                 <li class="nav-item nav-important">
                     <a class="page-scroll nav-link" href="<?= Url::to('/') ?>"><?= Html::escape(l('Sostienici Ora')) ?>

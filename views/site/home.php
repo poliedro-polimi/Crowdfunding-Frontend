@@ -1,4 +1,6 @@
 <?php
+
+use nigiri\Site;
 use nigiri\views\Url;
 use nigiri\views\Html;
 use site\controllers\DonationController;
@@ -26,10 +28,12 @@ use site\controllers\DonationController;
     </div>
 </section>
 <section id="sequence">
-    <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/infographics.svg') ?>
+    <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/infographics_'.Site::getRouter()->getRequestedLanguage().'.svg') ?>
 </section>
 <section id="rewards">
-    <h1 class="section-title"><?= Html::escape(l('Abbiamo Realizzato Per Te...')); ?></h1>
+    <div class="container container-narrow">
+        <h1 class="section-title"><?= Html::escape(l('Abbiamo Realizzato Per Te...')); ?></h1>
+    </div>
     <div class="row justify-content-around no-gutters">
         <div class="col-10 col-md-5 col-lg-3 reward">
             <div class="reward-box">
@@ -54,7 +58,7 @@ use site\controllers\DonationController;
                 <a href="<?= Url::to('donation', ['reward'=> 2]) ?>"><?= Html::escape(l('Dona')); ?></a>
             </div>
             <div class="reward-description">
-                <?= Html::escape(l("Mostra il tuo orgoglio! Con gli adesivi e la spilla PoliMi Pride potrai esprimere ovunque il tuo supporto all'iniziativa. Usali per personalizzare i tuoi oggetti, dal pc al tuo zaino!")); ?><br /><?= Html::escape(l('(Sacca zainetto inclusa)')) ?>
+                <?= Html::escape(l("Mostra il tuo orgoglio! Con gli adesivi e la spilla PoliMi Pride potrai esprimere ovunque il tuo supporto all'iniziativa. Usali per personalizzare i tuoi oggetti, dal pc al tuo zaino!")); ?><br /><strong><em><?= Html::escape(l('(Sacca zainetto inclusa)')) ?></em></strong>
             </div>
         </div>
         <div class="col-10 col-md-6 col-lg-3 reward">
@@ -67,7 +71,7 @@ use site\controllers\DonationController;
                 <a href="<?= Url::to('donation', ['reward' => 3]) ?>"><?= Html::escape(l('Dona')); ?></a>
             </div>
             <div class="reward-description">
-                <?= Html::escape(l("Non perderti la maglietta PoliMi Pride! Con la sua immagine rinnovata è disponibile sia in formato t-shirt che come canotta, scegli quella che fa più per te!")); ?><br /><?= Html::escape(l('(Sacca, spilla e adesivi inclusi)')) ?>
+                <?= Html::escape(l("Non perderti la maglietta PoliMi Pride! Con la sua immagine rinnovata è disponibile sia in formato t-shirt che come canotta, scegli quella che fa più per te!")); ?><br /><strong><em><?= Html::escape(l('(Sacca, spilla e adesivi inclusi)')) ?></em></strong>
             </div>
         </div>
     </div>
