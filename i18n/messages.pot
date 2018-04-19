@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-20 01:25+0200\n"
+"POT-Creation-Date: 2018-04-20 01:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -458,6 +458,10 @@ msgstr ""
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:93
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:94
 msgid "alla Pride Week"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:106
+msgid "Con il patrocinio del"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:113

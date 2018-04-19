@@ -103,7 +103,7 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
             <div class="col-12 col-md-6 col-poliedro-logo">
                 <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/footer_logos.svg') ?>
                 <div id="polimi">
-                    Con il patrocinio del<br />
+                    <?= Html::escape(l('Con il patrocinio del')) ?><br />
                     <a href="http://polimi.it" rel="noopener">
                     <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/politecnico.svg') ?>
                     </a>

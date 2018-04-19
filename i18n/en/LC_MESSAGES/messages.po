@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-20 01:25+0200\n"
-"PO-Revision-Date: 2018-04-20 01:27+0200\n"
+"POT-Creation-Date: 2018-04-20 01:47+0200\n"
+"PO-Revision-Date: 2018-04-20 01:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: English (British)\n"
 "Language: en_GB\n"
@@ -32,8 +32,8 @@ msgstr "Thank you for your donation to support out activities!"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:16
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:17
 msgid ""
-"Queste donazioni ci permettono di far fronte alle spese di tutti i giorni per "
-"la gestione dell'associazione"
+"Queste donazioni ci permettono di far fronte alle spese di tutti i giorni "
+"per la gestione dell'associazione"
 msgstr ""
 "These donations allow us to provide against the every day expenses to manage "
 "the association"
@@ -82,8 +82,8 @@ msgid ""
 "Durante la donazione hai selezionato delle ricompense da ricevere: ti "
 "contatteremo per email non appena tutti i materiali saranno pronti!"
 msgstr ""
-"With your donation you have selected some rewards to receive: we will contact "
-"you by email as soon as all the materials will be ready!"
+"With your donation you have selected some rewards to receive: we will "
+"contact you by email as soon as all the materials will be ready!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:41
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/confirmation.php:42
@@ -153,12 +153,12 @@ msgstr "Reward"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:93
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:96
 msgid ""
-"Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti "
-"pacchetti\n"
+"Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i "
+"seguenti pacchetti\n"
 "             di gadget"
 msgstr ""
-"To thank you of your donation to PoliEdro you can choose between these gadget "
-"packs"
+"To thank you of your donation to PoliEdro you can choose between these "
+"gadget packs"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:100
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:103
@@ -217,8 +217,8 @@ msgstr ""
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:161
 #, php-format
 msgid ""
-"Kit PoliMi Pride Completo: Adesivi, Spilla, Sacca e T-Shirt (donazione minima "
-"%s€)"
+"Kit PoliMi Pride Completo: Adesivi, Spilla, Sacca e T-Shirt (donazione "
+"minima %s€)"
 msgstr ""
 "Full PoliMi Pride Kit: Stickers, Pin, Sackpack and T-Shirt (minimum donation "
 "%s€)"
@@ -340,10 +340,10 @@ msgid ""
 "<strong>campagna di crowdfunding</strong> per raccogliere i fondi per "
 "ordinare tutti i materiali PoliMi Pride."
 msgstr ""
-"But to make them we need your support: last year Politecnico was able to fund "
-"the making of our materials, but this year it hasn&#039;t been possible, so "
-"we have launched a <strong>crowdfunding campaign</strong> to gather all the "
-"funds we need to order all PoliMi Pride gadgets."
+"But to make them we need your support: last year Politecnico was able to "
+"fund the making of our materials, but this year it hasn&#039;t been "
+"possible, so we have launched a <strong>crowdfunding campaign</strong> to "
+"gather all the funds we need to order all PoliMi Pride gadgets."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:11
 msgid ""
@@ -380,7 +380,8 @@ msgid ""
 "In base all'ammontare della tua donazione scegli il pacchetto di gadget che "
 "più ti piace"
 msgstr ""
-"Based on the amount of your donation you can choose the gadget pack you prefer"
+"Based on the amount of your donation you can choose the gadget pack you "
+"prefer"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:22
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:24
@@ -391,8 +392,8 @@ msgstr "The crowdfunding will be open until June 10th"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:25
 msgid ""
 "Alla chiusura del crowdfunding partiranno tutti gli ordini dei gadget, che "
-"avremo pronti da distribuire durante la Pride Week ai nostri stand nei campus "
-"del Politecnico (Leonardo e Bovisa)"
+"avremo pronti da distribuire durante la Pride Week ai nostri stand nei "
+"campus del Politecnico (Leonardo e Bovisa)"
 msgstr ""
 "As the crowdfunding closes we will make the orders of all the gadgets and "
 "they will be ready to be distributed during the Pride Week at our booths in "
@@ -443,8 +444,8 @@ msgid ""
 "bottiglie d'acqua, bandiere e tutto il necessario per essere favolosi!"
 msgstr ""
 "The PoliMi Pride sackpacks are perfect to face the Milano Pride parade! The "
-"nylon 34x43cm sackpacks are very useful to take with you water bottles, flags "
-"and all you need to be fabulous!"
+"nylon 34x43cm sackpacks are very useful to take with you water bottles, "
+"flags and all you need to be fabulous!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:57
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:61
@@ -459,8 +460,8 @@ msgid ""
 "tuoi oggetti, dal pc al tuo zaino!"
 msgstr ""
 "Show your pride! With the PoliMi Pride stickers and pin you can express your "
-"support for the initiative anywhere. Use them to customise your objects, from "
-"your pc to your backpack!"
+"support for the initiative anywhere. Use them to customise your objects, "
+"from your pc to your backpack!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:70
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:74
@@ -471,8 +472,8 @@ msgstr "(Sackpack, pin and stickers included)"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:74
 msgid ""
 "Non perderti la maglietta PoliMi Pride! Con la sua immagine rinnovata è "
-"disponibile sia in formato t-shirt che come canotta, scegli quella che fa più "
-"per te!"
+"disponibile sia in formato t-shirt che come canotta, scegli quella che fa "
+"più per te!"
 msgstr ""
 "Don't miss the PoliMi Pride t-shirt! With its renewed image it is available "
 "both as a t-shirt or a tank top, choose the one you prefer!"
@@ -516,6 +517,10 @@ msgstr "Support Now"
 msgid "alla Pride Week"
 msgstr "to the Pride Week"
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:106
+msgid "Con il patrocinio del"
+msgstr "With the patronage of"
+
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:113
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:114
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:115
@@ -523,8 +528,8 @@ msgstr "to the Pride Week"
 msgid ""
 "L'iniziativa <strong>PoliMi Pride</strong> è realizzata con il contributo "
 "del\n"
-"                        <a href=\"https://polimi.it\" rel=\"noopener\" target="
-"\"_blank\">Politecnico di Milano</a>."
+"                        <a href=\"https://polimi.it\" rel=\"noopener\" "
+"target=\"_blank\">Politecnico di Milano</a>."
 msgstr ""
 "The <strong>PoliMi Pride</strong> project is realised with the contribution "
 "of <a href=\"https://polimi.it\" rel=\"noopener\" target=\"_blank"
@@ -535,8 +540,8 @@ msgstr ""
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:119
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:124
 msgid ""
-"Visita il nostro <a href=\"https://poliedro-polimi.it\">sito</a> per scoprire "
-"tutte le\n"
+"Visita il nostro <a href=\"https://poliedro-polimi.it\">sito</a> per "
+"scoprire tutte le\n"
 "                        altre nostre attività."
 msgstr ""
 "Visit our <a href=\"https://poliedro-polimi.it\">website</a> to find out "
