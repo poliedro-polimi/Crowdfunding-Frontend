@@ -8,7 +8,7 @@ use site\controllers\DonationController;
 <section id="how_to_help">
     <div class="container container-narrow">
         <h1 class="section-title"><?= Html::escape(l('Come sostenere il progetto?')); ?></h1>
-        <div class="section-content"><?= Html::escape(l('Quest\'anno PoliMi Pride ha tanti gadget colorati in più! Le sacche/zainetto, gli adesivi e le spille completano il set di gadget targati "Polimi Pride" insieme alla maglietta!')) ?><br /><?= l('Ma per realizzarli abbiamo bisogno del vostro sostegno: lo scorso anno il Politecnico aveva finanziato la realizzazione dei materiali, ma quest&039;anno non è più stato possibile farlo, perciò abbiamo lanciato una <strong>campagna di crowdfunding</strong> per raccogliere i fondi per ordinare tutti i materiali PoliMi Pride.') ?>
+        <div class="section-content"><?= Html::escape(l('Quest\'anno PoliMi Pride ha tanti gadget colorati in più! Le sacche/zainetto, gli adesivi e le spille completano il set di gadget targati "Polimi Pride" insieme alla maglietta!')) ?><br /><?= l('Ma per realizzarli abbiamo bisogno del vostro sostegno: lo scorso anno il Politecnico aveva finanziato la realizzazione dei materiali, ma quest\'anno non è più stato possibile farlo, perciò abbiamo lanciato una <strong>campagna di crowdfunding</strong> per raccogliere i fondi per ordinare tutti i materiali PoliMi Pride.') ?>
         </div>
     </div>
 </section>
