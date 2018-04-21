@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-20 01:47+0200\n"
+"POT-Creation-Date: 2018-04-21 21:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -302,8 +302,8 @@ msgstr ""
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:11
 msgid ""
 "Ma per realizzarli abbiamo bisogno del vostro sostegno: lo scorso anno il "
-"Politecnico aveva finanziato la realizzazione dei materiali, ma quest'"
-"anno non è più stato possibile farlo, perciò abbiamo lanciato una "
+"Politecnico aveva finanziato la realizzazione dei materiali, ma quest'anno "
+"non è più stato possibile farlo, perciò abbiamo lanciato una "
 "<strong>campagna di crowdfunding</strong> per raccogliere i fondi per "
 "ordinare tutti i materiali PoliMi Pride."
 msgstr ""
@@ -497,4 +497,12 @@ msgstr ""
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:139
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:144
 msgid "crediti"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:145
+msgid "Privacy Policy"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:145
+msgid "biscotti"
 msgstr ""

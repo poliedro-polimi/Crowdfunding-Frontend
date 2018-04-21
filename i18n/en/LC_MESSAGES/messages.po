@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-20 01:47+0200\n"
-"PO-Revision-Date: 2018-04-20 16:14+0200\n"
+"POT-Creation-Date: 2018-04-21 21:44+0200\n"
+"PO-Revision-Date: 2018-04-21 21:45+0200\n"
 "Last-Translator: \n"
 "Language-Team: English (British)\n"
 "Language: en_GB\n"
@@ -560,3 +560,11 @@ msgstr "Credits"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:144
 msgid "crediti"
 msgstr "credits"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:145
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:145
+msgid "biscotti"
+msgstr "cookies"

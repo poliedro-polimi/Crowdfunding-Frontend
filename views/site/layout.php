@@ -141,7 +141,8 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         </div>
         <div class="section-copyright">
             &copy; PoliEdro 2018 | <a
-                    href="https://poliedro-polimi.it/it/<?= l('crediti') ?>/"><?= Html::escape(l('Crediti')) ?></a>
+                    href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage(); ?>/<?= l('crediti') ?>/"><?= Html::escape(l('Crediti')) ?></a> |
+            <a href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/<?= l("biscotti") ?>"><?= Html::escape(l("Privacy Policy")) ?></a>
         </div>
     </div>
 </footer>
