@@ -29,6 +29,16 @@ use \nigiri\views\Url;
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/>
     <link rel="stylesheet" href="<?= Url::resource('/assets/css/style.css') ?>">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18427027-12"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-18427027-12');
+    </script>
+
     <?= $head; ?>
 </head>
 <body class="<?= Controller::camelCaseToUnderscore(Site::getRouter()->getControllerName()) ?> <?=
