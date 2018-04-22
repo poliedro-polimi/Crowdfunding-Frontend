@@ -112,6 +112,12 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         <div class="row">
             <div class="col-12 col-md-6 col-poliedro-logo">
                 <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/footer_logos.svg') ?>
+                <div id="polimi">
+                    <?= Html::escape(l('Con il patrocinio del')) ?><br />
+                    <a href="http://polimi.it" rel="noopener">
+                    <?= page_include(dirname(dirname(__DIR__)).'/assets/imgs/politecnico.svg') ?>
+                    </a>
+                </div>
             </div>
             <div class="col-12 col-md-6 col-details d-flex align-items-end">
                 <div class="align-middle">
@@ -145,7 +151,8 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         </div>
         <div class="section-copyright">
             &copy; PoliEdro 2018 | <a
-                    href="https://poliedro-polimi.it/it/<?= l('crediti') ?>/"><?= Html::escape(l('Crediti')) ?></a>
+                    href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage(); ?>/<?= l('crediti') ?>/"><?= Html::escape(l('Crediti')) ?></a> |
+            <a href="https://poliedro-polimi.it/<?= Site::getRouter()->getRequestedLanguage() ?>/<?= l("biscotti") ?>"><?= Html::escape(l("Privacy Policy")) ?></a>
         </div>
     </div>
 </footer>
