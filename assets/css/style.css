@@ -664,6 +664,7 @@ body.site_controller #rewards h1{
 }
 
 body.site_controller #rewards .reward .reward-box{
+    position: relative;
     margin-bottom: 20px;
     text-align: center;
     border-radius: 10px;
@@ -708,6 +709,39 @@ body.site_controller #rewards .reward .reward-box a:hover{
 
 body.site_controller #rewards .reward .reward-description{
     text-align: justify;
+}
+
+body.site_controller .included-rewards{
+    position: absolute;
+    bottom: 15%;
+    right: -8%;
+    width: 16%;
+    text-align: center;
+}
+
+body.site_controller .included-rewards::before{
+    content: '+';
+    display: block;
+    position: absolute;
+    bottom: 1.8vw;
+    left: -30%;
+    line-height: .7em;
+    font-family: 'Roboto Slab', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #e94196;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+body.site_controller #rewards .reward-box .included-rewards img{
+    width: 100%;
+    padding: 5% 0;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    -webkit-box-shadow: 1px 1px 5px #000000;
+    -moz-box-shadow: 1px 1px 5px #000000;
+    box-shadow: 1px 1px 5px #000000;
 }
 
 body.site_controller #donate {

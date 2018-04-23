@@ -51,6 +51,9 @@ use site\controllers\DonationController;
         <div class="col-10 col-md-5 col-lg-3 reward">
             <div class="reward-box">
                 <img src="<?= Url::resource('assets/imgs/adesivi_spille.png') ?>" alt="Spille, Adesivi e Shopper PoliMi Pride" />
+                <div class="included-rewards">
+                    <img src="<?= Url::resource("assets/imgs/sacca.png"); ?>" alt="<?= Html::escape(l('Sacca Zainetto PoliMi Pride')); ?>" />
+                </div>
                 <div class="reward-contribution">
                     <div class="contribution-label"><?= Html::escape(l('Contributo Minimo')); ?>:</div>
                     <div class="reward-amount"><?= DonationController::REWARD_THRESHOLD2 ?>&euro;</div>
@@ -64,6 +67,10 @@ use site\controllers\DonationController;
         <div class="col-10 col-md-6 col-lg-3 reward">
             <div class="reward-box">
                 <img src="<?= Url::resource('assets/imgs/maglia.png') ?>" />
+                <div class="included-rewards">
+                    <img src="<?= Url::resource("assets/imgs/sacca.png"); ?>" alt="<?= Html::escape(l('Sacca Zainetto PoliMi Pride')); ?>" />
+                    <img src="<?= Url::resource('assets/imgs/adesivi_spille.png') ?>" alt="Spille, Adesivi e Shopper PoliMi Pride" />
+                </div>
                 <div class="reward-contribution">
                     <div class="contribution-label"><?= Html::escape(l('Contributo Minimo')); ?>:</div>
                     <div class="reward-amount"><?= DonationController::REWARD_THRESHOLD3 ?>&euro;</div>
