@@ -713,7 +713,7 @@ body.site_controller #rewards .reward .reward-description{
 
 body.site_controller .included-rewards{
     position: absolute;
-    bottom: 15%;
+    bottom: 25%;
     right: -8%;
     width: 16%;
     text-align: center;
