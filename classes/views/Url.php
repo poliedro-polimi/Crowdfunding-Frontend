@@ -33,18 +33,22 @@ class Url
             }
         } else {
             $url = $l_page;
+            $language = empty($language) ? Site::getRouter()->getRequestedLanguage() : $language;
 
-            $boom = explode('/', $url);
-            $lang = Site::getParam("languages", []);
-            if (in_array($boom[0], $lang)) {
-                if(!empty($language)){
-                    array_shift($boom);
-                    $url = $language.'/'.implode('/', $boom);
+            if($url!='/') {
+                $boom = explode('/', $url);
+                $lang = Site::getParam("languages", []);
+                if (in_array($boom[0], $lang)) {
+                    if (!empty($language)) {
+                        array_shift($boom);
+                        $url = $language . '/' . implode('/', $boom);
+                    }
+                } else {
+                    $url = $language . '/' . implode('/', $boom);
                 }
             }
             else{
-                $language = empty($language)?Site::getRouter()->getRequestedLanguage():$language;
-                $url = $language.'/'.implode('/', $boom);
+                $url = $language . '/';
             }
         }
 
