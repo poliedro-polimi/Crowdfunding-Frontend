@@ -713,24 +713,59 @@ body.site_controller #rewards .reward .reward-description{
 
 body.site_controller .included-rewards{
     position: absolute;
-    bottom: 25%;
+    bottom: 35%;
     right: -8%;
     width: 16%;
     text-align: center;
 }
 
-body.site_controller .included-rewards::before{
+
+body.site_controller .included-rewards div {
+    position: relative;
+}
+
+body.site_controller .included-rewards .plus{
     content: '+';
     display: block;
     position: absolute;
-    bottom: 1.8vw;
-    left: -30%;
+    left: -45%;
+    top: 50%;
+    -webkit-transform: translateY(-70%);
+    -moz-transform: translateY(-70%);
+    -ms-transform: translateY(-70%);
+    -o-transform: translateY(-70%);
+    transform: translateY(-70%);
     line-height: .7em;
     font-family: 'Roboto Slab', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: 2em;
     font-weight: bold;
     color: #e94196;
     text-shadow: 1px 1px 3px #000000;
+}
+
+@media screen and (max-width: 768px) {
+
+    body.site_controller .included-rewards .plus {
+        left: -30%;
+    }
+
+
+    body.site_controller .included-rewards {
+        bottom: 25%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    body.site_controller .included-rewards {
+        bottom: 30%;
+    }
+}
+
+
+@media screen and (min-width: 900px) and (max-width: 1122px) {
+  body.site_controller .included-rewards {
+    bottom: 45%;
+  }
 }
 
 body.site_controller #rewards .reward-box .included-rewards img{
