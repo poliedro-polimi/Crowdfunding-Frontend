@@ -436,7 +436,7 @@ div.navbar-lang p a {
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
-    transition: all 0.5;
+    transition: all 0.5s;
 }
 
 div.navbar-lang p a:hover {
