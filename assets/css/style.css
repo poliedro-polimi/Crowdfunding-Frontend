@@ -878,6 +878,10 @@ body.donation_controller.index_action #error_box{
     white-space: pre-line;
 }
 
+body.donation_controller.index_action #form_note{
+    font-size: 0.9em;
+}
+
 body.donation_controller.index_action #donation_data{
     box-shadow: 1px 1px 3px #000000;
     border-radius: 5px;

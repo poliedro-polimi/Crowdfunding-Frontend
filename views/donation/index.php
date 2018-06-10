@@ -46,6 +46,8 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
         </div>
     </section>
     <section id="error_box" class="text-danger"></section>
+    <div id="form_note" class="text-muted"><?= nl2br(Html::escape(l("Siamo a conoscenza di problemi nei pagamenti utilizzando gli iPhone.
+Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli iPhone e iPad. Ci scusiamo per l'inconveniente.")))?></div>
     <section id="donation_data">
         <form novalidate>
             <div id="required_legend"><?= Html::escape(l("I campi segnati con * sono obbligatori")); ?></div>
@@ -262,7 +264,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
             <div id="pay-button"></div>
         </form>
     </section>
-    <p class="text-muted"><?= Html::escape(l('Hai già fatto una donazione e hai bisogno di modificarla?')); ?> <a
+    <p class="text-muted"><?= Html::escape(l('Hai già fatto una donazione o hai problemi tecnici?')); ?> <a
           href="https://poliedro-polimi.it#contatti" class="extern"><?= Html::escape(l('Contattaci')) ?><i class="fa
           fa-external-link"></i></a></p>
 </div>
