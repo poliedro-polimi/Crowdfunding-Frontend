@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-10 23:20+0200\n"
-"PO-Revision-Date: 2018-06-10 23:21+0200\n"
+"POT-Creation-Date: 2018-06-11 13:00+0200\n"
+"PO-Revision-Date: 2018-06-11 13:02+0200\n"
 "Last-Translator: \n"
 "Language-Team: English (British)\n"
 "Language: en_GB\n"
@@ -368,8 +368,22 @@ msgstr ""
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:260
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:261
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:262
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:267
 msgid "Note Addizionali"
 msgstr "Additional Notes"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:261
+msgid ""
+"Ci spiace ma le prenotazioni dei gadget sono chiuse!\n"
+"Passa ai nostri stand al Politecnico dal 25 al 29 Giugno, avremo qualche "
+"gadget in più per chi non ha potuto prenotarli!\n"
+"Puoi comunque fare una donazione a favore delle attività di PoliEdro se lo "
+"desideri."
+msgstr ""
+"We are sorry but the gadgets reservation period has ended!\n"
+"Come to our stands at Politecnico from June 25th to June 29th, we'll have "
+"some more gadgets for those that were unable to reserve them online!\n"
+"You can still make a donation to PoliEdro, if you wish."
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:265
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:266
@@ -382,10 +396,12 @@ msgstr "Did you already make a donation and want to change it?"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:267
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:268
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:269
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:274
 msgid "Contattaci"
 msgstr "Contact Us"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:267
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:273
 msgid "Hai già fatto una donazione o hai problemi tecnici?"
 msgstr "Did you already make a donation or you have technical issues?"
 
@@ -393,6 +409,7 @@ msgstr "Did you already make a donation or you have technical issues?"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:286
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:287
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:288
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:293
 msgid "Verifica i dati inseriti!"
 msgstr "Check inserted data!"
 
@@ -400,6 +417,7 @@ msgstr "Check inserted data!"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:287
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:288
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:289
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:294
 msgid "Si è verificato un errore in PayPal. Riprova"
 msgstr "There was an error with PayPal. Try again"
 
@@ -407,12 +425,14 @@ msgstr "There was an error with PayPal. Try again"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:288
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:289
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:290
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:295
 msgid "Si è verificato un errore nel nostro sistema. Riprova"
 msgstr "There was an error with our system. Try again"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:288
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:289
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:290
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:296
 msgid ""
 "Il tuo metodo di pagamento è stato rifiutato dal gestore o dalla banca, "
 "oppure non può essere utilizzato per questo tipo di pagamento. Controlla di "
@@ -425,6 +445,7 @@ msgstr ""
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:289
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:290
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:291
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:297
 msgid "Per problemi puoi contattarci indicando il tuo ID di pagamento: "
 msgstr "If you have any problem you can contact us specifing your payment ID:"
 

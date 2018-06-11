@@ -92,7 +92,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
             </div>
             <fieldset>
                 <legend><?= l('Ricompensa') ?></legend>
-                <p><?= Html::escape(l('Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti pacchetti
+                <!--p><?= Html::escape(l('Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti pacchetti
              di gadget')); ?></p>
 
                 <div class="form-check reward-line">
@@ -256,6 +256,12 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                         <label><input type="radio" name="location" value="bovisa"/>Bovisa</label>
                     </div>
                 </fieldset>
+                -->
+
+                <p class="text-info"><?= nl2br(Html::escape(l("Ci spiace ma le prenotazioni dei gadget sono chiuse!\nPassa ai nostri stand al Politecnico dal 25 al 29 Giugno, avremo qualche gadget in più per chi non ha potuto prenotarli!\nPuoi comunque fare una donazione a favore delle attività di PoliEdro se lo desideri."))); ?></p>
+
+                <input type="radio" name="chosenReward" id="reward0" value="0" class="form-check-input" style="display: none;"
+                    checked="checked" />
             </fieldset>
             <div class="form-group">
                 <label for="notes"><?= Html::escape(l('Note Addizionali')) ?></label>

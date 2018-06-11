@@ -17,7 +17,7 @@ $(function(){
 
     amountChange(initialAmount);
 
-    $("input[name=chosenReward]").change(function(){
+    /*$("input[name=chosenReward]").change(function(){
         if($("#reward3").prop("checked")){
             $("#tshirt_data").show();
         }
@@ -45,9 +45,9 @@ $(function(){
         }
 
         setRequiredFields();
-    });
+    });*/
 
-    $(".qty input").change(function(ev){
+    /*$(".qty input").change(function(ev){
         var $t = $(this);
         var ths = $t.closest(".form-inline").find("input[type=radio]").data("threshold");
         var qty = $t.val();
@@ -67,10 +67,10 @@ $(function(){
         if($t.attr("id")=="qty3"){
             tshirtSection($t.val());
         }
-    });
+    });*/
 
     //Set things up correctly if there is already a reward chosen at the beginning
-    $("input[name=chosenReward]:checked").change();
+    //$("input[name=chosenReward]:checked").change();
 
     paypal.Button.render({
         locale: payPalLocale,
@@ -180,7 +180,7 @@ function amountChange(value) {
             $(this).css('z-index', 0);
         }
     });
-    $("input[name=chosenReward]").each(function(){
+    /*$("input[name=chosenReward]").each(function(){
         var $t=$(this);
         var thr = $t.data("threshold") || 0;
         if(thr<=value){
@@ -198,7 +198,7 @@ function amountChange(value) {
             }
         }
     });
-    $(".qty input:not(:disabled)").change();
+    $(".qty input:not(:disabled)").change();*/
 }
 
 function setRequiredFields(){
@@ -225,16 +225,16 @@ function build_pay_data(){
     var $reward = $("input[name=chosenReward]:checked");
     var output = {
         donation: parseFloat($("#amount").val()),
-        stretch_goal: parseInt($reward.val()),
-        items: parseInt($reward.closest(".form-inline").find(".qty input").val() || 0),
+        stretch_goal: /*parseInt($reward.val())*/0,
+        items: /*parseInt($reward.closest(".form-inline").find(".qty input").val() || 0)*/0,
         notes: $("#notes").val()
     };
 
-    switch($reward.attr('id')){
+    /*switch($reward.attr('id')){
         case 'reward3':
             output.shirts = build_shirts_data();
         case 'reward1':
-        case 'reward2':
+        case 'reward2':*/
             output.reference = {
                 firstname: $("#nome").val(),
                 lastname: $("#cognome").val(),
@@ -242,7 +242,7 @@ function build_pay_data(){
                 phone: $("#tel").val(),
                 location: $("input[name=location]:checked").val()
             };
-    }
+    //}
     return output;
 }
 
@@ -322,6 +322,8 @@ function form_is_valid(){
 }
 
 function validate_rewards(){
+    return true;
+    /*
     var $selected = $('input[name=chosenReward]:checked');
     var $qty = $selected.closest('.form-inline').find('qty input');
     var amt = $("#amount").val();
@@ -355,7 +357,7 @@ function validate_rewards(){
             break;
     }
 
-    return ret;
+    return ret;*/
 }
 
 function validate_tshirts(){
