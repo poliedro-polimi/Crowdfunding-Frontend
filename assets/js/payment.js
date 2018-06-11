@@ -230,19 +230,15 @@ function build_pay_data(){
         notes: $("#notes").val()
     };
 
-    /*switch($reward.attr('id')){
-        case 'reward3':
-            output.shirts = build_shirts_data();
-        case 'reward1':
-        case 'reward2':*/
-            output.reference = {
-                firstname: $("#nome").val(),
-                lastname: $("#cognome").val(),
-                email: $("#email").val(),
-                phone: $("#tel").val(),
-                location: $("input[name=location]:checked").val()
-            };
-    //}
+    if($("#nome").val()!='' && $("#cognome").val()!='' && $("#email").val()!='' && $("#tel").val()!='') {
+        output.reference = {
+            firstname: $("#nome").val(),
+            lastname: $("#cognome").val(),
+            email: $("#email").val(),
+            phone: $("#tel").val(),
+            location: 'leonardo'
+        };
+    }
     return output;
 }
 
