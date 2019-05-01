@@ -7,5 +7,7 @@ script: true
 after_success:
   - sudo apt-get update
   - sudo apt-get install sshpass
+  - ssh-keyscan ftp.cluster020.hosting.ovh.net
+  - ssh-keygen -F ftp.cluster020.hosting.ovh.net >> $HOME/.ssh/known_hosts
 #  - find . -type d \( -path "./.*" \) -prune -o -type f \( -name "*" ! -iname ".travis.yml" ! -name ".gitignore" \) -printf '%P' -exec curl --ftp-create-dirs -T {} ftp://${SFTP_USER}:${SFTP_PASSWORD}@ftp.cluster020.hosting.ovh.net/home/poliedrobp/donate/ \;
   - find . -type d \( -path "./.*" \) -prune -o -type f \( -name "*" ! -iname ".travis.yml" ! -name ".gitignore" \) -printf '%P' -exec sshpass -p${SFTP_PASSWORD} sftp -oBatchMode=no -b - ${SFTP_USER}@ftp.cluster020.hosting.ovh.net:/home/poliedrobp/donate/ <<< $'put {}' \;
