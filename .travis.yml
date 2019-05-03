@@ -9,4 +9,4 @@ script: true
 after_success:
   - sudo apt-get update
   - sudo apt-get install git-ftp
-  - git ftp init -u ${SFTP_USER} -p ${SFTP_PASSWORD} "sftp://ftp.cluster020.hosting.ovh.net/home/poliedrobp/donate/"
+  - git ftp init -v -u ${SFTP_USER} -p ${SFTP_PASSWORD} "sftp://ftp.cluster020.hosting.ovh.net/home/poliedrobp/donate/"
