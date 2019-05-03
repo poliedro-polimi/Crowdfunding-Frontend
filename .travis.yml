@@ -8,5 +8,6 @@ addons:
 script: true
 after_success:
   - sudo apt-get update
-  - sudo apt-get install git-ftp
-  - git ftp init -v -u ${SFTP_USER} -p ${SFTP_PASSWORD} "sftp://ftp.cluster020.hosting.ovh.net/home/poliedrobp/donate/"
+  - sudo apt-get install sshpass
+  - find . -type d \( -path "./.*" \) -prune -o -type f \( -name "*" ! -name ".travis.yml" ! -name ".gitignore" ! -name "LICENCE" \) -printf '%P' -exec sshpass -p${SFTP_PASSWORD} sftp -oBatchMode=no -b - ${SFTP_USER}@ftp.cluster020.hosting.ovh.net:/home/poliedrobp/donate/ <<< $'put {}' \;
+
