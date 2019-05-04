@@ -270,7 +270,7 @@ a:hover {
 
 .section-title {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #E60F6D;
+    color: #E74412;
 }
 
 .section-content {
@@ -573,8 +573,8 @@ section#header {
     position: relative;
     overflow: hidden;
     background: transparent url(../imgs/banner1.png) no-repeat top center;
-    -webkit-background-size: contain;
-    background-size: contain;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 section#header .container{
     width: 100%;
@@ -585,7 +585,7 @@ body.donation_controller.index_action section#header{
     background-image: url(../imgs/banner2.png);
 }
 body.donation_controller.confirmation_action section#header{
-    background-image: url(../imgs/banner3.png);
+    background-image: url(../imgs/banner1.png);
 }
 
 section#header .container{
@@ -596,6 +596,7 @@ section#header .container{
     left: 0;
     right: 0;
     margin: auto;
+    text-shadow: 0 0 5px #000;
 }
 
 section#header .section-title,
@@ -691,17 +692,15 @@ body.site_controller #rewards .reward .reward-box a{
     display: block;
     border-radius: 0 0 10px 10px;
     color: #FFFFFF;
+    text-shadow: 0 0 5px #000000;
     text-transform: uppercase;
     padding: 3px;
     font-size: 1.3em;
     font-weight: bold;
 
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4660ff+0,e94196+100 */
-    background: #4660ff; /* Old browsers */
-    background: -moz-linear-gradient(left, #4660ff 0%, #e94196 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #4660ff 0%,#e94196 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #4660ff 0%,#e94196 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4660ff', endColorstr='#e94196',GradientType=1 ); /* IE6-9 */
+    background: url(../imgs/donate-button.png) center center;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 body.site_controller #rewards .reward .reward-box a:hover{
     text-decoration: none;
