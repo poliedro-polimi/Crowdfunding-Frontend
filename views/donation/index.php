@@ -21,17 +21,12 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
     <section id="donation_amount">
         <div id="donation_objectives">
             <div class="donation_objective" id="obj1" data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"><img
-                  src="<?= Url::resource('assets/imgs/sacca.png') ?>" class="item"/>
+                  src="<?= Url::resource('assets/imgs/tier1.png') ?>" class="item"/>
                 <div
                   class="objective_arrow"></div>
             </div>
             <div class="donation_objective" id="obj2" data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"><img
-                  src="<?= Url::resource('assets/imgs/adesivi_spille.png') ?>" class="item"/>
-                <div
-                  class="objective_arrow"></div>
-            </div>
-            <div class="donation_objective" id="obj3" data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"><img
-                  src="<?= Url::resource('assets/imgs/maglia.png') ?>" class="item"/>
+                  src="<?= Url::resource('assets/imgs/tier2.png') ?>" class="item"/>
                 <div
                   class="objective_arrow"></div>
             </div>
@@ -92,7 +87,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
             </div>
             <fieldset>
                 <legend><?= l('Ricompensa') ?></legend>
-                <!--p><?= Html::escape(l('Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti pacchetti
+                <p><?= Html::escape(l('Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti pacchetti
              di gadget')); ?></p>
 
                 <div class="form-check reward-line">
@@ -109,7 +104,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                                data-threshold="<?= DonationController::REWARD_THRESHOLD1 ?>"
                           <?= ($reward == 1 ? 'checked="checked"' : '') ?> />
                         <label class="form-check-label" for="reward1">
-                            <?= Html::escape(l('Sacca zainetto (donazione minima %s€)',
+                            <?= Html::escape(l('Sacca zainetto, Spille, Bracciale e Tira Lampo (donazione minima %s€)',
                               DonationController::REWARD_THRESHOLD1)); ?>
                         </label>
                     </div>
@@ -124,16 +119,16 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                         </div>
                     </div>
                     <small class="form-text text-muted"><?= Html::escape(l('Sacca Zainetto in Nylon, decorata con il 
-                    nuovo logo PoliMi Pride, 43x34cm')) ?></small>
+                    nuovo logo PoliMi Pride, 43x34cm. Nuove spille, un Tira Lampo per decorare gli zaini e il bracciale daportare sempre con te!')) ?></small>
                 </div>
                 <div class="form-inline reward-line">
                     <div class="form-check">
                         <input type="radio" name="chosenReward" id="reward2" value="2" disabled="disabled"
                                class="form-check-input"
                                data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"
-                          <?= ($reward == 2 ? 'checked="checked"' : '') ?>/>
+                          <?= ($reward == 3 ? 'checked="checked"' : '') ?> />
                         <label class="form-check-label" for="reward2">
-                            <?= Html::escape(l('Adesivi e Spilla PoliMi Pride (donazione minima %s€)',
+                            <?= Html::escape(l('Kit PoliMi Pride Completo: Spille, Sacca, Tira Lampo, Bracciale e T-Shirt (donazione minima %s€)',
                               DonationController::REWARD_THRESHOLD2)); ?>
                         </label>
                     </div>
@@ -143,31 +138,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><?= Html::escape(l('Q.tà')) ?></div>
                             </div>
-                            <input type="number" name="qty2" id="qty2" disabled="disabled" class="form-control" value="0"
-                                   min="0"/>
-                        </div>
-                    </div>
-                    <small class="form-text text-muted"><?= Html::escape(l('Adesivi tondi PoliMi Pride, spilla 
-                    circolare da 44mm (include anche la sacca zainetto)')) ?></small>
-                </div>
-                <div class="form-inline reward-line">
-                    <div class="form-check">
-                        <input type="radio" name="chosenReward" id="reward3" value="3" disabled="disabled"
-                               class="form-check-input"
-                               data-threshold="<?= DonationController::REWARD_THRESHOLD3 ?>"
-                          <?= ($reward == 3 ? 'checked="checked"' : '') ?> />
-                        <label class="form-check-label" for="reward3">
-                            <?= Html::escape(l('Kit PoliMi Pride Completo: Adesivi, Spilla, Sacca e T-Shirt (donazione minima %s€)',
-                              DonationController::REWARD_THRESHOLD3)); ?>
-                        </label>
-                    </div>
-                    <div class="form-group qty">
-                        <label class="sr-only" for="qty3"><?= Html::escape(l('Quantità')); ?></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><?= Html::escape(l('Q.tà')) ?></div>
-                            </div>
-                            <input type="number" name="qty3" id="qty3" class="form-control" disabled="disabled" value="0"
+                            <input type="number" name="qty2" id="qty2" class="form-control" disabled="disabled" value="0"
                                    min="0"/>
                         </div>
                     </div>
@@ -177,7 +148,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                     </small>
                 </div>
                 <small
-                  class="help-block"><?= Html::escape(l('Puoi scegliere quantità maggiori delle ricompense con una donazione almeno pari a un multiplo della donazione minima')); ?></small>
+                  class="help-block"><?= Html::escape(l('Puoi scegliere quantità maggiori delle ricompense con una donazione almeno pari a un multiplo della donazione minima necessaria per il pacchetto che hai scelto')); ?></small>
                 <fieldset id="tshirt_data">
                     <legend><?= Html::escape(l('Scegli la tua T-Shirt')); ?></legend>
                     <div class="form-row justify-content-around">
@@ -186,7 +157,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                                 <label>
                                     <input type="radio" name="shirt-type" value="t-shirt"/>
                                     <?= Html::escape(l('T-shirt classica')); ?><br/><img
-                                      src="<?= Url::resource('assets/imgs/maglia.png') ?>"/>
+                                      src="<?= Url::resource('assets/imgs/tshirt.png') ?>"/>
                                 </label>
                             </div>
                             <div class="radio">
@@ -246,7 +217,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                 </fieldset>
                 <fieldset id="location_data">
                     <legend><?= Html::escape(l('Indica dove preferisci ritirare le tue ricompense')); ?></legend>
-                    <p><?= Html::escape(l('Per ragioni organizzative non possiamo spedire gli oggetti a un tuo domicilio, li
+                    <p><?= Html::escape(l('Per ragioni organizzative non possiamo spedire gli oggetti al tuo domicilio, li
                     consegneremo invece personalmente presso i nostri stand nelle sedi del Politecnico organizzati
                     durante il mese di Giugno')); ?><span class="required">&nbsp;*</span></p>
                     <div class="radio">
@@ -256,9 +227,8 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                         <label><input type="radio" name="location" value="bovisa"/>Bovisa</label>
                     </div>
                 </fieldset>
-                -->
 
-                <p class="text-info"><?= nl2br(Html::escape(l("Ci spiace ma le prenotazioni dei gadget sono chiuse!\nPassa ai nostri stand al Politecnico dal 25 al 29 Giugno, avremo qualche gadget in più per chi non ha potuto prenotarli!\nPuoi comunque fare una donazione a favore delle attività di PoliEdro se lo desideri."))); ?></p>
+                <!--p class="text-info"><?= nl2br(Html::escape(l("Ci spiace ma le prenotazioni dei gadget sono chiuse!\nPassa ai nostri stand al Politecnico dal 24 al 28 Giugno, avremo qualche gadget in più per chi non ha potuto prenotarli!\nPuoi comunque fare una donazione a favore delle attività di PoliEdro se lo desideri."))); ?></p-->
 
                 <input type="radio" name="chosenReward" id="reward0" value="0" class="form-check-input" style="display: none;"
                     checked="checked" />

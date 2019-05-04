@@ -839,7 +839,7 @@ body.donation_controller.index_action .donation_objective{
     transform: translate(-50%, 0);
 }
 body.donation_controller.index_action .donation_objective.active{
-    background-color: #777777;
+    background-color: #E8C726;
 }
 body.donation_controller.index_action .donation_objective img.item{
     max-width: 95%;
@@ -862,13 +862,10 @@ body.donation_controller.index_action .donation_objective.active .objective_arro
     border-top-color: #777777;
 }
 body.donation_controller.index_action .donation_objective#obj1{
-    left: 25%;
+    left: 43.75%;
 }
 body.donation_controller.index_action .donation_objective#obj2{
-    left: 37.5%;
-}
-body.donation_controller.index_action .donation_objective#obj3{
-    left: 75%;
+    left: 81.25%;
 }
 
 body.donation_controller.index_action #error_box{

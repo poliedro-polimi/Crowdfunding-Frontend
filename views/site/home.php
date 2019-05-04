@@ -48,7 +48,7 @@ use site\controllers\DonationController;
                 <a href="<?= Url::to('donation', ['reward' => 1]) ?>"><?= Html::escape(l('Dona')) ?></a>
             </div>
             <div class="reward-description">
-                <?= Html::escape(l('Le sacche zainetto PoliMi Pride sono perfette per affrontare la parata del Milano Pride! Le sacche in nylon 34x43cm sono utilissime per portare con sè borracce d\'acqua, bandiere e tutto il necessario per essere favolosi! E i gadget non finiscono qui: Bracciale, Spille e Tira Lampo sono tutte incluse!')) ?>
+                <?= Html::escape(l('Le sacche zainetto PoliMi Pride sono perfette per affrontare la parata del Milano Pride! Le sacche in nylon 34x43cm sono utilissime per portare con sè borracce d\'acqua, bandiere e tutto il necessario per essere favolosi! E i gadget non finiscono qui: Bracciale, Spille e Tira Lampo sono tutte incluse per supportarci tutto l\'anno!')) ?>
             </div>
         </div>
         <div class="col-10 col-md-5 col-lg-3 reward">
@@ -62,7 +62,7 @@ use site\controllers\DonationController;
                 <a href="<?= Url::to('donation', ['reward' => 2]) ?>"><?= Html::escape(l('Dona')); ?></a>
             </div>
             <div class="reward-description">
-                <?= Html::escape(l("Non perderti la t-shirt PoliMi Pride! Insieme a tutti gli altri gadget completa perfettamente la collezione PoliMi Pride 2019")); ?>
+                <?= Html::escape(l("Non perderti la t-shirt PoliMi Pride! Insieme a tutti gli altri gadget completa perfettamente la collezione PoliMi Pride 2019. Partecipa al Milano Pride con la nostra maglietta per essere sempre più visibili!")); ?>
             </div>
         </div>
     </div>
