@@ -12,9 +12,8 @@ use nigiri\Controller;
 
 class DonationController extends Controller
 {
-    const REWARD_THRESHOLD1 = 4;
-    const REWARD_THRESHOLD2 = 6;
-    const REWARD_THRESHOLD3 = 12;
+    const REWARD_THRESHOLD1 = 7;
+    const REWARD_THRESHOLD2 = 13;
 
     public function actionIndex()
     {
@@ -26,9 +25,6 @@ class DonationController extends Controller
                 break;
             case 2:
                 $amount = self::REWARD_THRESHOLD2;
-                break;
-            case 3;
-                $amount = self::REWARD_THRESHOLD3;
                 break;
             default:
                 $amount = 0;
