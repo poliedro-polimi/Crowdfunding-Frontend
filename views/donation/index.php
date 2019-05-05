@@ -119,7 +119,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                         </div>
                     </div>
                     <small class="form-text text-muted"><?= Html::escape(l('Sacca Zainetto in Nylon, decorata con il 
-                    nuovo logo PoliMi Pride, 43x34cm. Nuove spille, un Tira Lampo per decorare gli zaini e il bracciale daportare sempre con te!')) ?></small>
+                    nuovo logo PoliMi Pride, 43x34cm. Nuove spille, un Tira Lampo per decorare gli zaini e il bracciale da portare sempre con te!')) ?></small>
                 </div>
                 <div class="form-inline reward-line">
                     <div class="form-check">
@@ -228,10 +228,10 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                     </div>
                 </fieldset>
 
-                <!--p class="text-info"><?= nl2br(Html::escape(l("Ci spiace ma le prenotazioni dei gadget sono chiuse!\nPassa ai nostri stand al Politecnico dal 24 al 28 Giugno, avremo qualche gadget in più per chi non ha potuto prenotarli!\nPuoi comunque fare una donazione a favore delle attività di PoliEdro se lo desideri."))); ?></p-->
+                <!--p class="text-info"><?= nl2br(Html::escape(l("Ci spiace ma le prenotazioni dei gadget sono chiuse!\nPassa ai nostri stand al Politecnico dal 24 al 28 Giugno, avremo qualche gadget in più per chi non ha potuto prenotarli!\nPuoi comunque fare una donazione a favore delle attività di PoliEdro se lo desideri."))); ?></p>
 
                 <input type="radio" name="chosenReward" id="reward0" value="0" class="form-check-input" style="display: none;"
-                    checked="checked" />
+                    checked="checked" /-->
             </fieldset>
             <div class="form-group">
                 <label for="notes"><?= Html::escape(l('Note Addizionali')) ?></label>

@@ -18,7 +18,7 @@ $(function(){
     amountChange(initialAmount);
 
     $("input[name=chosenReward]").change(function(){
-        if($("#reward3").prop("checked")){
+        if($("#reward2").prop("checked")){
             $("#tshirt_data").show();
         }
         else{
@@ -64,7 +64,7 @@ $(function(){
             setTimeout(function(){$t.removeClass("warning");}, 2000);
         }
 
-        if($t.attr("id")=="qty3"){
+        if($t.attr("id")=="qty2"){
             tshirtSection($t.val());
         }
     });
@@ -225,10 +225,14 @@ function build_pay_data(){
     var $reward = $("input[name=chosenReward]:checked");
     var output = {
         donation: parseFloat($("#amount").val()),
-        stretch_goal: /*parseInt($reward.val())*/0,
-        items: /*parseInt($reward.closest(".form-inline").find(".qty input").val() || 0)*/0,
+        stretch_goal: parseInt($reward.val()),
+        items: parseInt($reward.closest(".form-inline").find(".qty input").val() || 0),
         notes: $("#notes").val()
     };
+
+    if($reward.attr('id') == 'reward3') {
+        output.shirts = build_shirts_data();
+    }
 
     if($("#nome").val()!='' && $("#cognome").val()!='' && $("#email").val()!='' && $("#tel").val()!='') {
         output.reference = {
