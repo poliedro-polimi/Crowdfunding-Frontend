@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-05 16:07+0200\n"
-"PO-Revision-Date: 2019-05-05 17:31+0200\n"
+"PO-Revision-Date: 2019-05-11 20:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: English (British)\n"
 "Language: en_GB\n"
@@ -224,7 +224,7 @@ msgstr "I do not wish any reward"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:107
 #, php-format
 msgid "Sacca zainetto, Spille, Bracciale e Tira Lampo (donazione minima %s€)"
-msgstr "Sackpack, Pins, Bracelet and Zip Pull (minimum donation %s€)"
+msgstr "Sackpack, Pins, Rainbow Band and Zip Puller (minimum donation %s€)"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:110
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:111
@@ -276,7 +276,7 @@ msgid ""
 msgstr ""
 "Sackpack made of Nylon, adorned with the\n"
 "new PoliMi Pride Logo, 43x34cm. New pins, a Zip Pull to decorate your "
-"backpack and the bracelet to take always with you!"
+"backpack and the band to take always with you!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:124
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:125
@@ -295,8 +295,8 @@ msgid ""
 "Kit PoliMi Pride Completo: Spille, Sacca, Tira Lampo, Bracciale e T-Shirt "
 "(donazione minima %s€)"
 msgstr ""
-"Full PoliMi Pride Kit: Pina, Sackpack, Zip Pull, Bracelet and T-Shirt "
-"(minimum donation %s€)"
+"Full PoliMi Pride Kit: Pina, Sackpack, Zip Puller, band and T-Shirt (minimum "
+"donation %s€)"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:134
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:135
@@ -575,8 +575,8 @@ msgid ""
 "\"Polimi Pride\" insieme alla maglietta!"
 msgstr ""
 "The colourful PoliMi Pride gadget are more and more! The sackpacks, the "
-"pins, the bracelet and the zip pulls complete the gadgets set branded "
-"\"PoliMi Pride\" together with the t-shirt!"
+"pins, the band and the zip puller complete the gadgets set branded \"PoliMi "
+"Pride\" together with the t-shirt!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:13
 msgid ""
@@ -723,7 +723,7 @@ msgstr "Donate"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:43
 msgid "Sacca Zainetto, Bracciale, Spille e Tira Lampo PoliMi Pride"
-msgstr "PoliMi Pride Sackpack, Bracelet, Pins and Zip Pull"
+msgstr "PoliMi Pride Sackpack, Rainbow Band, Pins and Zip Pull"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:44
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:48
@@ -748,8 +748,8 @@ msgstr ""
 "The PoliMi Pride sackpacks are perfect to face the Milano Pride parade! The "
 "nylon 34x43cm sackpacks are very useful to take with you water bottles, "
 "flags and all you need to be fabulous! And the gadgets are not finished "
-"here: Bracelet, Pins and Zip Pull are all included so you can support us for "
-"the whole year!"
+"here: Rainbow Band, Pins and Zip Puller are all included so you can support "
+"us for the whole year!"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:57
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/home.php:61
