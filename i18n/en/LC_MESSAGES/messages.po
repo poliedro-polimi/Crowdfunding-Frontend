@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-05 16:07+0200\n"
-"PO-Revision-Date: 2019-05-11 20:36+0200\n"
+"POT-Creation-Date: 2019-05-11 20:48+0200\n"
+"PO-Revision-Date: 2019-05-11 20:49+0200\n"
 "Last-Translator: \n"
 "Language-Team: English (British)\n"
 "Language: en_GB\n"
@@ -848,6 +848,10 @@ msgstr "Support Us Now"
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:103
 msgid "alla Pride Week"
 msgstr "to the Pride Week"
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:103
+msgid "al termine della raccolta fondi"
+msgstr "to the end of the crowdfunding"
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:106
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/site/layout.php:116
