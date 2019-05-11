@@ -25,11 +25,11 @@ $(function(){
             $("#tshirt_data").hide();
         }
 
-        if(!$("#reward0").prop("checked")) {
-            $("#location_data").show();
+        if($("#reward0").prop("checked")) {
+            $("#location_data").hide();
         }
         else{
-            $("#location_data").hide();
+            $("#location_data").show();
         }
 
         $(".qty input").val(0).prop("disabled", true);
@@ -70,7 +70,7 @@ $(function(){
     });
 
     //Set things up correctly if there is already a reward chosen at the beginning
-    //$("input[name=chosenReward]:checked").change();
+    $("input[name=chosenReward]:checked").change();
 
     paypal.Button.render({
         locale: payPalLocale,

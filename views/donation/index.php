@@ -126,7 +126,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                         <input type="radio" name="chosenReward" id="reward2" value="2" disabled="disabled"
                                class="form-check-input"
                                data-threshold="<?= DonationController::REWARD_THRESHOLD2 ?>"
-                          <?= ($reward == 3 ? 'checked="checked"' : '') ?> />
+                          <?= ($reward == 2 ? 'checked="checked"' : '') ?> />
                         <label class="form-check-label" for="reward2">
                             <?= Html::escape(l('Kit PoliMi Pride Completo: Spille, Sacca, Tira Lampo, Bracciale e T-Shirt (donazione minima %s€)',
                               DonationController::REWARD_THRESHOLD2)); ?>
