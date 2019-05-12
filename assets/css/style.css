@@ -796,6 +796,11 @@ body.site_controller #donate a{
     color: #FFFFFF;
     border-radius: 10px;
 }
+@media screen and (max-width: 768px) {
+    body.site_controller #donate a {
+        padding: 8px 40px;
+    }
+}
 
 body.donation_controller.index_action #donation_slider .ui-slider-handle{
     border-radius: 10px;
