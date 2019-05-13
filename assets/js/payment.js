@@ -230,7 +230,7 @@ function build_pay_data(){
         notes: $("#notes").val()
     };
 
-    if($reward.attr('id') == 'reward3') {
+    if($reward.attr('id') == 'reward2') {
         output.shirts = build_shirts_data();
     }
 
