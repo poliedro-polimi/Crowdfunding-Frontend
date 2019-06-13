@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-11 20:48+0200\n"
+"POT-Creation-Date: 2019-06-13 20:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,7 +97,16 @@ msgid ""
 "dagli iPhone e iPad. Ci scusiamo per l'inconveniente."
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:46
+msgid ""
+"La raccolta fondi si è conclusa! Ringraziamo tutti coloro che hanno "
+"partecipato, passa ai nostri stand al Politecnico dal 24 al 28 Giugno, "
+"avremo qualche gadget in più per chi non ha potuto prenotarli! \n"
+"Se vuoi puoi ancora fare una donazione a PoliEdro."
+msgstr ""
+
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:48
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:49
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:51
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:52
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:53
@@ -113,6 +122,7 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:52
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:53
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:55
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:56
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:57
@@ -121,6 +131,7 @@ msgid "Nome"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:56
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:57
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:59
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:60
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:61
@@ -129,6 +140,7 @@ msgid "Cognome"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:62
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:63
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:65
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:66
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:67
@@ -137,6 +149,7 @@ msgid "Email"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:64
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:65
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:67
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:68
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:69
@@ -147,6 +160,7 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:68
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:69
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:71
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:72
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:73
@@ -155,6 +169,7 @@ msgid "Numero di Telefono"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:71
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:72
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:74
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:75
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:76
@@ -163,6 +178,7 @@ msgid "Sarà utilizzato solo in caso non riuscissimo a contattarti per email"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:76
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:77
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:79
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:80
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:81
@@ -198,6 +214,7 @@ msgid "Non desidero alcuna ricompensa"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:107
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:110
 #, php-format
 msgid "Sacca zainetto, Spille, Bracciale e Tira Lampo (donazione minima %s€)"
 msgstr ""
@@ -245,6 +262,7 @@ msgid "Q.tà"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:121
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:124
 msgid ""
 "Sacca Zainetto in Nylon, decorata con il \n"
 "                    nuovo logo PoliMi Pride, 43x34cm. Nuove spille, un Tira "
@@ -261,6 +279,7 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:131
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:134
 #, php-format
 msgid ""
 "Kit PoliMi Pride Completo: Spille, Sacca, Tira Lampo, Bracciale e T-Shirt "
@@ -276,6 +295,7 @@ msgid "Adesivi e Spilla PoliMi Pride (donazione minima %s€)"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:145
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:148
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:172
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:173
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:174
@@ -297,6 +317,7 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:151
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:154
 msgid ""
 "Puoi scegliere quantità maggiori delle ricompense con una donazione almeno "
 "pari a un multiplo della donazione minima necessaria per il pacchetto che "
@@ -304,6 +325,7 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:153
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:156
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:180
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:181
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:182
@@ -322,6 +344,7 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:159
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:162
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:186
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:187
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:188
@@ -330,6 +353,7 @@ msgid "T-shirt classica"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:166
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:169
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:193
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:194
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:195
@@ -338,6 +362,7 @@ msgid "Canotta"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:171
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:174
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:198
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:199
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:200
@@ -355,6 +380,7 @@ msgid ""
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:219
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:222
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:246
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:247
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:248
@@ -363,6 +389,7 @@ msgid "Indica dove preferisci ritirare le tue ricompense"
 msgstr ""
 
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:220
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:223
 msgid ""
 "Per ragioni organizzative non possiamo spedire gli oggetti al tuo domicilio, "
 "li\n"
@@ -380,6 +407,7 @@ msgid ""
 "desideri."
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:235
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:237
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:259
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:260
@@ -389,12 +417,14 @@ msgstr ""
 msgid "Note Addizionali"
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:241
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:243
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:267
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:273
 msgid "Hai già fatto una donazione o hai problemi tecnici?"
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:242
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:244
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:266
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:267
@@ -425,6 +455,7 @@ msgid ""
 "desideri."
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:261
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:263
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:285
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:286
@@ -434,6 +465,7 @@ msgstr ""
 msgid "Verifica i dati inseriti!"
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:262
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:264
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:286
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:287
@@ -443,13 +475,7 @@ msgstr ""
 msgid "Si è verificato un errore in PayPal. Riprova"
 msgstr ""
 
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:265
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:266
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:267
-#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:268
-msgid "Hai già fatto una donazione e hai bisogno di modificarla?"
-msgstr ""
-
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:263
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:265
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:287
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:288
@@ -459,6 +485,7 @@ msgstr ""
 msgid "Si è verificato un errore nel nostro sistema. Riprova"
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:264
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:266
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:288
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:289
@@ -470,6 +497,14 @@ msgid ""
 "avere abbastanza disponibilità e che i dati siano validi."
 msgstr ""
 
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:265
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:266
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:267
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:268
+msgid "Hai già fatto una donazione e hai bisogno di modificarla?"
+msgstr ""
+
+#: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:265
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:267
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:289
 #: /home/stefano/workspace/Crowdfunding-Frontend/views/donation/index.php:290
