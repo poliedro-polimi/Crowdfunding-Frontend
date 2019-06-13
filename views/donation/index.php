@@ -43,6 +43,7 @@ Site::getTheme()->append(Url::resource("assets/imgs/banner2.png"), 'banner_img')
     <section id="error_box" class="text-danger"></section>
     <div id="form_note" class="text-muted"><?= nl2br(Html::escape(l("Siamo a conoscenza di problemi nei pagamenti utilizzando gli iPhone.
 Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli iPhone e iPad. Ci scusiamo per l'inconveniente.")))?></div>
+    <p class="alert alert-info"><?= nl2br(Html::escape(l("La raccolta fondi si è conclusa! Ringraziamo tutti coloro che hanno partecipato, passa ai nostri stand al Politecnico dal 24 al 28 Giugno, avremo qualche gadget in più per chi non ha potuto prenotarli! \nSe vuoi puoi ancora fare una donazione a PoliEdro."))) ?></p>
     <section id="donation_data">
         <form novalidate>
             <div id="required_legend"><?= Html::escape(l("I campi segnati con * sono obbligatori")); ?></div>
@@ -85,7 +86,9 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                     </div>
                 </div>
             </div>
-            <fieldset>
+          <input type="radio" name="chosenReward" id="reward0" value="0" class="form-check-input" style="display: none;"
+                 checked="checked" />
+            <!--- fieldset>
                 <legend><?= l('Ricompensa') ?></legend>
                 <p><?= Html::escape(l('Per ringraziarti della tua donazione a PoliEdro puoi scegliere tra i seguenti pacchetti
              di gadget')); ?></p>
@@ -227,12 +230,7 @@ Se non riuscite a fare la donazione provate da pc o da dispositivi diversi dagli
                         <label><input type="radio" name="location" value="bovisa"/>Bovisa</label>
                     </div>
                 </fieldset>
-
-                <!--p class="text-info"><?= nl2br(Html::escape(l("Ci spiace ma le prenotazioni dei gadget sono chiuse!\nPassa ai nostri stand al Politecnico dal 24 al 28 Giugno, avremo qualche gadget in più per chi non ha potuto prenotarli!\nPuoi comunque fare una donazione a favore delle attività di PoliEdro se lo desideri."))); ?></p>
-
-                <input type="radio" name="chosenReward" id="reward0" value="0" class="form-check-input" style="display: none;"
-                    checked="checked" /-->
-            </fieldset>
+            </fieldset-->
             <div class="form-group">
                 <label for="notes"><?= Html::escape(l('Note Addizionali')) ?></label>
                 <textarea class="form-control" rows="3" id="notes"></textarea>

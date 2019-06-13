@@ -100,7 +100,7 @@ Controller::camelCaseToUnderscore(Site::getRouter()->getActionName()) ?>_action"
         <h1 class="section-title"><span id="countdown"><span class="days">00</span>d&nbsp;&nbsp;<span
                         class="hours">00</span>h&nbsp;&nbsp;<span class="minutes">00</span>m&nbsp;&nbsp;<span
                         class="seconds">00</span>s</span></h1>
-        <h2 class="section-content"><?= l('al termine della raccolta fondi') ?></h2>
+        <h2 class="section-content"><?= l('alla Pride Week') ?></h2>
     </div>
 </section>
 <div id="page_content">

@@ -230,9 +230,9 @@ function build_pay_data(){
         notes: $("#notes").val()
     };
 
-    if($reward.attr('id') == 'reward2') {
+    /*if($reward.attr('id') == 'reward2') {
         output.shirts = build_shirts_data();
-    }
+    }*/
 
     if($("#nome").val()!='' && $("#cognome").val()!='' && $("#email").val()!='' && $("#tel").val()!='') {
         output.reference = {
@@ -240,7 +240,7 @@ function build_pay_data(){
             lastname: $("#cognome").val(),
             email: $("#email").val(),
             phone: $("#tel").val(),
-            location: 'leonardo'
+            location: 'leonardo'//TODO changeme back
         };
     }
     return output;
@@ -313,7 +313,7 @@ function form_is_valid(){
         $amt.removeClass("is-invalid");
     }
 
-    ret2 = validate_rewards();
+    ret2 = /*validate_rewards();*/ true;
     ret = ret && ret2;
 
     $('#donation_data form').addClass('was-validated');
